@@ -1941,7 +1941,6 @@ public class diagFind : Form
         this.Controls.Add(this.Label5);
         this.Font = new System.Drawing.Font("Segoe UI", 9f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-        this.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
         this.MaximizeBox = false;
         this.MinimizeBox = false;
         this.Name = "diagFind";
