@@ -107,8 +107,11 @@ namespace {context.Namespace}
                     var def = split[0].Split(' ', StringSplitOptions.RemoveEmptyEntries);
                     if (def.Length == 2)// var declaration
                     {
-                        varMapping.Add(def[1], split[1]);
-                        continue;
+                        if (def[1] != "resources")
+                        {
+                            varMapping.Add(def[1], split[1]);
+                            continue;
+                        }
                     }
                     else
                     {
