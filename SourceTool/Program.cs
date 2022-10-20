@@ -31,6 +31,13 @@ namespace SourceTool
                 if (isValidFile)
                 {
                     var designerString = DesignerUtil.GetDesignerString(context);
+
+                    var filename = Path.GetFileNameWithoutExtension(enumerateFile.Name);
+                    var extension = Path.GetExtension(enumerateFile.Name);
+                    var newPath = Path.Combine(directory.FullName, filename + ".Designer" + extension);
+
+                    File.WriteAllText(enumerateFile.FullName, context.SourceString);
+                    File.WriteAllText(newPath, designerString);
                 }
             }
 

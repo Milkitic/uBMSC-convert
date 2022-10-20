@@ -18,7 +18,7 @@ internal class Context
 
     public Dictionary<string, List<(string Event, string EventHandlerTypeName, string EventHandler)>> EventHandlers { get; } = new();
 
-    private string SourceString => _source.ToString();
+    public string SourceString => _source.ToString();
 
     public void AppendSourceLine(string content)
     {
