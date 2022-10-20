@@ -42,7 +42,7 @@ public partial class dgStatistics : Form
 
     public dgStatistics(int[,] data)
     {
-        base.Load += dgStatistics_Load;
+        Load += dgStatistics_Load;
         InitializeComponent();
         int num = 0;
         checked

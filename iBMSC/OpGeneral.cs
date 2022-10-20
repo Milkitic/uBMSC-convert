@@ -89,7 +89,7 @@ public partial class OpGeneral : Form
                 switch (try0006_dispatch)
                 {
                     default:
-                        base.Load += OpGeneral_Load;
+                        Load += OpGeneral_Load;
                         goto IL_0019;
                     case 950:
                         {

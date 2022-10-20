@@ -22,7 +22,7 @@ internal class MyApplication : WindowsFormsApplicationBase
     {
         try
         {
-            Application.SetCompatibleTextRenderingDefault(WindowsFormsApplicationBase.UseCompatibleTextRendering);
+            Application.SetCompatibleTextRenderingDefault(UseCompatibleTextRendering);
         }
         finally
         {
@@ -59,9 +59,9 @@ internal class MyApplication : WindowsFormsApplicationBase
     public MyApplication()
         : base(AuthenticationMode.Windows)
     {
-        base.UnhandledException += MyApplication_UnhandledException;
-        base.Shutdown += MyApplication_Shutdown;
-        base.Startup += MyApplication_Startup;
+        UnhandledException += MyApplication_UnhandledException;
+        Shutdown += MyApplication_Shutdown;
+        Startup += MyApplication_Startup;
         IsSingleInstance = false;
         EnableVisualStyles = true;
         SaveMySettingsOnExit = true;

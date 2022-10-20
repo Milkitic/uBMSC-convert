@@ -30,7 +30,7 @@ public partial class OpVisual : Form
 
     public OpVisual(visualSettings xvo, Column[] xcol, Font monoFont)
     {
-        base.Load += OpVisual_Load;
+        Load += OpVisual_Load;
         niB = 27;
         lLeft = new int[28]
         {
