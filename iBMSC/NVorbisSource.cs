@@ -50,7 +50,7 @@ internal class NVorbisSource : ISampleSource
             throw new ArgumentException("stream");
         }
         _stream = stream;
-        _vorbisReader = new VorbisReader((Stream)(object)stream, closeStreamOnDispose: false);
+        _vorbisReader = new VorbisReader(stream, false);
         _waveFormat = new WaveFormat(_vorbisReader.SampleRate, 32, _vorbisReader.Channels, AudioEncoding.IeeeFloat);
     }
 

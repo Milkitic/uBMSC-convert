@@ -595,7 +595,7 @@ namespace iBMSC
             this.POExpansionInner.Controls.Add(this.TExpansion);
             this.POExpansionInner.Controls.Add(this.POExpansionResizer);
             this.POExpansionInner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POExpansionInner.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POExpansionInner.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.POExpansionInner.Location = new System.Drawing.Point(0, 20);
             this.POExpansionInner.Name = "POExpansionInner";
             this.POExpansionInner.Size = new System.Drawing.Size(183, 250);
@@ -637,7 +637,7 @@ namespace iBMSC
             this.POExpansionSwitch.BackColor = System.Drawing.SystemColors.Control;
             this.POExpansionSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POExpansionSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POExpansionSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POExpansionSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POExpansionSwitch.Location = new System.Drawing.Point(0, 0);
             this.POExpansionSwitch.Name = "POExpansionSwitch";
             this.POExpansionSwitch.Size = new System.Drawing.Size(183, 20);
@@ -845,7 +845,7 @@ namespace iBMSC
             // LBeat
             // 
             this.LBeat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBeat.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBeat.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LBeat.IntegralHeight = false;
             this.LBeat.ItemHeight = 14;
             this.LBeat.Items.AddRange(new object[] {
@@ -937,7 +937,7 @@ namespace iBMSC
             this.POBeatSwitch.BackColor = System.Drawing.SystemColors.Control;
             this.POBeatSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POBeatSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POBeatSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POBeatSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POBeatSwitch.Location = new System.Drawing.Point(0, 0);
             this.POBeatSwitch.Name = "POBeatSwitch";
             this.POBeatSwitch.Size = new System.Drawing.Size(183, 20);
@@ -1009,7 +1009,7 @@ namespace iBMSC
             // LWAV
             // 
             this.LWAV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LWAV.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LWAV.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LWAV.IntegralHeight = false;
             this.LWAV.ItemHeight = 14;
             this.LWAV.Location = new System.Drawing.Point(3, 93);
@@ -1154,7 +1154,7 @@ namespace iBMSC
             this.POWAVSwitch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.POWAVSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POWAVSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POWAVSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POWAVSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POWAVSwitch.Location = new System.Drawing.Point(0, 0);
             this.POWAVSwitch.Name = "POWAVSwitch";
             this.POWAVSwitch.Size = new System.Drawing.Size(183, 20);
@@ -1654,7 +1654,7 @@ namespace iBMSC
             this.POWaveFormSwitch.BackColor = System.Drawing.SystemColors.Control;
             this.POWaveFormSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POWaveFormSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POWaveFormSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POWaveFormSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POWaveFormSwitch.Location = new System.Drawing.Point(0, 0);
             this.POWaveFormSwitch.Name = "POWaveFormSwitch";
             this.POWaveFormSwitch.Size = new System.Drawing.Size(183, 20);
@@ -2152,7 +2152,7 @@ namespace iBMSC
             this.POGridSwitch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.POGridSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POGridSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POGridSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POGridSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POGridSwitch.Location = new System.Drawing.Point(0, 0);
             this.POGridSwitch.Name = "POGridSwitch";
             this.POGridSwitch.Size = new System.Drawing.Size(183, 20);
@@ -4069,7 +4069,7 @@ namespace iBMSC
             this.POHeaderSwitch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.POHeaderSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.POHeaderSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POHeaderSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POHeaderSwitch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.POHeaderSwitch.Location = new System.Drawing.Point(0, 0);
             this.POHeaderSwitch.Name = "POHeaderSwitch";
             this.POHeaderSwitch.Size = new System.Drawing.Size(183, 20);
@@ -5124,7 +5124,7 @@ namespace iBMSC
             // 
             // TBStatistics
             // 
-            this.TBStatistics.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.TBStatistics.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TBStatistics.Image = global::iBMSC.Resources.x16Statistics;
             this.TBStatistics.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TBStatistics.Name = "TBStatistics";
@@ -5397,7 +5397,7 @@ namespace iBMSC
             // FSSS
             // 
             this.FSSS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.FSSS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSSS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSSS.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FSSS.Name = "FSSS";
             this.FSSS.Size = new System.Drawing.Size(23, 20);
@@ -5408,7 +5408,7 @@ namespace iBMSC
             // FSSL
             // 
             this.FSSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.FSSL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSSL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSSL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FSSL.Name = "FSSL";
             this.FSSL.Size = new System.Drawing.Size(23, 20);
@@ -5419,7 +5419,7 @@ namespace iBMSC
             // FSSH
             // 
             this.FSSH.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.FSSH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSSH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSSH.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FSSH.Name = "FSSH";
             this.FSSH.Size = new System.Drawing.Size(23, 20);
@@ -5447,7 +5447,7 @@ namespace iBMSC
             // 
             this.TVCM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.TVCM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TVCM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.TVCM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TVCM.Name = "TVCM";
             this.TVCM.Size = new System.Drawing.Size(60, 22);
             this.TVCM.Text = "2";
@@ -5465,7 +5465,7 @@ namespace iBMSC
             // 
             this.TVCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.TVCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TVCD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.TVCD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TVCD.Name = "TVCD";
             this.TVCD.Size = new System.Drawing.Size(60, 22);
             this.TVCD.Text = "1";
@@ -5489,7 +5489,7 @@ namespace iBMSC
             // 
             this.TVCBPM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.TVCBPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TVCBPM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.TVCBPM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TVCBPM.Name = "TVCBPM";
             this.TVCBPM.Size = new System.Drawing.Size(80, 22);
             this.TVCBPM.Text = "120";
@@ -5573,7 +5573,7 @@ namespace iBMSC
             // FSP1
             // 
             this.FSP1.AutoSize = false;
-            this.FSP1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSP1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSP1.Name = "FSP1";
             this.FSP1.Size = new System.Drawing.Size(170, 17);
             this.FSP1.Text = "9.41176470588235 / 9999";
@@ -5582,7 +5582,7 @@ namespace iBMSC
             // FSP3
             // 
             this.FSP3.AutoSize = false;
-            this.FSP3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSP3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSP3.ForeColor = System.Drawing.Color.Maroon;
             this.FSP3.Name = "FSP3";
             this.FSP3.Size = new System.Drawing.Size(85, 17);
@@ -5592,7 +5592,7 @@ namespace iBMSC
             // FSP2
             // 
             this.FSP2.AutoSize = false;
-            this.FSP2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.FSP2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FSP2.ForeColor = System.Drawing.Color.Green;
             this.FSP2.Name = "FSP2";
             this.FSP2.Size = new System.Drawing.Size(170, 17);
@@ -5670,7 +5670,7 @@ namespace iBMSC
             this.PMain.Controls.Add(this.MainPanelScroll);
             this.PMain.Controls.Add(this.HS);
             this.PMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PMain.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMain.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMain.ForeColor = System.Drawing.Color.White;
             this.PMain.Location = new System.Drawing.Point(5, 0);
             this.PMain.Name = "PMain";
@@ -5682,7 +5682,7 @@ namespace iBMSC
             // 
             this.PMainIn.BackColor = System.Drawing.Color.Black;
             this.PMainIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PMainIn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMainIn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMainIn.ForeColor = System.Drawing.Color.White;
             this.PMainIn.Location = new System.Drawing.Point(0, 0);
             this.PMainIn.Name = "PMainIn";
@@ -5768,7 +5768,7 @@ namespace iBMSC
             this.PMainR.Controls.Add(this.RightPanelScroll);
             this.PMainR.Controls.Add(this.HSR);
             this.PMainR.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PMainR.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMainR.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMainR.ForeColor = System.Drawing.Color.White;
             this.PMainR.Location = new System.Drawing.Point(876, 0);
             this.PMainR.Name = "PMainR";
@@ -5780,7 +5780,7 @@ namespace iBMSC
             // 
             this.PMainInR.BackColor = System.Drawing.Color.Black;
             this.PMainInR.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PMainInR.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMainInR.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMainInR.ForeColor = System.Drawing.Color.White;
             this.PMainInR.Location = new System.Drawing.Point(0, 0);
             this.PMainInR.Name = "PMainInR";
@@ -5834,7 +5834,7 @@ namespace iBMSC
             this.PMainL.Controls.Add(this.LeftPanelScroll);
             this.PMainL.Controls.Add(this.HSL);
             this.PMainL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PMainL.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMainL.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMainL.ForeColor = System.Drawing.Color.White;
             this.PMainL.Location = new System.Drawing.Point(0, 0);
             this.PMainL.Name = "PMainL";
@@ -5846,7 +5846,7 @@ namespace iBMSC
             // 
             this.PMainInL.BackColor = System.Drawing.Color.Black;
             this.PMainInL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PMainInL.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMainInL.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PMainInL.ForeColor = System.Drawing.Color.White;
             this.PMainInL.Location = new System.Drawing.Point(0, 0);
             this.PMainInL.Name = "PMainInL";
@@ -5919,7 +5919,7 @@ namespace iBMSC
             this.Controls.Add(this.POptionsResizer);
             this.Controls.Add(this.POptionsScroll);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.mnMain;

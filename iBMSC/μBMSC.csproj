@@ -4,7 +4,7 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>True</UseWindowsForms>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>10.0</LangVersion>
@@ -16,15 +16,8 @@
     <RootNamespace>iBMSC</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="CSCore">
-      <HintPath>C:\Users\milkitic\Downloads\ubmsc\CSCore.dll</HintPath>
-    </Reference>
-    <Reference Include="NVorbis">
-      <HintPath>C:\Users\milkitic\Downloads\ubmsc\NVorbis.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
+    <PackageReference Include="CSCore" Version="1.2.1.2" />
+    <PackageReference Include="NVorbis" Version="0.10.5" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
