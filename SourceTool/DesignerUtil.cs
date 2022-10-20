@@ -12,6 +12,7 @@ internal static class DesignerUtil
         }
 
         stringBuilder.AppendLine($@"using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;

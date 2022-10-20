@@ -9,7 +9,7 @@ namespace SourceTool
             var directory = new DirectoryInfo("D:\\GitHub\\uBMSC\\iBMSC");
             foreach (var enumerateFile in directory.EnumerateFiles("*.cs"))
             {
-                var context = new Context { };
+                var context = new Context { FileName = enumerateFile.FullName };
                 bool isValidFile = false;
                 //context.Source.Clear();
                 //context.Designer.Clear();
@@ -36,8 +36,8 @@ namespace SourceTool
                     var extension = Path.GetExtension(enumerateFile.Name);
                     var newPath = Path.Combine(directory.FullName, filename + ".Designer" + extension);
 
-                    File.WriteAllText(enumerateFile.FullName, context.SourceString);
-                    File.WriteAllText(newPath, designerString);
+                    //File.WriteAllText(enumerateFile.FullName, context.SourceString);
+                    //File.WriteAllText(newPath, designerString);
                 }
             }
 
@@ -162,6 +162,7 @@ namespace SourceTool
 
         private static bool MatchPartial(Context context, string[] lines, ref int i, ref bool isValidFile)
         {
+
             var line = lines[i];
             if (!line.Contains("[DesignerGenerated]")) return false;
 
@@ -176,7 +177,8 @@ namespace SourceTool
 
             i++;
             context.AppendSourceLine(line);
-            context.AppendSourceLine(nextLine.Substring(0, 14) + " partial " + nextLine.Substring(14));
+            var index = nextLine.IndexOf(" class ", StringComparison.Ordinal);
+            context.AppendSourceLine(nextLine.Substring(0, index) + " partial " + nextLine.Substring(index));
             isValidFile = true;
             return true;
         }
