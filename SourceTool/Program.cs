@@ -116,7 +116,7 @@ namespace SourceTool
                 sb.AppendLine(lines[i]);
             }
 
-            context.TargetFields.Add(sb.ToString().TrimEnd());
+            context.TargetFields.Add(split[^1], sb.ToString().TrimEnd());
             return true;
         }
 
@@ -172,39 +172,6 @@ namespace SourceTool
             context.AppendSourceLine(nextLine.Substring(0, 14) + " partial " + nextLine.Substring(14));
             isValidFile = true;
             return true;
-        }
-    }
-
-    internal class Context
-    {
-        private readonly StringBuilder _source = new();
-        private string? _lastLineTrim;
-
-        public string? TargetClass { get; set; }
-        public string? TargetComponentDefinition { get; set; }
-        public string? DisposeDefinition { get; set; }
-        public string? InitializeComponentDefinition { get; set; }
-        public string? Namespace { get; set; }
-
-        public List<string> TargetFields { get; } = new();
-        public Dictionary<string, string> Fields { get; } = new();
-
-        private string SourceString => _source.ToString();
-
-        public void AppendSourceLine(string content)
-        {
-            if (_lastLineTrim == "" && content.Trim() == "")
-            {
-                return;
-            }
-
-            if (_lastLineTrim == "{" && content.Trim() == "")
-            {
-                return;
-            }
-
-            _lastLineTrim = content.Trim();
-            _source.AppendLine(content);
         }
     }
 }
