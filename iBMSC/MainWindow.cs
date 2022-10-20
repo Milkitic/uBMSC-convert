@@ -1464,224 +1464,240 @@ IL_0952:
     {
         KMouseOver = -1;
         BinaryReader br = new BinaryReader(new FileStream(Path, FileMode.Open, FileAccess.Read), Encoding.Unicode);
-        checked
+
+        if (br.ReadInt32() == 0x534D4269 && br.ReadByte() == 0x43)
         {
-            if (br.ReadInt32() == 1397572201 && br.ReadByte() == 67)
+            int xMajor = br.ReadByte();
+            int xMinor = br.ReadByte();
+            int xBuild = br.ReadByte();
+
+            ClearUndo();
+
+            Notes = new Note[1];
+            mColumn = new int[1000];
+            hWAV = new string[1296];
+
+            InitializeNewBMS();
+            InitializeOpenBMS();
+            Note[] notes = Notes;
+            notes[0].ColumnIndex = 2;
+            notes[0].VPosition = -1.0;
+            // .LongNote = False
+            // .Selected = False
+            notes[0].Value = 1200000L;
+            while (br.BaseStream.Position < br.BaseStream.Length)
             {
-                int num = br.ReadByte();
-                int num2 = br.ReadByte();
-                int num3 = br.ReadByte();
-                ClearUndo();
-                Notes = new Note[1];
-                mColumn = new int[1000];
-                hWAV = new string[1296];
-                InitializeNewBMS();
-                InitializeOpenBMS();
-                Note[] notes = Notes;
-                int num4 = 0;
-                notes[num4].ColumnIndex = 2;
-                notes[num4].VPosition = -1.0;
-                notes[num4].Value = 1200000L;
-                while (br.BaseStream.Position < br.BaseStream.Length)
+                switch (br.ReadInt32())
                 {
-                    switch (br.ReadInt32())
-                    {
-                        case 1717924432:
-                            {
-                                int num17 = br.ReadInt32();
-                                NTInput = (num17 & 1) != 0;
-                                TBNTInput.Checked = NTInput;
-                                mnNTInput.Checked = NTInput;
-                                POBLong.Enabled = !NTInput;
-                                POBLongShort.Enabled = !NTInput;
-                                ErrorCheck = (num17 & 2) != 0;
-                                TBErrorCheck.Checked = ErrorCheck;
-                                TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
-                                PreviewOnClick = (num17 & 4) != 0;
-                                TBPreviewOnClick.Checked = PreviewOnClick;
-                                TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
-                                ShowFileName = (num17 & 8) != 0;
-                                TBShowFileName.Checked = ShowFileName;
-                                TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
-                                mnSMenu.Checked = (num17 & 0x100) != 0;
-                                mnSTB.Checked = (num17 & 0x200) != 0;
-                                mnSOP.Checked = (num17 & 0x400) != 0;
-                                mnSStatus.Checked = (num17 & 0x800) != 0;
-                                mnSLSplitter.Checked = (num17 & 0x1000) != 0;
-                                mnSRSplitter.Checked = (num17 & 0x2000) != 0;
-                                CGShow.Checked = (num17 & 0x4000) != 0;
-                                CGShowS.Checked = (num17 & 0x8000) != 0;
-                                CGShowBG.Checked = (num17 & 0x10000) != 0;
-                                CGShowM.Checked = (num17 & 0x20000) != 0;
-                                CGShowMB.Checked = (num17 & 0x40000) != 0;
-                                CGShowV.Checked = (num17 & 0x80000) != 0;
-                                CGShowC.Checked = (num17 & 0x100000) != 0;
-                                CGBLP.Checked = (num17 & 0x200000) != 0;
-                                CGSTOP.Checked = (num17 & 0x400000) != 0;
-                                CGSCROLL.Checked = (num17 & 0x20000000) != 0;
-                                CGBPM.Checked = (num17 & 0x800000) != 0;
-                                CGSnap.Checked = (num17 & 0x1000000) != 0;
-                                CGDisableVertical.Checked = (num17 & 0x2000000) != 0;
-                                cVSLockL.Checked = (num17 & 0x4000000) != 0;
-                                cVSLock.Checked = (num17 & 0x8000000) != 0;
-                                cVSLockR.Checked = (num17 & 0x10000000) != 0;
-                                CGDivide.Value = new decimal(br.ReadInt32());
-                                CGSub.Value = new decimal(br.ReadInt32());
-                                gSlash = br.ReadInt32();
-                                CGHeight.Value = new decimal(br.ReadSingle());
-                                CGWidth.Value = new decimal(br.ReadSingle());
-                                CGB.Value = new decimal(br.ReadInt32());
-                                break;
-                            }
-                        case 1684104520:
-                            {
-                                THTitle.Text = br.ReadString();
-                                THArtist.Text = br.ReadString();
-                                THGenre.Text = br.ReadString();
-                                Notes[0].Value = br.ReadInt64();
-                                int num23 = br.ReadByte();
-                                THPlayLevel.Text = br.ReadString();
-                                CHPlayer.SelectedIndex = num23 & 0xF;
-                                CHRank.SelectedIndex = num23 >> 4;
-                                THSubTitle.Text = br.ReadString();
-                                THSubArtist.Text = br.ReadString();
-                                THStageFile.Text = br.ReadString();
-                                THBanner.Text = br.ReadString();
-                                THBackBMP.Text = br.ReadString();
-                                CHDifficulty.SelectedIndex = br.ReadByte();
-                                THExRank.Text = br.ReadString();
-                                THTotal.Text = br.ReadString();
-                                THComment.Text = br.ReadString();
-                                CHLnObj.SelectedIndex = br.ReadInt16();
-                                break;
-                            }
-                        case 5652823:
-                            {
-                                int num11 = br.ReadByte();
-                                WAVMultiSelect = (num11 & 1) != 0;
-                                CWAVMultiSelect.Checked = WAVMultiSelect;
-                                CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
-                                WAVChangeLabel = (num11 & 2) != 0;
-                                CWAVChangeLabel.Checked = WAVChangeLabel;
-                                CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
-                                int num12 = br.ReadInt32();
-                                int num13 = num12;
-                                for (int k = 1; k <= num13; k++)
-                                {
-                                    int num14 = br.ReadInt16();
-                                    hWAV[num14] = br.ReadString();
-                                }
+                    case 0x66657250:
+                        {
+                            int xPref = br.ReadInt32();
 
-                                break;
-                            }
-                        case 1952539970:
-                            {
-                                nBeatN.Value = new decimal(br.ReadInt16());
-                                nBeatD.Value = new decimal(br.ReadInt16());
-                                int num18 = br.ReadByte();
-                                RadioButton[] array =
-                                    new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
-                                array[num18].Checked = true;
-                                CBeatPreserve_Click(array[num18], EventArgs.Empty);
-                                int num19 = br.ReadInt32();
-                                int num20 = num19;
-                                for (int m = 1; m <= num20; m++)
-                                {
-                                    int num21 = br.ReadInt16();
-                                    MeasureLength[num21] = br.ReadDouble();
-                                    double num22 = MeasureLength[num21] / 192.0;
-                                    long denominator = Functions.GetDenominator(num22, 2147483647L);
-                                    LBeat.Items[num21] = Operators.ConcatenateObject(
-                                        string.Concat(Functions.Add3Zeros(num21) + ": ", Conversions.ToString(num22)),
-                                        Interaction.IIf(denominator > 10000, "",
-                                            " ( " + Conversions.ToString((long)Math.Round(num22 * denominator)) + " / " +
-                                            Conversions.ToString(denominator) + " ) "));
-                                }
+                            NTInput = (xPref & 1) != 0;
+                            TBNTInput.Checked = NTInput;
+                            mnNTInput.Checked = NTInput;
+                            POBLong.Enabled = !NTInput;
+                            POBLongShort.Enabled = !NTInput;
 
-                                break;
-                            }
-                        case 1852864581:
-                            TExpansion.Text = br.ReadString();
+                            ErrorCheck = (xPref & 2) != 0;
+                            TBErrorCheck.Checked = ErrorCheck;
+                            TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
+
+                            PreviewOnClick = (xPref & 4) != 0;
+                            TBPreviewOnClick.Checked = PreviewOnClick;
+                            TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
+
+                            ShowFileName = (xPref & 8) != 0;
+                            TBShowFileName.Checked = ShowFileName;
+                            TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
+
+                            mnSMenu.Checked = (xPref & 0x100) != 0;
+                            mnSTB.Checked = (xPref & 0x200) != 0;
+                            mnSOP.Checked = (xPref & 0x400) != 0;
+                            mnSStatus.Checked = (xPref & 0x800) != 0;
+                            mnSLSplitter.Checked = (xPref & 0x1000) != 0;
+                            mnSRSplitter.Checked = (xPref & 0x2000) != 0;
+
+                            CGShow.Checked = (xPref & 0x4000) != 0;
+                            CGShowS.Checked = (xPref & 0x8000) != 0;
+                            CGShowBG.Checked = (xPref & 0x10000) != 0;
+                            CGShowM.Checked = (xPref & 0x20000) != 0;
+                            CGShowMB.Checked = (xPref & 0x40000) != 0;
+                            CGShowV.Checked = (xPref & 0x80000) != 0;
+                            CGShowC.Checked = (xPref & 0x100000) != 0;
+                            CGBLP.Checked = (xPref & 0x200000) != 0;
+                            CGSTOP.Checked = (xPref & 0x400000) != 0;
+                            CGSCROLL.Checked = (xPref & 0x20000000) != 0;
+                            CGBPM.Checked = (xPref & 0x800000) != 0;
+
+                            CGSnap.Checked = (xPref & 0x1000000) != 0;
+                            CGDisableVertical.Checked = (xPref & 0x2000000) != 0;
+                            cVSLockL.Checked = (xPref & 0x4000000) != 0;
+                            cVSLock.Checked = (xPref & 0x8000000) != 0;
+                            cVSLockR.Checked = (xPref & 0x10000000) != 0;
+
+                            CGDivide.Value = br.ReadInt32();
+                            CGSub.Value = br.ReadInt32();
+                            gSlash = br.ReadInt32();
+                            CGHeight.Value = (decimal)br.ReadSingle();
+                            CGWidth.Value = (decimal)br.ReadSingle();
+                            CGB.Value = br.ReadInt32();
                             break;
-                        case 1702129486:
+                        }
+                    case 0x64616548:
+                        {
+                            THTitle.Text = br.ReadString();
+                            THArtist.Text = br.ReadString();
+                            THGenre.Text = br.ReadString();
+                            Notes[0].Value = br.ReadInt64();
+                            int xPlayerRank = br.ReadByte();
+                            THPlayLevel.Text = br.ReadString();
+
+                            CHPlayer.SelectedIndex = xPlayerRank & 0xF;
+                            CHRank.SelectedIndex = xPlayerRank >> 4;
+
+                            THSubTitle.Text = br.ReadString();
+                            THSubArtist.Text = br.ReadString();
+                            // THMaker.Text = br.ReadString
+                            THStageFile.Text = br.ReadString();
+                            THBanner.Text = br.ReadString();
+                            THBackBMP.Text = br.ReadString();
+                            // THMidiFile.Text = br.ReadString
+                            CHDifficulty.SelectedIndex = br.ReadByte();
+                            THExRank.Text = br.ReadString();
+                            THTotal.Text = br.ReadString();
+                            // THVolWAV.Text = br.ReadString
+                            THComment.Text = br.ReadString();
+                            // THLnType.Text = br.ReadString
+                            CHLnObj.SelectedIndex = br.ReadInt16();
+                            break;
+                        }
+                    case 5652823:
+                        {
+                            int num11 = br.ReadByte();
+                            WAVMultiSelect = (num11 & 1) != 0;
+                            CWAVMultiSelect.Checked = WAVMultiSelect;
+                            CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
+                            WAVChangeLabel = (num11 & 2) != 0;
+                            CWAVChangeLabel.Checked = WAVChangeLabel;
+                            CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
+                            int num12 = br.ReadInt32();
+                            int num13 = num12;
+                            for (int k = 1; k <= num13; k++)
                             {
-                                int num15 = br.ReadInt32();
-                                Notes = (Note[])Utils.CopyArray(Notes, new Note[num15 + 1]);
-                                int num16 = Information.UBound(Notes);
-                                for (int l = 1; l <= num16; l++)
+                                int num14 = br.ReadInt16();
+                                hWAV[num14] = br.ReadString();
+                            }
+
+                            break;
+                        }
+                    case 1952539970:
+                        {
+                            nBeatN.Value = new decimal(br.ReadInt16());
+                            nBeatD.Value = new decimal(br.ReadInt16());
+                            int num18 = br.ReadByte();
+                            RadioButton[] array =
+                                new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
+                            array[num18].Checked = true;
+                            CBeatPreserve_Click(array[num18], EventArgs.Empty);
+                            int num19 = br.ReadInt32();
+                            int num20 = num19;
+                            for (int m = 1; m <= num20; m++)
+                            {
+                                int num21 = br.ReadInt16();
+                                MeasureLength[num21] = br.ReadDouble();
+                                double num22 = MeasureLength[num21] / 192.0;
+                                long denominator = Functions.GetDenominator(num22, 2147483647L);
+                                LBeat.Items[num21] = Operators.ConcatenateObject(
+                                    string.Concat(Functions.Add3Zeros(num21) + ": ", Conversions.ToString(num22)),
+                                    Interaction.IIf(denominator > 10000, "",
+                                        " ( " + Conversions.ToString((long)Math.Round(num22 * denominator)) + " / " +
+                                        Conversions.ToString(denominator) + " ) "));
+                            }
+
+                            break;
+                        }
+                    case 1852864581:
+                        TExpansion.Text = br.ReadString();
+                        break;
+                    case 1702129486:
+                        {
+                            int num15 = br.ReadInt32();
+                            Notes = (Note[])Utils.CopyArray(Notes, new Note[num15 + 1]);
+                            int num16 = Information.UBound(Notes);
+                            for (int l = 1; l <= num16; l++)
+                            {
+                                Notes[l].FromBinReader(ref br);
+                            }
+
+                            break;
+                        }
+                    case 1868852821:
+                        {
+                            int num5 = br.ReadInt32();
+                            sI = br.ReadInt32();
+                            int num6 = 0;
+                            do
+                            {
+                                int num7 = br.ReadInt32();
+                                UndoRedo.Void @void = new UndoRedo.Void();
+                                UndoRedo.LinkedURCmd linkedURCmd = @void;
+                                int num8 = num7;
+                                for (int i = 1; i <= num8; i++)
                                 {
-                                    Notes[l].FromBinReader(ref br);
+                                    int count = br.ReadInt32();
+                                    byte[] b = br.ReadBytes(count);
+                                    linkedURCmd.Next = UndoRedo.fromBytes(b);
+                                    linkedURCmd = linkedURCmd.Next;
                                 }
 
-                                break;
-                            }
-                        case 1868852821:
-                            {
-                                int num5 = br.ReadInt32();
-                                sI = br.ReadInt32();
-                                int num6 = 0;
-                                do
+                                sUndo[num6] = @void.Next;
+                                int num9 = br.ReadInt32();
+                                UndoRedo.Void void2 = new UndoRedo.Void();
+                                UndoRedo.LinkedURCmd linkedURCmd2 = void2;
+                                int num10 = num9;
+                                for (int j = 1; j <= num10; j++)
                                 {
-                                    int num7 = br.ReadInt32();
-                                    UndoRedo.Void @void = new UndoRedo.Void();
-                                    UndoRedo.LinkedURCmd linkedURCmd = @void;
-                                    int num8 = num7;
-                                    for (int i = 1; i <= num8; i++)
-                                    {
-                                        int count = br.ReadInt32();
-                                        byte[] b = br.ReadBytes(count);
-                                        linkedURCmd.Next = UndoRedo.fromBytes(b);
-                                        linkedURCmd = linkedURCmd.Next;
-                                    }
+                                    int count2 = br.ReadInt32();
+                                    byte[] b2 = br.ReadBytes(count2);
+                                    linkedURCmd2.Next = UndoRedo.fromBytes(b2);
+                                    linkedURCmd2 = linkedURCmd2.Next;
+                                }
 
-                                    sUndo[num6] = @void.Next;
-                                    int num9 = br.ReadInt32();
-                                    UndoRedo.Void void2 = new UndoRedo.Void();
-                                    UndoRedo.LinkedURCmd linkedURCmd2 = void2;
-                                    int num10 = num9;
-                                    for (int j = 1; j <= num10; j++)
-                                    {
-                                        int count2 = br.ReadInt32();
-                                        byte[] b2 = br.ReadBytes(count2);
-                                        linkedURCmd2.Next = UndoRedo.fromBytes(b2);
-                                        linkedURCmd2 = linkedURCmd2.Next;
-                                    }
+                                sRedo[num6] = void2.Next;
+                                num6++;
+                            } while (num6 <= 99);
 
-                                    sRedo[num6] = void2.Next;
-                                    num6++;
-                                } while (num6 <= 99);
-
-                                break;
-                            }
-                    }
+                            break;
+                        }
                 }
             }
-
-            br.Close();
-            TBUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
-            TBRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
-            mnUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
-            mnRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
-            LWAV.Visible = false;
-            LWAV.Items.Clear();
-            int num24 = 1;
-            do
-            {
-                LWAV.Items.Add(Functions.C10to36(num24) + ": " + hWAV[num24]);
-                num24++;
-            } while (num24 <= 1295);
-
-            LWAV.SelectedIndex = 0;
-            LWAV.Visible = true;
-            THBPM.Value = new decimal(Notes[0].Value / 10000.0);
-            SortByVPositionQuick(0, Information.UBound(Notes));
-            UpdatePairing();
-            UpdateMeasureBottom();
-            CalculateTotalPlayableNotes();
-            CalculateGreatestVPosition();
-            RefreshPanelAll();
-            POStatusRefresh();
         }
+
+        br.Close();
+        TBUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
+        TBRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
+        mnUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
+        mnRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
+        LWAV.Visible = false;
+        LWAV.Items.Clear();
+        int num24 = 1;
+        do
+        {
+            LWAV.Items.Add(Functions.C10to36(num24) + ": " + hWAV[num24]);
+            num24++;
+        } while (num24 <= 1295);
+
+        LWAV.SelectedIndex = 0;
+        LWAV.Visible = true;
+        THBPM.Value = new decimal(Notes[0].Value / 10000.0);
+        SortByVPositionQuick(0, Information.UBound(Notes));
+        UpdatePairing();
+        UpdateMeasureBottom();
+        CalculateTotalPlayableNotes();
+        CalculateGreatestVPosition();
+        RefreshPanelAll();
+        POStatusRefresh();
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
