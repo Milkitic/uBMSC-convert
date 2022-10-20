@@ -1,9 +1,6 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
@@ -12,7 +9,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public sealed partial  class AboutBox1 : Form
+public sealed partial class AboutBox1 : Form
 {
     private const int WM_SYSCOMMAND = 274;
 

@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -12,7 +10,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class diagFind : Form
+public partial class diagFind : Form
 {
     private int bCol;
 

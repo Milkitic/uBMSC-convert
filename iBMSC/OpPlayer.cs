@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -12,7 +10,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class OpPlayer : Form
+public partial class OpPlayer : Form
 {
     private MainWindow.PlayerArguments[] pArg;
 
@@ -61,7 +59,7 @@ public partial  class OpPlayer : Form
 
     private void LPlayer_KeyDown(object sender, KeyEventArgs e)
     {
-        LPlayer_Click(RuntimeHelpers.GetObjectValue(sender), new EventArgs());
+        LPlayer_Click(RuntimeHelpers.GetObjectValue(sender), EventArgs.Empty);
     }
 
     private void BPrevAdd_Click(object sender, EventArgs e)

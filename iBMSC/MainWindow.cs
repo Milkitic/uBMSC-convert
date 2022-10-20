@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -23,7 +22,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class MainWindow : Form
+public partial class MainWindow : Form
 {
     public struct PlayerArguments
     {
@@ -1365,13 +1364,13 @@ IL_0952:
                                 POBLongShort.Enabled = !NTInput;
                                 ErrorCheck = (num17 & 2) != 0;
                                 TBErrorCheck.Checked = ErrorCheck;
-                                TBErrorCheck_Click(TBErrorCheck, new EventArgs());
+                                TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
                                 PreviewOnClick = (num17 & 4) != 0;
                                 TBPreviewOnClick.Checked = PreviewOnClick;
-                                TBPreviewOnClick_Click(TBPreviewOnClick, new EventArgs());
+                                TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
                                 ShowFileName = (num17 & 8) != 0;
                                 TBShowFileName.Checked = ShowFileName;
-                                TBShowFileName_Click(TBShowFileName, new EventArgs());
+                                TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
                                 mnSMenu.Checked = (num17 & 0x100) != 0;
                                 mnSTB.Checked = (num17 & 0x200) != 0;
                                 mnSOP.Checked = (num17 & 0x400) != 0;
@@ -1429,10 +1428,10 @@ IL_0952:
                                 int num11 = br.ReadByte();
                                 WAVMultiSelect = (num11 & 1) != 0;
                                 CWAVMultiSelect.Checked = WAVMultiSelect;
-                                CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, new EventArgs());
+                                CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
                                 WAVChangeLabel = (num11 & 2) != 0;
                                 CWAVChangeLabel.Checked = WAVChangeLabel;
-                                CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, new EventArgs());
+                                CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
                                 int num12 = br.ReadInt32();
                                 int num13 = num12;
                                 for (int k = 1; k <= num13; k++)
@@ -1449,7 +1448,7 @@ IL_0952:
                                 int num18 = br.ReadByte();
                                 RadioButton[] array = new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
                                 array[num18].Checked = true;
-                                CBeatPreserve_Click(array[num18], new EventArgs());
+                                CBeatPreserve_Click(array[num18], EventArgs.Empty);
                                 int num19 = br.ReadInt32();
                                 int num20 = num19;
                                 for (int m = 1; m <= num20; m++)
@@ -2402,10 +2401,10 @@ IL_0952:
                     LoadLocale(MyProject.Application.Info.DirectoryPath + "\\" + xmlElement7.GetAttribute("Language"));
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("ErrorCheck"), ref ErrorCheck);
                     TBErrorCheck.Checked = ErrorCheck;
-                    TBErrorCheck_Click(TBErrorCheck, new EventArgs());
+                    TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("ShowFileName"), ref ShowFileName);
                     TBShowFileName.Checked = ShowFileName;
-                    TBShowFileName_Click(TBShowFileName, new EventArgs());
+                    TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("MiddleButtonMoveMethod"), ref MiddleButtonMoveMethod);
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("AutoFocusMouseEnter"), ref AutoFocusMouseEnter);
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("FirstClickDisabled"), ref FirstClickDisabled);
@@ -2420,7 +2419,7 @@ IL_0952:
                     }
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("PreviewOnClick"), ref PreviewOnClick);
                     TBPreviewOnClick.Checked = PreviewOnClick;
-                    TBPreviewOnClick_Click(TBPreviewOnClick, new EventArgs());
+                    TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
                     XMLUtil.XMLLoadAttribute(xmlElement7.GetAttribute("ClickStopPreview"), ref ClickStopPreview);
                     xmlElement7 = null;
                 }
@@ -2470,16 +2469,16 @@ IL_0952:
                     XmlElement xmlElement11 = xmlElement10;
                     XMLUtil.XMLLoadAttribute(xmlElement11.GetAttribute("WAVMultiSelect"), ref WAVMultiSelect);
                     CWAVMultiSelect.Checked = WAVMultiSelect;
-                    CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, new EventArgs());
+                    CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
                     XMLUtil.XMLLoadAttribute(xmlElement11.GetAttribute("WAVChangeLabel"), ref WAVChangeLabel);
                     CWAVChangeLabel.Checked = WAVChangeLabel;
-                    CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, new EventArgs());
+                    CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
                     int num5 = Conversions.ToInteger(xmlElement11.GetAttribute("BeatChangeMode"));
                     RadioButton[] array = new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
                     if ((num5 >= 0) & (num5 < array.Length))
                     {
                         array[num5].Checked = true;
-                        CBeatPreserve_Click(array[num5], new EventArgs());
+                        CBeatPreserve_Click(array[num5], EventArgs.Empty);
                     }
                     xmlElement11 = null;
                 }
@@ -7805,8 +7804,8 @@ IL_03ba:
                 if (stop_notes != null)
                 {
                     var stops = from stp in stop_notes
-                        where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
-                        select stp;
+                                where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
+                                select stp;
                     //IEnumerable<Note> stops = enumerable.Where(closure_0024__._Lambda_0024__8);
                     double stop_beats = stops.Sum([SpecialName] (Note x) => (double)x.Value / 10000.0) / 48.0;
                     stop_contrib += current_bps * stop_beats;
@@ -7913,7 +7912,7 @@ IL_03ba:
             }
             else
             {
-                BVCApply_Click(BVCApply, new EventArgs());
+                BVCApply_Click(BVCApply, EventArgs.Empty);
             }
         }
     }
@@ -7944,7 +7943,7 @@ IL_03ba:
             }
             else
             {
-                BVCApply_Click(BVCApply, new EventArgs());
+                BVCApply_Click(BVCApply, EventArgs.Empty);
             }
         }
     }
@@ -7975,7 +7974,7 @@ IL_03ba:
             }
             else
             {
-                BVCCalculate_Click(BVCCalculate, new EventArgs());
+                BVCCalculate_Click(BVCCalculate, EventArgs.Empty);
             }
         }
     }
@@ -9292,7 +9291,7 @@ IL_0347:
             {
                 Interaction.Beep();
             }
-            TBThemeRefresh_Click(TBThemeRefresh, new EventArgs());
+            TBThemeRefresh_Click(TBThemeRefresh, EventArgs.Empty);
         }
     }
 
@@ -11725,7 +11724,7 @@ end_IL_0000_3:
                             break;
                         }
                     case Keys.Delete:
-                        mnDelete_Click(mnDelete, new EventArgs());
+                        mnDelete_Click(mnDelete, EventArgs.Empty);
                         break;
                     case Keys.Home:
                         if (PanelFocus == 0)
@@ -11893,28 +11892,28 @@ end_IL_0000_3:
                     switch (e.KeyCode)
                     {
                         case Keys.Z:
-                            TBUndo_Click(TBUndo, new EventArgs());
+                            TBUndo_Click(TBUndo, EventArgs.Empty);
                             break;
                         case Keys.Y:
-                            TBRedo_Click(TBRedo, new EventArgs());
+                            TBRedo_Click(TBRedo, EventArgs.Empty);
                             break;
                         case Keys.X:
-                            TBCut_Click(TBCut, new EventArgs());
+                            TBCut_Click(TBCut, EventArgs.Empty);
                             break;
                         case Keys.C:
-                            TBCopy_Click(TBCopy, new EventArgs());
+                            TBCopy_Click(TBCopy, EventArgs.Empty);
                             break;
                         case Keys.V:
-                            TBPaste_Click(TBPaste, new EventArgs());
+                            TBPaste_Click(TBPaste, EventArgs.Empty);
                             break;
                         case Keys.A:
-                            mnSelectAll_Click(mnSelectAll, new EventArgs());
+                            mnSelectAll_Click(mnSelectAll, EventArgs.Empty);
                             break;
                         case Keys.F:
-                            TBFind_Click(TBFind, new EventArgs());
+                            TBFind_Click(TBFind, EventArgs.Empty);
                             break;
                         case Keys.T:
-                            TBStatistics_Click(TBStatistics, new EventArgs());
+                            TBStatistics_Click(TBStatistics, EventArgs.Empty);
                             break;
                     }
                 }

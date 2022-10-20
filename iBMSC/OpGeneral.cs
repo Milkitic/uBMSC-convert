@@ -1,7 +1,4 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -14,7 +11,7 @@ using Microsoft.Win32;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class OpGeneral : Form
+public partial class OpGeneral : Form
 {
     public int zWheel;
 

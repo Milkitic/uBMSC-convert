@@ -1,5 +1,3 @@
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.CompilerServices;
@@ -7,7 +5,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public sealed partial  class SplashScreen1 : Form
+public sealed partial class SplashScreen1 : Form
 {
     public SplashScreen1()
     {

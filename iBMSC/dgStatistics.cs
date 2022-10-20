@@ -1,8 +1,5 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using iBMSC.My;
 using Microsoft.VisualBasic.CompilerServices;
@@ -10,7 +7,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class dgStatistics : Form
+public partial class dgStatistics : Form
 {
     private void OK_Button_Click(object sender, EventArgs e)
     {

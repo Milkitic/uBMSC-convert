@@ -1,7 +1,4 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using iBMSC.My;
@@ -11,7 +8,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class dgMyO2 : Form
+public partial class dgMyO2 : Form
 {
     public struct Adj
     {

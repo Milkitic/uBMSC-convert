@@ -608,21 +608,21 @@ public class UndoRedo
         }
         return b[0] switch
         {
-            0 => new Void(b), 
-            1 => new AddNote(b), 
-            2 => new RemoveNote(b), 
-            3 => new ChangeNote(b), 
-            4 => new MoveNote(b), 
-            5 => new LongNoteModify(b), 
-            6 => new HiddenNoteModify(b), 
-            7 => new RelabelNote(b), 
-            15 => new RemoveAllNotes(b), 
-            16 => new ChangeMeasureLength(b), 
-            17 => new ChangeTimeSelection(b), 
-            18 => new NT(b), 
-            20 => new WavAutoincFlag(b), 
-            byte.MaxValue => new NoOperation(b), 
-            _ => null, 
+            0 => new Void(b),
+            1 => new AddNote(b),
+            2 => new RemoveNote(b),
+            3 => new ChangeNote(b),
+            4 => new MoveNote(b),
+            5 => new LongNoteModify(b),
+            6 => new HiddenNoteModify(b),
+            7 => new RelabelNote(b),
+            15 => new RemoveAllNotes(b),
+            16 => new ChangeMeasureLength(b),
+            17 => new ChangeTimeSelection(b),
+            18 => new NT(b),
+            20 => new WavAutoincFlag(b),
+            byte.MaxValue => new NoOperation(b),
+            _ => null,
         };
     }
 }

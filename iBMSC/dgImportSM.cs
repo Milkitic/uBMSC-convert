@@ -1,8 +1,4 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using iBMSC.My;
 using Microsoft.VisualBasic.CompilerServices;
@@ -10,7 +6,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace iBMSC;
 
 [DesignerGenerated]
-public partial  class dgImportSM : Form
+public partial class dgImportSM : Form
 {
     public int iResult;
 
