@@ -1489,7 +1489,7 @@ IL_0952:
             {
                 switch (br.ReadInt32())
                 {
-                    case 0x66657250:
+                    case 0x66657250: // Preferences
                         {
                             int xPref = br.ReadInt32();
 
@@ -1544,7 +1544,7 @@ IL_0952:
                             CGB.Value = br.ReadInt32();
                             break;
                         }
-                    case 0x64616548:
+                    case 0x64616548: // Header
                         {
                             THTitle.Text = br.ReadString();
                             THArtist.Text = br.ReadString();
@@ -1572,101 +1572,101 @@ IL_0952:
                             CHLnObj.SelectedIndex = br.ReadInt16();
                             break;
                         }
-                    case 5652823:
+                    case 0x564157: // WAV List
                         {
-                            int num11 = br.ReadByte();
-                            WAVMultiSelect = (num11 & 1) != 0;
+                            int xWAVOptions = br.ReadByte();
+                            WAVMultiSelect = (xWAVOptions & 1) != 0;
                             CWAVMultiSelect.Checked = WAVMultiSelect;
                             CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
-                            WAVChangeLabel = (num11 & 2) != 0;
+                            WAVChangeLabel = (xWAVOptions & 2) != 0;
                             CWAVChangeLabel.Checked = WAVChangeLabel;
                             CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
-                            int num12 = br.ReadInt32();
-                            int num13 = num12;
-                            for (int k = 1; k <= num13; k++)
+
+                            int xWAVCount = br.ReadInt32();
+                            for (int i = 1; i <= xWAVCount; i++)
                             {
-                                int num14 = br.ReadInt16();
-                                hWAV[num14] = br.ReadString();
+                                int xI = br.ReadInt16();
+                                hWAV[xI] = br.ReadString();
                             }
 
                             break;
                         }
-                    case 1952539970:
+                    case 0x74616542: // Beat
                         {
-                            nBeatN.Value = new decimal(br.ReadInt16());
-                            nBeatD.Value = new decimal(br.ReadInt16());
-                            int num18 = br.ReadByte();
-                            RadioButton[] array =
-                                new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
-                            array[num18].Checked = true;
-                            CBeatPreserve_Click(array[num18], EventArgs.Empty);
-                            int num19 = br.ReadInt32();
-                            int num20 = num19;
-                            for (int m = 1; m <= num20; m++)
+                            nBeatN.Value = (br.ReadInt16());
+                            nBeatD.Value = (br.ReadInt16());
+
+                            int xBeatChangeMode = br.ReadByte();
+                            var xBeatChangeList = new RadioButton[] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
+                            xBeatChangeList[xBeatChangeMode].Checked = true;
+                            CBeatPreserve_Click(xBeatChangeList[xBeatChangeMode], EventArgs.Empty);
+
+                            int xBeatCount = br.ReadInt32();
+                            for (int i = 1; i <= xBeatCount; i++)
                             {
-                                int num21 = br.ReadInt16();
-                                MeasureLength[num21] = br.ReadDouble();
-                                double num22 = MeasureLength[num21] / 192.0;
-                                long denominator = Functions.GetDenominator(num22, 2147483647L);
-                                LBeat.Items[num21] = Operators.ConcatenateObject(
-                                    string.Concat(Functions.Add3Zeros(num21) + ": ", Conversions.ToString(num22)),
-                                    Interaction.IIf(denominator > 10000, "",
-                                        " ( " + Conversions.ToString((long)Math.Round(num22 * denominator)) + " / " +
-                                        Conversions.ToString(denominator) + " ) "));
+                                int xIndex = br.ReadInt16();
+                                MeasureLength[xIndex] = br.ReadDouble();
+                                double xRatio = MeasureLength[xIndex] / 192.0;
+                                long xxD = Functions.GetDenominator(xRatio, 2147483647L);
+                                LBeat.Items[xIndex] = Operators.ConcatenateObject(
+                                    Functions.Add3Zeros(xIndex) + ": " + Conversions.ToString(xRatio),
+                                    Interaction.IIf(xxD > 10000, "",
+                                        " ( " + Conversions.ToString((long)Math.Round(xRatio * xxD)) + " / " +
+                                        Conversions.ToString(xxD) + " ) "));
                             }
 
                             break;
                         }
-                    case 1852864581:
+                    case 0x6E707845: // Expansion Code
                         TExpansion.Text = br.ReadString();
                         break;
-                    case 1702129486:
+                    case 0x65746F4E: // Note
                         {
-                            int num15 = br.ReadInt32();
-                            Notes = (Note[])Utils.CopyArray(Notes, new Note[num15 + 1]);
-                            int num16 = Information.UBound(Notes);
-                            for (int l = 1; l <= num16; l++)
+                            int xNoteUbound = br.ReadInt32();
+                            Notes = (Note[])Utils.CopyArray(Notes, new Note[xNoteUbound + 1]);
+                            int loopTo = Information.UBound(Notes);
+                            for (int i = 1; i <= loopTo; i++)
                             {
-                                Notes[l].FromBinReader(ref br);
+                                Notes[i].FromBinReader(ref br);
                             }
 
                             break;
                         }
-                    case 1868852821:
+                    case 0x6F646E55: // Undo / Redo Commands
                         {
-                            int num5 = br.ReadInt32();
+                            int URCount = br.ReadInt32();
                             sI = br.ReadInt32();
-                            int num6 = 0;
-                            do
+
+                            for (int xI = 0; xI <= 99; xI++)
                             {
-                                int num7 = br.ReadInt32();
-                                UndoRedo.Void @void = new UndoRedo.Void();
-                                UndoRedo.LinkedURCmd linkedURCmd = @void;
-                                int num8 = num7;
-                                for (int i = 1; i <= num8; i++)
+                                int xUndoCount = br.ReadInt32();
+                                var xBaseUndo = new UndoRedo.Void();
+                                UndoRedo.LinkedURCmd xIteratorUndo = xBaseUndo;
+
+                                for (int i = 1; i <= xUndoCount; i++)
                                 {
                                     int count = br.ReadInt32();
                                     byte[] b = br.ReadBytes(count);
-                                    linkedURCmd.Next = UndoRedo.fromBytes(b);
-                                    linkedURCmd = linkedURCmd.Next;
+                                    xIteratorUndo.Next = UndoRedo.fromBytes(b);
+                                    xIteratorUndo = xIteratorUndo.Next;
                                 }
 
-                                sUndo[num6] = @void.Next;
-                                int num9 = br.ReadInt32();
-                                UndoRedo.Void void2 = new UndoRedo.Void();
-                                UndoRedo.LinkedURCmd linkedURCmd2 = void2;
-                                int num10 = num9;
-                                for (int j = 1; j <= num10; j++)
+                                sUndo[xI] = xBaseUndo.Next;
+
+                                int xRedoCount = br.ReadInt32();
+                                var void2 = new UndoRedo.Void();
+                                UndoRedo.LinkedURCmd xIteratorRedo = void2;
+
+                                for (int i = 1; i <= xRedoCount; i++)
                                 {
                                     int count2 = br.ReadInt32();
                                     byte[] b2 = br.ReadBytes(count2);
-                                    linkedURCmd2.Next = UndoRedo.fromBytes(b2);
-                                    linkedURCmd2 = linkedURCmd2.Next;
+                                    xIteratorRedo.Next = UndoRedo.fromBytes(b2);
+                                    xIteratorRedo = xIteratorRedo.Next;
                                 }
 
-                                sRedo[num6] = void2.Next;
-                                num6++;
-                            } while (num6 <= 99);
+                                sRedo[xI] = void2.Next;
+                            }
 
                             break;
                         }
@@ -1675,22 +1675,24 @@ IL_0952:
         }
 
         br.Close();
+
         TBUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
         TBRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
         mnUndo.Enabled = sUndo[sI].ofType() != byte.MaxValue;
         mnRedo.Enabled = sRedo[sIA()].ofType() != byte.MaxValue;
+
         LWAV.Visible = false;
         LWAV.Items.Clear();
-        int num24 = 1;
-        do
+
+        for (int i = 1; i <= 1295; i++)
         {
-            LWAV.Items.Add(Functions.C10to36(num24) + ": " + hWAV[num24]);
-            num24++;
-        } while (num24 <= 1295);
+            LWAV.Items.Add(Functions.C10to36(i) + ": " + hWAV[i]);
+        }
 
         LWAV.SelectedIndex = 0;
         LWAV.Visible = true;
-        THBPM.Value = new decimal(Notes[0].Value / 10000.0);
+
+        THBPM.Value = (decimal)(Notes[0].Value / 10000.0);
         SortByVPositionQuick(0, Information.UBound(Notes));
         UpdatePairing();
         UpdateMeasureBottom();
@@ -5803,157 +5805,144 @@ IL_0952:
         }
     }
 
-    private void SortByVPositionQuick(int xMin, int xMax)
+    private void SortByVPositionQuick(int xMin, int xMax) // Quick Sort
     {
+        // If min >= max, the list contains 0 or 1 items so it is sorted.
         if (xMin >= xMax)
         {
             return;
         }
 
-        checked
+        // Pick the dividing value.
+        int xI1 = (int)Math.Round((xMax - xMin) / 2.0) + xMin;
+        Note xNote = Notes[xI1];
+
+        // Swap it to the front.
+        ref Note reference = ref Notes[xI1];
+        reference = Notes[xMin];
+
+        int iLo = xMin;
+        int iHi = xMax;
+        while (true)
         {
-            int num = (int)Math.Round((xMax - xMin) / 2.0) + xMin;
-            Note note = Notes[num];
-            ref Note reference = ref Notes[num];
-            reference = Notes[xMin];
-            int num2 = xMin;
-            int num3 = xMax;
-            while (true)
+            // Look down from hi for a value < med_value.
+            if (Notes[iHi].VPosition >= xNote.VPosition)
             {
-                if (Notes[num3].VPosition >= note.VPosition)
+                iHi--;
+                if (iHi > iLo)
                 {
-                    num3--;
-                    if (num3 > num2)
-                    {
-                        continue;
-                    }
+                    continue;
                 }
-
-                if (num3 <= num2)
-                {
-                    Notes[num2] = note;
-                    break;
-                }
-
-                ref Note reference2 = ref Notes[num2];
-                reference2 = Notes[num3];
-                num2++;
-                while (Notes[num2].VPosition < note.VPosition)
-                {
-                    num2++;
-                    if (num2 >= num3)
-                    {
-                        break;
-                    }
-                }
-
-                if (num2 >= num3)
-                {
-                    num2 = num3;
-                    Notes[num3] = note;
-                    break;
-                }
-
-                ref Note reference3 = ref Notes[num3];
-                reference3 = Notes[num2];
             }
 
-            SortByVPositionQuick(xMin, num2 - 1);
-            SortByVPositionQuick(num2 + 1, xMax);
+            if (iHi <= iLo)
+            {
+                Notes[iLo] = xNote;
+                break;
+            }
+
+            // Swap the lo and hi values.
+            ref Note reference2 = ref Notes[iLo];
+            reference2 = Notes[iHi];
+
+            // Look up from lo for a value >= med_value.
+            iLo++;
+            while (Notes[iLo].VPosition < xNote.VPosition)
+            {
+                iLo++;
+                if (iLo >= iHi)
+                {
+                    break;
+                }
+            }
+
+            if (iLo >= iHi)
+            {
+                iLo = iHi;
+                Notes[iHi] = xNote;
+                break;
+            }
+
+            // Swap the lo and hi values.
+            ref Note reference3 = ref Notes[iHi];
+            reference3 = Notes[iLo];
         }
+
+        // Sort the two sublists.
+        SortByVPositionQuick(xMin, iLo - 1);
+        SortByVPositionQuick(iLo + 1, xMax);
     }
 
     private void SortByVPositionQuick3(int xMin, int xMax)
     {
-        int num = xMin;
-        int num2 = xMax;
-        checked
+        // If xMax = 0 Then
+        // xMin = LBound(K1)
+        // xMax = UBound(K1)
+        // End If
+        var xxMin = xMin;
+        var xxMax = xMax;
+        var xxMid = xMax - xMin + 1;
+        var xI1 = (int)Math.Round(Conversion.Int(xxMid * VBMath.Rnd())) + xMin;
+        var xI2 = (int)Math.Round(Conversion.Int(xxMid * VBMath.Rnd())) + xMin;
+        var xI3 = (int)Math.Round(Conversion.Int(xxMid * VBMath.Rnd())) + xMin;
+        if (Notes[xI1].VPosition <= Notes[xI2].VPosition & Notes[xI2].VPosition <= Notes[xI3].VPosition)
         {
-            int num3 = xMax - xMin + 1;
-            int num4 = (int)Math.Round(Conversion.Int(num3 * VBMath.Rnd())) + xMin;
-            int num5 = (int)Math.Round(Conversion.Int(num3 * VBMath.Rnd())) + xMin;
-            int num6 = (int)Math.Round(Conversion.Int(num3 * VBMath.Rnd())) + xMin;
-            num3 =
-                (((Notes[num4].VPosition <= Notes[num5].VPosition) & (Notes[num5].VPosition <= Notes[num6].VPosition))
-                    ? num5
-                    : ((!((Notes[num5].VPosition <= Notes[num4].VPosition) &
-                          (Notes[num4].VPosition <= Notes[num6].VPosition)))
-                        ? num6
-                        : num4));
-            Note note = Notes[num3];
-            while (true)
+            xxMid = xI2;
+        }
+        else if (Notes[xI2].VPosition <= Notes[xI1].VPosition & Notes[xI1].VPosition <= Notes[xI3].VPosition)
+        {
+            xxMid = xI1;
+        }
+        else
+        {
+            xxMid = xI3;
+        }
+
+        var xNoteMid = Notes[xxMid];
+        do
+        {
+            while (Notes[xxMin].VPosition < xNoteMid.VPosition & xxMin < xMax)
+                xxMin = xxMin + 1;
+            while (xNoteMid.VPosition < Notes[xxMax].VPosition & xxMax > xMin)
+                xxMax = xxMax - 1;
+            if (xxMin <= xxMax)
             {
-                if (Notes[num].VPosition < note.VPosition && num < xMax)
-                {
-                    num++;
-                    continue;
-                }
-
-                while (note.VPosition < Notes[num2].VPosition && num2 > xMin)
-                {
-                    num2--;
-                }
-
-                if (num <= num2)
-                {
-                    Note note2 = Notes[num];
-                    ref Note reference = ref Notes[num];
-                    reference = Notes[num2];
-                    Notes[num2] = note2;
-                    num++;
-                    num2--;
-                }
-
-                if (num > num2)
-                {
-                    break;
-                }
+                var xNote = Notes[xxMin];
+                Notes[xxMin] = Notes[xxMax];
+                Notes[xxMax] = xNote;
+                xxMin = xxMin + 1;
+                xxMax = xxMax - 1;
             }
+        } while (xxMin <= xxMax);
 
-            if (num2 - xMin < xMax - num)
-            {
-                if (xMin < num2)
-                {
-                    SortByVPositionQuick3(xMin, num2);
-                }
-
-                if (num < xMax)
-                {
-                    SortByVPositionQuick3(num, xMax);
-                }
-            }
-            else
-            {
-                if (num < xMax)
-                {
-                    SortByVPositionQuick3(num, xMax);
-                }
-
-                if (xMin < num2)
-                {
-                    SortByVPositionQuick3(xMin, num2);
-                }
-            }
+        if (xxMax - xMin < xMax - xxMin)
+        {
+            if (xMin < xxMax)
+                SortByVPositionQuick3(xMin, xxMax);
+            if (xxMin < xMax)
+                SortByVPositionQuick3(xxMin, xMax);
+        }
+        else
+        {
+            if (xxMin < xMax)
+                SortByVPositionQuick3(xxMin, xMax);
+            if (xMin < xxMax)
+                SortByVPositionQuick3(xMin, xxMax);
         }
     }
 
     private void UpdateMeasureBottom()
     {
         MeasureBottom[0] = 0.0;
-        int num = 0;
-        checked
+        for (int xI1 = 0; xI1 <= 998; xI1++)
         {
-            do
-            {
-                MeasureBottom[num + 1] = MeasureBottom[num] + MeasureLength[num];
-                num++;
-            } while (num <= 998);
+            MeasureBottom[xI1 + 1] = MeasureBottom[xI1] + MeasureLength[xI1];
         }
     }
 
     private bool PathIsValid(string sPath)
     {
-        return File.Exists(sPath) | Directory.Exists(sPath);
+        return File.Exists(sPath) || Directory.Exists(sPath);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
@@ -5965,10 +5954,10 @@ IL_0952:
                     Operators.CompareString(InitPath, "", TextCompare: false) == 0,
                     MyProject.Application.Info.DirectoryPath, InitPath)), ExcludeFileName(FileName)),
             "\\___TempBMS.bms"));
-        int num = MeasureAtDisplacement(Math.Abs(PanelVScroll[PanelFocus]));
+        int xMeasure = MeasureAtDisplacement(Math.Abs(PanelVScroll[PanelFocus]));
         string expression =
             Microsoft.VisualBasic.Strings.Replace(InitStr, "<apppath>", MyProject.Application.Info.DirectoryPath);
-        string expression2 = Microsoft.VisualBasic.Strings.Replace(expression, "<measure>", Conversions.ToString(num));
+        string expression2 = Microsoft.VisualBasic.Strings.Replace(expression, "<measure>", Conversions.ToString(xMeasure));
         return Microsoft.VisualBasic.Strings.Replace(expression2, "<filename>", replacement);
     }
 
@@ -5978,8 +5967,7 @@ IL_0952:
         InitPath = ExcludeFileName(FileName);
         SetIsSaved(IsSaved);
     }
-
-    [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+    
     private void SetIsSaved(bool isSaved)
     {
         string right = Conversions.ToString(Operators.ConcatenateObject(
@@ -6008,66 +5996,61 @@ IL_0952:
 
     private void AddNote(Note note, bool xSelected = false, bool OverWrite = true, bool SortAndUpdatePairing = true)
     {
-        if ((note.VPosition < 0.0) | (note.VPosition >= GetMaxVPosition()))
+        if ((note.VPosition < 0.0) || (note.VPosition >= GetMaxVPosition()))
         {
             return;
         }
 
         int num = 1;
-        checked
+
+        if (OverWrite)
         {
-            if (OverWrite)
+            while (num <= Information.UBound(Notes))
             {
-                while (num <= Information.UBound(Notes))
+                if ((Notes[num].VPosition == note.VPosition) & (Notes[num].ColumnIndex == note.ColumnIndex))
                 {
-                    if ((Notes[num].VPosition == note.VPosition) & (Notes[num].ColumnIndex == note.ColumnIndex))
-                    {
-                        RemoveNote(num);
-                    }
-                    else
-                    {
-                        num++;
-                    }
+                    RemoveNote(num);
+                }
+                else
+                {
+                    num++;
                 }
             }
-
-            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
-            note.Selected &= nEnabled(note.ColumnIndex);
-            Notes[Information.UBound(Notes)] = note;
-            if (SortAndUpdatePairing)
-            {
-                SortByVPositionInsertion();
-                UpdatePairing();
-            }
-
-            CalculateTotalPlayableNotes();
         }
+
+        Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
+        note.Selected &= nEnabled(note.ColumnIndex);
+        Notes[Information.UBound(Notes)] = note;
+        if (SortAndUpdatePairing)
+        {
+            SortByVPositionInsertion();
+            UpdatePairing();
+        }
+
+        CalculateTotalPlayableNotes();
     }
 
     private void RemoveNote(int I, bool SortAndUpdatePairing = true)
     {
         KMouseOver = -1;
-        checked
+        if (TBWavIncrease.Checked && Notes[I].Value == LWAV.SelectedIndex * 10000)
         {
-            if (TBWavIncrease.Checked && Notes[I].Value == LWAV.SelectedIndex * 10000)
-            {
-                DecreaseCurrentWav();
-            }
+            DecreaseCurrentWav();
+        }
 
-            int num = I + 1;
-            int num2 = Information.UBound(Notes);
-            for (int i = num; i <= num2; i++)
-            {
-                ref Note reference = ref Notes[i - 1];
-                reference = Notes[i];
-            }
+        int num = I + 1;
+        int num2 = Information.UBound(Notes);
+        for (int i = num; i <= num2; i++)
+        {
+            ref Note reference = ref Notes[i - 1];
+            reference = Notes[i];
+        }
 
-            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
-            if (SortAndUpdatePairing)
-            {
-                SortByVPositionInsertion();
-                UpdatePairing();
-            }
+        Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
+        if (SortAndUpdatePairing)
+        {
+            SortByVPositionInsertion();
+            UpdatePairing();
         }
     }
 
@@ -6075,186 +6058,184 @@ IL_0952:
     {
         string[] array = Microsoft.VisualBasic.Strings.Split(Clipboard.GetText(), "\r\n");
         int num = Information.UBound(Notes);
-        checked
+
+        for (int i = 0; i <= num; i++)
         {
-            for (int i = 0; i <= num; i++)
+            Notes[i].Selected = false;
+        }
+
+        long num2 = PanelVScroll[PanelFocus];
+        Note[] notes = Notes;
+        if (Operators.CompareString(array[0], "iBMSC Clipboard Data", TextCompare: false) == 0)
+        {
+            if (NTInput)
             {
-                Notes[i].Selected = false;
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
             }
 
-            long num2 = PanelVScroll[PanelFocus];
-            Note[] notes = Notes;
-            if (Operators.CompareString(array[0], "iBMSC Clipboard Data", TextCompare: false) == 0)
+            int num3 = Information.UBound(array);
+            for (int i = 1; i <= num3; i++)
             {
-                if (NTInput)
+                if (Operators.CompareString(array[i].Trim(), "", TextCompare: false) != 0)
                 {
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
-                }
-
-                int num3 = Information.UBound(array);
-                for (int i = 1; i <= num3; i++)
-                {
-                    if (Operators.CompareString(array[i].Trim(), "", TextCompare: false) != 0)
-                    {
-                        string[] array2 = Microsoft.VisualBasic.Strings.Split(array[i]);
-                        double num4 = Conversion.Val(array2[1]) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
-                        if ((Information.UBound(array2) == 5 && num4 >= 0.0) & (num4 < GetMaxVPosition()))
-                        {
-                            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
-                            Note[] notes2 = Notes;
-                            int num5 = Information.UBound(Notes);
-                            notes2[num5].ColumnIndex = (int)Math.Round(Conversion.Val(array2[0]));
-                            notes2[num5].VPosition = num4;
-                            notes2[num5].Value = (long)Math.Round(Conversion.Val(array2[2]));
-                            notes2[num5].LongNote = Conversion.Val(array2[3]) != 0.0;
-                            notes2[num5].Hidden = Conversion.Val(array2[4]) != 0.0;
-                            notes2[num5].Landmine = Conversion.Val(array2[5]) != 0.0;
-                            notes2[num5].Selected = xSelected;
-                        }
-                    }
-                }
-
-                if (NTInput)
-                {
-                    ConvertBMSE2NT();
-                    int num6 = Information.UBound(Notes);
-                    for (int i = 1; i <= num6; i++)
-                    {
-                        ref Note reference = ref Notes[i - 1];
-                        reference = Notes[i];
-                    }
-
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
-                    Note[] notes3 = Notes;
-                    Notes = notes;
-                    int num7 = Notes.Length;
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes3.Length + 1]);
-                    int num8 = Information.UBound(Notes);
-                    for (int i = num7; i <= num8; i++)
-                    {
-                        ref Note reference2 = ref Notes[i];
-                        reference2 = notes3[i - num7];
-                    }
-                }
-            }
-            else if (Operators.CompareString(array[0], "iBMSC Clipboard Data xNT", TextCompare: false) == 0)
-            {
-                if (!NTInput)
-                {
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
-                }
-
-                int num9 = Information.UBound(array);
-                for (int i = 1; i <= num9; i++)
-                {
-                    if (Operators.CompareString(array[i].Trim(), "", TextCompare: false) != 0)
-                    {
-                        string[] array3 = Microsoft.VisualBasic.Strings.Split(array[i]);
-                        double num4 = Conversion.Val(array3[1]) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
-                        if ((Information.UBound(array3) == 5 && num4 >= 0.0) & (num4 < GetMaxVPosition()))
-                        {
-                            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
-                            Note[] notes4 = Notes;
-                            int num10 = Information.UBound(Notes);
-                            notes4[num10].ColumnIndex = (int)Math.Round(Conversion.Val(array3[0]));
-                            notes4[num10].VPosition = num4;
-                            notes4[num10].Value = (long)Math.Round(Conversion.Val(array3[2]));
-                            notes4[num10].Length = Conversion.Val(array3[3]);
-                            notes4[num10].Hidden = Conversion.Val(array3[4]) != 0.0;
-                            notes4[num10].Landmine = Conversion.Val(array3[5]) != 0.0;
-                            notes4[num10].Selected = xSelected;
-                        }
-                    }
-                }
-
-                if (!NTInput)
-                {
-                    ConvertNT2BMSE();
-                    int num11 = Information.UBound(Notes);
-                    for (int i = 1; i <= num11; i++)
-                    {
-                        ref Note reference3 = ref Notes[i - 1];
-                        reference3 = Notes[i];
-                    }
-
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
-                    Note[] notes5 = Notes;
-                    Notes = notes;
-                    int num12 = Notes.Length;
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes5.Length + 1]);
-                    int num13 = Information.UBound(Notes);
-                    for (int i = num12; i <= num13; i++)
-                    {
-                        ref Note reference4 = ref Notes[i];
-                        reference4 = notes5[i - num12];
-                    }
-                }
-            }
-            else if (Operators.CompareString(array[0], "BMSE ClipBoard Object Data Format", TextCompare: false) == 0)
-            {
-                if (NTInput)
-                {
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
-                }
-
-                int num14 = Information.UBound(array);
-                for (int i = 1; i <= num14; i++)
-                {
-                    string inputStr = Microsoft.VisualBasic.Strings.Mid(array[i], 5, 7);
-                    double num15 = Conversion.Val(inputStr) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
-                    string i2 = Microsoft.VisualBasic.Strings.Mid(array[i], 1, 3);
-                    object objectValue = RuntimeHelpers.GetObjectValue(BMSEChannelToColumnIndex(i2));
-                    double a = Conversion.Val(Microsoft.VisualBasic.Strings.Mid(array[i], 12)) * 10000.0;
-                    string left = Microsoft.VisualBasic.Strings.Mid(array[i], 4, 1);
-                    object left2 = Operators.AndObject(Microsoft.VisualBasic.Strings.Len(array[i]) > 11,
-                        Operators.CompareObjectGreater(objectValue, 0, TextCompare: false));
-                    bool flag = (num15 >= 0.0) & (num15 < GetMaxVPosition());
-                    if (Conversions.ToBoolean(Operators.AndObject(left2, flag)))
+                    string[] array2 = Microsoft.VisualBasic.Strings.Split(array[i]);
+                    double num4 = Conversion.Val(array2[1]) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
+                    if ((Information.UBound(array2) == 5 && num4 >= 0.0) & (num4 < GetMaxVPosition()))
                     {
                         Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
-                        Note[] notes6 = Notes;
-                        int num16 = Information.UBound(Notes);
-                        notes6[num16].ColumnIndex = Conversions.ToInteger(objectValue);
-                        notes6[num16].VPosition = num15;
-                        notes6[num16].Value = (long)Math.Round(a);
-                        notes6[num16].LongNote = Operators.CompareString(left, "2", TextCompare: false) == 0;
-                        notes6[num16].Hidden = Operators.CompareString(left, "1", TextCompare: false) == 0;
-                        notes6[num16].Selected = xSelected & nEnabled(notes6[num16].ColumnIndex);
-                    }
-                }
-
-                if (NTInput)
-                {
-                    ConvertBMSE2NT();
-                    int num17 = Information.UBound(Notes);
-                    for (int i = 1; i <= num17; i++)
-                    {
-                        ref Note reference5 = ref Notes[i - 1];
-                        reference5 = Notes[i];
-                    }
-
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
-                    Note[] notes7 = Notes;
-                    Notes = notes;
-                    int num18 = Notes.Length;
-                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes7.Length + 1]);
-                    int num19 = Information.UBound(Notes);
-                    for (int i = num18; i <= num19; i++)
-                    {
-                        ref Note reference6 = ref Notes[i];
-                        reference6 = notes7[i - num18];
+                        Note[] notes2 = Notes;
+                        int num5 = Information.UBound(Notes);
+                        notes2[num5].ColumnIndex = (int)Math.Round(Conversion.Val(array2[0]));
+                        notes2[num5].VPosition = num4;
+                        notes2[num5].Value = (long)Math.Round(Conversion.Val(array2[2]));
+                        notes2[num5].LongNote = Conversion.Val(array2[3]) != 0.0;
+                        notes2[num5].Hidden = Conversion.Val(array2[4]) != 0.0;
+                        notes2[num5].Landmine = Conversion.Val(array2[5]) != 0.0;
+                        notes2[num5].Selected = xSelected;
                     }
                 }
             }
 
-            if (SortAndUpdatePairing)
+            if (NTInput)
             {
-                SortByVPositionInsertion();
-                UpdatePairing();
+                ConvertBMSE2NT();
+                int num6 = Information.UBound(Notes);
+                for (int i = 1; i <= num6; i++)
+                {
+                    ref Note reference = ref Notes[i - 1];
+                    reference = Notes[i];
+                }
+
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
+                Note[] notes3 = Notes;
+                Notes = notes;
+                int num7 = Notes.Length;
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes3.Length + 1]);
+                int num8 = Information.UBound(Notes);
+                for (int i = num7; i <= num8; i++)
+                {
+                    ref Note reference2 = ref Notes[i];
+                    reference2 = notes3[i - num7];
+                }
+            }
+        }
+        else if (Operators.CompareString(array[0], "iBMSC Clipboard Data xNT", TextCompare: false) == 0)
+        {
+            if (!NTInput)
+            {
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
             }
 
-            CalculateTotalPlayableNotes();
+            int num9 = Information.UBound(array);
+            for (int i = 1; i <= num9; i++)
+            {
+                if (Operators.CompareString(array[i].Trim(), "", TextCompare: false) != 0)
+                {
+                    string[] array3 = Microsoft.VisualBasic.Strings.Split(array[i]);
+                    double num4 = Conversion.Val(array3[1]) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
+                    if ((Information.UBound(array3) == 5 && num4 >= 0.0) & (num4 < GetMaxVPosition()))
+                    {
+                        Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
+                        Note[] notes4 = Notes;
+                        int num10 = Information.UBound(Notes);
+                        notes4[num10].ColumnIndex = (int)Math.Round(Conversion.Val(array3[0]));
+                        notes4[num10].VPosition = num4;
+                        notes4[num10].Value = (long)Math.Round(Conversion.Val(array3[2]));
+                        notes4[num10].Length = Conversion.Val(array3[3]);
+                        notes4[num10].Hidden = Conversion.Val(array3[4]) != 0.0;
+                        notes4[num10].Landmine = Conversion.Val(array3[5]) != 0.0;
+                        notes4[num10].Selected = xSelected;
+                    }
+                }
+            }
+
+            if (!NTInput)
+            {
+                ConvertNT2BMSE();
+                int num11 = Information.UBound(Notes);
+                for (int i = 1; i <= num11; i++)
+                {
+                    ref Note reference3 = ref Notes[i - 1];
+                    reference3 = Notes[i];
+                }
+
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
+                Note[] notes5 = Notes;
+                Notes = notes;
+                int num12 = Notes.Length;
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes5.Length + 1]);
+                int num13 = Information.UBound(Notes);
+                for (int i = num12; i <= num13; i++)
+                {
+                    ref Note reference4 = ref Notes[i];
+                    reference4 = notes5[i - num12];
+                }
+            }
         }
+        else if (Operators.CompareString(array[0], "BMSE ClipBoard Object Data Format", TextCompare: false) == 0)
+        {
+            if (NTInput)
+            {
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
+            }
+
+            int num14 = Information.UBound(array);
+            for (int i = 1; i <= num14; i++)
+            {
+                string inputStr = Microsoft.VisualBasic.Strings.Mid(array[i], 5, 7);
+                double num15 = Conversion.Val(inputStr) + MeasureBottom[MeasureAtDisplacement(-num2) + 1];
+                string i2 = Microsoft.VisualBasic.Strings.Mid(array[i], 1, 3);
+                object objectValue = RuntimeHelpers.GetObjectValue(BMSEChannelToColumnIndex(i2));
+                double a = Conversion.Val(Microsoft.VisualBasic.Strings.Mid(array[i], 12)) * 10000.0;
+                string left = Microsoft.VisualBasic.Strings.Mid(array[i], 4, 1);
+                object left2 = Operators.AndObject(Microsoft.VisualBasic.Strings.Len(array[i]) > 11,
+                    Operators.CompareObjectGreater(objectValue, 0, TextCompare: false));
+                bool flag = (num15 >= 0.0) & (num15 < GetMaxVPosition());
+                if (Conversions.ToBoolean(Operators.AndObject(left2, flag)))
+                {
+                    Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
+                    Note[] notes6 = Notes;
+                    int num16 = Information.UBound(Notes);
+                    notes6[num16].ColumnIndex = Conversions.ToInteger(objectValue);
+                    notes6[num16].VPosition = num15;
+                    notes6[num16].Value = (long)Math.Round(a);
+                    notes6[num16].LongNote = Operators.CompareString(left, "2", TextCompare: false) == 0;
+                    notes6[num16].Hidden = Operators.CompareString(left, "1", TextCompare: false) == 0;
+                    notes6[num16].Selected = xSelected & nEnabled(notes6[num16].ColumnIndex);
+                }
+            }
+
+            if (NTInput)
+            {
+                ConvertBMSE2NT();
+                int num17 = Information.UBound(Notes);
+                for (int i = 1; i <= num17; i++)
+                {
+                    ref Note reference5 = ref Notes[i - 1];
+                    reference5 = Notes[i];
+                }
+
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
+                Note[] notes7 = Notes;
+                Notes = notes;
+                int num18 = Notes.Length;
+                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + notes7.Length + 1]);
+                int num19 = Information.UBound(Notes);
+                for (int i = num18; i <= num19; i++)
+                {
+                    ref Note reference6 = ref Notes[i];
+                    reference6 = notes7[i - num18];
+                }
+            }
+        }
+
+        if (SortAndUpdatePairing)
+        {
+            SortByVPositionInsertion();
+            UpdatePairing();
+        }
+
+        CalculateTotalPlayableNotes();
     }
 
     private void CopyNotes(bool Unselect = true)
