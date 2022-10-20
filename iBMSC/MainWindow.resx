@@ -117,8 +117,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TBWavIncrease.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\TBWavIncrease.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="cmnLanguage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="cmnTheme.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
+  </metadata>
+  <metadata name="ToolTipUniversal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>144, 55</value>
+  </metadata>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>269, 17</value>
+  </metadata>
+  <metadata name="Menu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>361, 17</value>
+  </metadata>
+  <metadata name="AutoSaveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>454, 17</value>
+  </metadata>
+  <metadata name="mnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>595, 17</value>
+  </metadata>
+  <metadata name="cmnConversion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>696, 17</value>
+  </metadata>
+  <metadata name="TBMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>839, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TBWavIncrease.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        9I6fuOko6n8E3ybAkiNWCgAAAABJRU5ErkJggg==
+</value>
   </data>
+  <metadata name="FStatus2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>935, 17</value>
+  </metadata>
+  <metadata name="FStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1037, 17</value>
+  </metadata>
+  <metadata name="TimerMiddle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 55</value>
+  </metadata>
 </root>
