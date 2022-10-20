@@ -2427,36 +2427,19 @@ IL_0952:
                 if (xmlElement8 != null)
                 {
                     XmlElement xmlElement9 = xmlElement8;
-                    switch (Microsoft.VisualBasic.Strings.UCase(xmlElement9.GetAttribute("TextEncoding")))
+                    TextEncoding = Microsoft.VisualBasic.Strings.UCase(xmlElement9.GetAttribute("TextEncoding")) switch
                     {
-                        case "SYSTEM ANSI":
-                            TextEncoding = Encoding.Default;
-                            break;
-                        case "LITTLE ENDIAN UTF16":
-                            TextEncoding = Encoding.Unicode;
-                            break;
-                        case "ASCII":
-                            TextEncoding = Encoding.ASCII;
-                            break;
-                        case "BIG ENDIAN UTF16":
-                            TextEncoding = Encoding.BigEndianUnicode;
-                            break;
-                        case "LITTLE ENDIAN UTF32":
-                            TextEncoding = Encoding.UTF32;
-                            break;
-                        case "UTF7":
-                            TextEncoding = Encoding.UTF7;
-                            break;
-                        case "UTF8":
-                            TextEncoding = Encoding.UTF8;
-                            break;
-                        case "SJIS":
-                            TextEncoding = Encoding.GetEncoding(932);
-                            break;
-                        case "EUC-KR":
-                            TextEncoding = Encoding.GetEncoding(51949);
-                            break;
-                    }
+                        "SYSTEM ANSI" => Encoding.Default,
+                        "LITTLE ENDIAN UTF16" => Encoding.Unicode,
+                        "ASCII" => Encoding.ASCII,
+                        "BIG ENDIAN UTF16" => Encoding.BigEndianUnicode,
+                        "LITTLE ENDIAN UTF32" => Encoding.UTF32,
+                        "UTF7" => Encoding.UTF7,
+                        "UTF8" => Encoding.UTF8,
+                        "SJIS" => Encoding.GetEncoding(932),
+                        "EUC-KR" => Encoding.GetEncoding(51949),
+                        _ => TextEncoding
+                    };
                     XMLUtil.XMLLoadAttribute(xmlElement9.GetAttribute("BMSGridLimit"), ref BMSGridLimit);
                     XMLUtil.XMLLoadAttribute(xmlElement9.GetAttribute("BeepWhileSaved"), ref BeepWhileSaved);
                     XMLUtil.XMLLoadAttribute(xmlElement9.GetAttribute("BPMx1296"), ref BPMx1296);

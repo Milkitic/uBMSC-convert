@@ -26,7 +26,7 @@ public class UndoRedo
     {
         public override byte[] toBytes()
         {
-            return new byte[1] { 0 };
+            return new byte[] { 0 };
         }
 
         public Void()
@@ -413,7 +413,7 @@ public class UndoRedo
             byte[] bytes = BitConverter.GetBytes(SelStart);
             byte[] bytes2 = BitConverter.GetBytes(SelLength);
             byte[] bytes3 = BitConverter.GetBytes(SelLength);
-            return new byte[26]
+            return new byte[]
             {
                 17,
                 bytes[0],
@@ -482,7 +482,7 @@ public class UndoRedo
 
         public override byte[] toBytes()
         {
-            return new byte[3]
+            return new byte[]
             {
                 18,
                 Conversions.ToByte(Interaction.IIf(BecomeNT, (byte)1, (byte)0)),
@@ -524,7 +524,7 @@ public class UndoRedo
 
         public override byte[] toBytes()
         {
-            return new byte[2]
+            return new byte[]
             {
                 20,
                 Conversions.ToByte(Interaction.IIf(Checked, (byte)1, (byte)0))
@@ -547,7 +547,7 @@ public class UndoRedo
     {
         public override byte[] toBytes()
         {
-            return new byte[1] { 255 };
+            return new byte[] { 255 };
         }
 
         public NoOperation()

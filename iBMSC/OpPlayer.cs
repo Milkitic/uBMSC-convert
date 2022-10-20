@@ -186,14 +186,7 @@ public partial class OpPlayer : Form
                     break;
                 }
             }
-            if (flag)
-            {
-                textBox.BackColor = Color.FromArgb(-16192);
-            }
-            else
-            {
-                textBox.BackColor = backColor;
-            }
+            textBox.BackColor = flag ? Color.FromArgb(-16192) : backColor;
         }
     }
 
