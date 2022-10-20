@@ -21,7 +21,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class MainWindow : Form
 {
     public struct PlayerArguments
@@ -8459,7 +8458,7 @@ IL_03ba:
                                 where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
                                 select stp;
                     //IEnumerable<Note> stops = enumerable.Where(closure_0024__._Lambda_0024__8);
-                    double stop_beats = stops.Sum((x) => x.Value / 10000.0) / 48.0;
+                    double stop_beats = stops.Sum(x => x.Value / 10000.0) / 48.0;
                     stop_contrib += current_bps * stop_beats;
                 }
             }
@@ -11980,7 +11979,7 @@ end_IL_0000_3:
 
     public object GetColumnHighlightColor(Color col, double factor = 2.0)
     {
-        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = (x) =>
+        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = x =>
             Interaction.IIf(Operators.ConditionalCompareObjectGreater(x, 255, TextCompare: false), 255,
                 RuntimeHelpers.GetObjectValue(x));
         return Color.FromArgb(Conversions.ToInteger(vB_0024AnonymousDelegate_(col.A * factor)),

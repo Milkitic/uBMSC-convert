@@ -9,7 +9,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class ColorPicker : Form
 {
     public Color OrigColor;

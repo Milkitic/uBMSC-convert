@@ -7,7 +7,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class fLoadFileProgress : Form
 {
     private string[] xPath;

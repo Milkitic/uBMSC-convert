@@ -16,7 +16,7 @@ internal static class Audio
     {
         Output = new WasapiOut();
         CodecFactory.Instance.Register("ogg",
-            new CodecFactoryEntry((s) => new NVorbisSource(s).ToWaveSource(), ".ogg"));
+            new CodecFactoryEntry(s => new NVorbisSource(s).ToWaveSource(), ".ogg"));
     }
 
     public static void Finalize()

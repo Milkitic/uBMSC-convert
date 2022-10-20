@@ -1,11 +1,9 @@
 using System;
 using System.Windows.Forms;
 using iBMSC.My;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class dgImportSM : Form
 {
     public int iResult;

@@ -7,7 +7,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class dgMyO2 : Form
 {
     public struct Adj

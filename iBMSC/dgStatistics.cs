@@ -6,7 +6,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class dgStatistics : Form
 {
     private void OK_Button_Click(object sender, EventArgs e)

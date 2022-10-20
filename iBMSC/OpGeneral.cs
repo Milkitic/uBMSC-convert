@@ -10,7 +10,6 @@ using Microsoft.Win32;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class OpGeneral : Form
 {
     public int zWheel;

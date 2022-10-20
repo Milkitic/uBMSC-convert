@@ -8,7 +8,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class OpVisual : Form
 {
     public struct ColumnOptionSet

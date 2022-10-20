@@ -4,11 +4,9 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public sealed partial class AboutBox1 : Form
 {
     private const int WM_SYSCOMMAND = 274;

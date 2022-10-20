@@ -9,7 +9,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[DesignerGenerated]
 public partial class diagFind : Form
 {
     private int bCol;
