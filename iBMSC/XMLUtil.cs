@@ -8,8 +8,7 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[StandardModule]
-internal sealed class XMLUtil
+internal static class XMLUtil
 {
     [SpecialName]
     private static NumberFormatInfo _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi;

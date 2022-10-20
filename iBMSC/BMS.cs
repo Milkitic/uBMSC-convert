@@ -1,12 +1,10 @@
 using System;
 using iBMSC.Editor;
 using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[StandardModule]
-internal sealed class BMS
+internal static class BMS
 {
     public static bool IsChannelLongNote(string I)
     {

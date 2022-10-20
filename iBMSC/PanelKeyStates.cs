@@ -1,10 +1,8 @@
 using iBMSC.My;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[StandardModule]
-internal sealed class PanelKeyStates
+internal static class PanelKeyStates
 {
     public static bool ModifierLongNoteActive()
     {

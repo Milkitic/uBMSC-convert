@@ -9,8 +9,7 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC;
 
-[StandardModule]
-internal sealed class Audio
+internal static class Audio
 {
     private static WasapiOut Output;
 
