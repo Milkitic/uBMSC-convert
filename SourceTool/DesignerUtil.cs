@@ -68,6 +68,10 @@ namespace {context.Namespace}
             }
             else if (isIn)
             {
+                if (context.TargetClass == "SplashScreen1" && line.Contains("this.AutoScaleDimensions"))
+                {
+
+                }
                 var split = line.Trim(';', ' ').Split('=').Select(k => k.Trim()).ToArray();
 
                 if (split.Length == 3)
@@ -97,6 +101,7 @@ namespace {context.Namespace}
                     if (varMapping.TryGetValue(split[1], out var val))
                     {
                         split[1] = val;
+                        line = string.Join('=', split) + ";";
                     }
 
                     var def = split[0].Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -124,7 +129,7 @@ namespace {context.Namespace}
                     }
                 }
             }
-            
+
             sb.AppendLine(line);
             if (thisObject != null && thisObject != lastObject &&
                 context.EventHandlers.TryGetValue(thisObject, out var list))
