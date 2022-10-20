@@ -5422,7 +5422,7 @@ IL_0952:
         DragDrop += Form1_DragDrop;
         KeyDown += Form1_KeyDown;
         KeyUp += Form1_KeyUp;
-        Disposed += [SpecialName][DebuggerStepThrough] (a0, a1) => { Unload(); };
+        Disposed += [DebuggerStepThrough] (a0, a1) => { Unload(); };
         Load += Form1_Load;
         BMSChannelList = new string[72]
         {
@@ -8411,12 +8411,12 @@ IL_03ba:
             .GroupBy(note => note.ColumnIndex, (Column, NoteGroups) => new { Column, NoteGroups })
             .ToDictionary(x => x.Column, x => x.NoteGroups);
         //Dictionary<int, IEnumerable<Note>> dictionary = Notes
-        //    .Where([SpecialName](Note note) => (note.ColumnIndex == 2) | (note.ColumnIndex == 3))
-        //    .GroupBy([SpecialName](Note note) => note.ColumnIndex,
-        //        [SpecialName](int Column, IEnumerable<Note> _0024VB_0024Group) =>
+        //    .Where((Note note) => (note.ColumnIndex == 2) | (note.ColumnIndex == 3))
+        //    .GroupBy((Note note) => note.ColumnIndex,
+        //        (int Column, IEnumerable<Note> _0024VB_0024Group) =>
         //            new VB_0024AnonymousType_0<int, IEnumerable<Note>>(Column, _0024VB_0024Group)).ToDictionary(
-        //        [SpecialName](VB_0024AnonymousType_0<int, IEnumerable<Note>> x) => x.Column,
-        //        [SpecialName](VB_0024AnonymousType_0<int, IEnumerable<Note>> x) => x.NoteGroups);
+        //        (VB_0024AnonymousType_0<int, IEnumerable<Note>> x) => x.Column,
+        //        (VB_0024AnonymousType_0<int, IEnumerable<Note>> x) => x.NoteGroups);
         IEnumerable<Note> bpm_notes = dictionary[2];
         IEnumerable<Note> stop_notes = null;
         if (dictionary.ContainsKey(3))
@@ -8459,7 +8459,7 @@ IL_03ba:
                                 where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
                                 select stp;
                     //IEnumerable<Note> stops = enumerable.Where(closure_0024__._Lambda_0024__8);
-                    double stop_beats = stops.Sum([SpecialName] (x) => x.Value / 10000.0) / 48.0;
+                    double stop_beats = stops.Sum((x) => x.Value / 10000.0) / 48.0;
                     stop_contrib += current_bps * stop_beats;
                 }
             }
@@ -11980,7 +11980,7 @@ end_IL_0000_3:
 
     public object GetColumnHighlightColor(Color col, double factor = 2.0)
     {
-        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = [SpecialName] (x) =>
+        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = (x) =>
             Interaction.IIf(Operators.ConditionalCompareObjectGreater(x, 255, TextCompare: false), 255,
                 RuntimeHelpers.GetObjectValue(x));
         return Color.FromArgb(Conversions.ToInteger(vB_0024AnonymousDelegate_(col.A * factor)),

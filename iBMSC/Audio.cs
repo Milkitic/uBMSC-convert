@@ -1,5 +1,4 @@
 using System.IO;
-using System.Runtime.CompilerServices;
 using CSCore;
 using CSCore.Codecs;
 using CSCore.SoundOut;
@@ -17,7 +16,7 @@ internal static class Audio
     {
         Output = new WasapiOut();
         CodecFactory.Instance.Register("ogg",
-            new CodecFactoryEntry([SpecialName] (s) => new NVorbisSource(s).ToWaveSource(), ".ogg"));
+            new CodecFactoryEntry((s) => new NVorbisSource(s).ToWaveSource(), ".ogg"));
     }
 
     public static void Finalize()

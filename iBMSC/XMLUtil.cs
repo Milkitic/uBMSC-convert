@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Xml;
 using iBMSC.Editor;
@@ -10,17 +9,13 @@ namespace iBMSC;
 
 internal static class XMLUtil
 {
-    [SpecialName]
     private static NumberFormatInfo _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi;
 
-    [SpecialName]
     private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi_0024Init =
         new StaticLocalInitFlag();
 
-    [SpecialName]
     private static NumberFormatInfo _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi;
 
-    [SpecialName]
     private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi_0024Init =
         new StaticLocalInitFlag();
 

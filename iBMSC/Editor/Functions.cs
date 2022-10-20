@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -12,19 +11,14 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace iBMSC.Editor;
 
-[StandardModule]
-public sealed class Functions
+public static class Functions
 {
-    [SpecialName]
     private static Regex _0024STATIC_0024IsBase36_0024012E_0024re;
-
-    [SpecialName]
     private static NumberFormatInfo _0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi;
 
-    [SpecialName]
-    private static StaticLocalInitFlag _0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi_0024Init = new StaticLocalInitFlag();
+    private static StaticLocalInitFlag _0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi_0024Init =
+        new StaticLocalInitFlag();
 
-    [SpecialName]
     private static StaticLocalInitFlag _0024STATIC_0024IsBase36_0024012E_0024re_0024Init = new StaticLocalInitFlag();
 
     public static string WriteDecimalWithDot(double v)
@@ -51,6 +45,7 @@ public sealed class Functions
                 Monitor.Exit(_0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi_0024Init);
             }
         }
+
         _0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi.NumberDecimalSeparator = ".";
         return v.ToString(_0024STATIC_0024WriteDecimalWithDot_002401ED_0024nfi);
     }
@@ -73,6 +68,7 @@ public sealed class Functions
         {
             return Conversions.ToChar(Conversions.ToString(xStart));
         }
+
         return Microsoft.VisualBasic.Strings.Chr(checked(xStart + 55));
     }
 
@@ -83,10 +79,12 @@ public sealed class Functions
         {
             return checked(num - 48);
         }
+
         if (num is >= 65 and <= 90)
         {
             return checked(num - 55);
         }
+
         return 0;
     }
 
@@ -96,13 +94,16 @@ public sealed class Functions
         {
             xStart = 1L;
         }
+
         if (xStart > 1295)
         {
             xStart = 1295L;
         }
+
         checked
         {
-            return Conversions.ToString(C10to36S((int)(xStart / 36))) + Conversions.ToString(C10to36S((int)(xStart % 36)));
+            return Conversions.ToString(C10to36S((int)(xStart / 36))) +
+                   Conversions.ToString(C10to36S((int)(xStart % 36)));
         }
     }
 
@@ -121,38 +122,47 @@ public sealed class Functions
         {
             return "System Ansi";
         }
+
         if (TextEncoding == Encoding.Unicode)
         {
             return "Little Endian UTF16";
         }
+
         if (TextEncoding == Encoding.ASCII)
         {
             return "ASCII";
         }
+
         if (TextEncoding == Encoding.BigEndianUnicode)
         {
             return "Big Endian UTF16";
         }
+
         if (TextEncoding == Encoding.UTF32)
         {
             return "Little Endian UTF32";
         }
+
         if (TextEncoding == Encoding.UTF7)
         {
             return "UTF7";
         }
+
         if (TextEncoding == Encoding.UTF8)
         {
             return "UTF8";
         }
+
         if (TextEncoding == Encoding.GetEncoding(932))
         {
             return "SJIS";
         }
+
         if (TextEncoding == Encoding.GetEncoding(51949))
         {
             return "EUC-KR";
         }
+
         return "ANSI (" + TextEncoding.EncodingName + ")" + Conversions.ToString(TextEncoding == Encoding.Default);
     }
 
@@ -162,9 +172,16 @@ public sealed class Functions
         {
             return Color.FromArgb(0);
         }
+
         checked
         {
-            return Color.FromArgb((int)Math.Round(cStart.A * iTransparency), (int)Math.Round(unchecked(cStart.R * (100f - Math.Abs(iPercent)) * 0.01 + Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)), (int)Math.Round(unchecked(cStart.G * (100f - Math.Abs(iPercent)) * 0.01 + Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)), (int)Math.Round(unchecked(cStart.B * (100f - Math.Abs(iPercent)) * 0.01 + Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)));
+            return Color.FromArgb((int)Math.Round(cStart.A * iTransparency),
+                (int)Math.Round(unchecked(cStart.R * (100f - Math.Abs(iPercent)) * 0.01 +
+                                          Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)),
+                (int)Math.Round(unchecked(cStart.G * (100f - Math.Abs(iPercent)) * 0.01 +
+                                          Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)),
+                (int)Math.Round(unchecked(cStart.B * (100f - Math.Abs(iPercent)) * 0.01 +
+                                          Math.Abs((0 - ((iPercent >= 0f) ? 1 : 0)) * iPercent) * 2.55)));
         }
     }
 
@@ -186,9 +203,10 @@ public sealed class Functions
         do
         {
             VBMath.Randomize();
-            text = Conversions.ToString(DateAndTime.Now.Ticks) + Microsoft.VisualBasic.Strings.Mid(Conversions.ToString(VBMath.Rnd()), 3) + extWithDot;
-        }
-        while (File.Exists(text) | Directory.Exists(text));
+            text = Conversions.ToString(DateAndTime.Now.Ticks) +
+                   Microsoft.VisualBasic.Strings.Mid(Conversions.ToString(VBMath.Rnd()), 3) + extWithDot;
+        } while (File.Exists(text) | Directory.Exists(text));
+
         return text;
     }
 
@@ -198,6 +216,7 @@ public sealed class Functions
         {
             return Color.Black;
         }
+
         double num = xS / 1000.0;
         checked
         {
@@ -241,6 +260,7 @@ public sealed class Functions
                 num4 = 1.0;
                 num3 = (330 - xH) / 30.0;
             }
+
             num4 = (num4 * num * (1.0 - Math.Abs(num2)) + num2 + 1.0) * 255.0 / 2.0;
             num5 = (num5 * num * (1.0 - Math.Abs(num2)) + num2 + 1.0) * 255.0 / 2.0;
             num3 = (num3 * num * (1.0 - Math.Abs(num2)) + num2 + 1.0) * 255.0 / 2.0;
@@ -250,7 +270,8 @@ public sealed class Functions
 
     public static string FontToString(Font xFont)
     {
-        return xFont.FontFamily.Name + "," + Conversions.ToString(xFont.Size) + "," + Conversions.ToString((int)xFont.Style);
+        return xFont.FontFamily.Name + "," + Conversions.ToString(xFont.Size) + "," +
+               Conversions.ToString((int)xFont.Style);
     }
 
     public static bool isFontInstalled(string f)
@@ -264,6 +285,7 @@ public sealed class Functions
                 return true;
             }
         }
+
         return false;
     }
 
@@ -275,6 +297,7 @@ public sealed class Functions
             FontStyle style = (FontStyle)checked((int)Math.Round(Conversion.Val(array[2])));
             return new Font(array[0], (float)Conversion.Val(array[1]), style, GraphicsUnit.Pixel);
         }
+
         return xDefault;
     }
 
@@ -284,8 +307,11 @@ public sealed class Functions
         int num = Information.UBound(xInt);
         for (int i = 0; i <= num; i = checked(i + 1))
         {
-            text = Conversions.ToString(Operators.ConcatenateObject(text, Operators.ConcatenateObject(xInt[i].ToString(), Interaction.IIf(i == Information.UBound(xInt), "", ","))));
+            text = Conversions.ToString(Operators.ConcatenateObject(text,
+                Operators.ConcatenateObject(xInt[i].ToString(),
+                    Interaction.IIf(i == Information.UBound(xInt), "", ","))));
         }
+
         return text;
     }
 
@@ -295,8 +321,11 @@ public sealed class Functions
         int num = Information.UBound(xBool);
         for (int i = 0; i <= num; i = checked(i + 1))
         {
-            text = Conversions.ToString(Operators.ConcatenateObject(text, Operators.ConcatenateObject((0 - (xBool[i] ? 1 : 0)).ToString(), Interaction.IIf(i == Information.UBound(xBool), "", ","))));
+            text = Conversions.ToString(Operators.ConcatenateObject(text,
+                Operators.ConcatenateObject((0 - (xBool[i] ? 1 : 0)).ToString(),
+                    Interaction.IIf(i == Information.UBound(xBool), "", ","))));
         }
+
         return text;
     }
 
@@ -306,8 +335,11 @@ public sealed class Functions
         int num = Information.UBound(xColor);
         for (int i = 0; i <= num; i = checked(i + 1))
         {
-            text = Conversions.ToString(Operators.ConcatenateObject(text, Operators.ConcatenateObject(xColor[i].ToArgb().ToString(), Interaction.IIf(i == Information.UBound(xColor), "", ","))));
+            text = Conversions.ToString(Operators.ConcatenateObject(text,
+                Operators.ConcatenateObject(xColor[i].ToArgb().ToString(),
+                    Interaction.IIf(i == Information.UBound(xColor), "", ","))));
         }
+
         return text;
     }
 
@@ -322,6 +354,7 @@ public sealed class Functions
             {
                 array2[i] = (int)Math.Round(Conversion.Val(array[i]));
             }
+
             return array2;
         }
     }
@@ -337,6 +370,7 @@ public sealed class Functions
             {
                 array2[i] = Conversion.Val(array[i]) != 0.0;
             }
+
             return array2;
         }
     }
@@ -363,13 +397,16 @@ public sealed class Functions
                 {
                     break;
                 }
+
                 num5 = 1.0 / (num5 - num6);
                 if (num5 > 9.223372036854776E+18)
                 {
                     break;
                 }
+
                 num6 = (long)Math.Round(Conversion.Int(num5));
             }
+
             return num3;
         }
     }
@@ -398,6 +435,7 @@ public sealed class Functions
                 Monitor.Exit(_0024STATIC_0024IsBase36_0024012E_0024re_0024Init);
             }
         }
+
         return _0024STATIC_0024IsBase36_0024012E_0024re.IsMatch(str);
     }
 }
