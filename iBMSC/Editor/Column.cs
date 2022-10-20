@@ -41,10 +41,7 @@ public struct Column
 
     public int Width
     {
-        get
-        {
-            return _Width;
-        }
+        get => _Width;
         set
         {
             _Width = value;
@@ -54,10 +51,7 @@ public struct Column
 
     public bool isVisible
     {
-        get
-        {
-            return _isVisible;
-        }
+        get => _isVisible;
         set
         {
             _isVisible = value;
@@ -67,10 +61,7 @@ public struct Column
 
     public bool isNoteCol
     {
-        get
-        {
-            return _isNoteCol;
-        }
+        get => _isNoteCol;
         set
         {
             _isNoteCol = value;

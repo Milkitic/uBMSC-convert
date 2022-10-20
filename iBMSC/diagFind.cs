@@ -49,9 +49,9 @@ public partial class diagFind : Form
         }
         finally
         {
-            if (enumerator is IDisposable)
+            if (enumerator is IDisposable disposable)
             {
-                (enumerator as IDisposable).Dispose();
+                disposable.Dispose();
             }
         }
     }
@@ -70,9 +70,9 @@ public partial class diagFind : Form
         }
         finally
         {
-            if (enumerator is IDisposable)
+            if (enumerator is IDisposable disposable)
             {
-                (enumerator as IDisposable).Dispose();
+                disposable.Dispose();
             }
         }
     }
@@ -91,9 +91,9 @@ public partial class diagFind : Form
         }
         finally
         {
-            if (enumerator is IDisposable)
+            if (enumerator is IDisposable disposable)
             {
-                (enumerator as IDisposable).Dispose();
+                disposable.Dispose();
             }
         }
     }
@@ -141,7 +141,7 @@ public partial class diagFind : Form
                 checkBox2.Checked = true;
                 checkBox2.FlatStyle = FlatStyle.System;
                 CheckBox checkBox3 = checkBox2;
-                Point location = new Point(unchecked(checked(i - 26) % 8) * 35 + 3, unchecked(checked(i - 26) / 8) * 25 + 103);
+                Point location = new Point(checked(i - 26) % 8 * 35 + 3, checked(i - 26) / 8 * 25 + 103);
                 checkBox3.Location = location;
                 CheckBox checkBox4 = checkBox2;
                 Size size = new Size(35, 25);
@@ -175,14 +175,14 @@ public partial class diagFind : Form
             return false;
         }
         int num = Microsoft.VisualBasic.Strings.Asc(Microsoft.VisualBasic.Strings.Mid(xStr, 1, 1));
-        if (!((num >= 48 && num <= 57) || (num >= 65 && num <= 90)))
+        if (num is not (>= 48 and <= 57 or >= 65 and <= 90))
         {
             return false;
         }
         if (Microsoft.VisualBasic.Strings.Len(xStr) == 2)
         {
             int num2 = Microsoft.VisualBasic.Strings.Asc(Microsoft.VisualBasic.Strings.Mid(xStr, 2, 1));
-            if (!((num2 >= 48 && num2 <= 57) || (num2 >= 65 && num2 <= 90)))
+            if (num2 is not (>= 48 and <= 57 or >= 65 and <= 90))
             {
                 return false;
             }
@@ -200,12 +200,12 @@ public partial class diagFind : Form
 
     private bool ValidateLabel(object sender)
     {
-        bool flag = ValidLabel(Conversions.ToString(NewLateBinding.LateGet(sender, null, "Text", new object[0], null, null, null)));
+        bool flag = ValidLabel(Conversions.ToString(NewLateBinding.LateGet(sender, null, "Text", Array.Empty<object>(), null, null, null)));
         if (!flag)
         {
             Interaction.MsgBox(msg2, MsgBoxStyle.Critical, msg1);
-            NewLateBinding.LateCall(sender, null, "Focus", new object[0], null, null, null, IgnoreReturn: true);
-            NewLateBinding.LateCall(sender, null, "SelectAll", new object[0], null, null, null, IgnoreReturn: true);
+            NewLateBinding.LateCall(sender, null, "Focus", Array.Empty<object>(), null, null, null, IgnoreReturn: true);
+            NewLateBinding.LateCall(sender, null, "SelectAll", Array.Empty<object>(), null, null, null, IgnoreReturn: true);
         }
         return flag;
     }
@@ -216,7 +216,7 @@ public partial class diagFind : Form
         {
             return;
         }
-        int[] array = new int[0];
+        int[] array = Array.Empty<int>();
         checked
         {
             IEnumerator enumerator = default(IEnumerator);
@@ -235,9 +235,9 @@ public partial class diagFind : Form
             }
             finally
             {
-                if (enumerator is IDisposable)
+                if (enumerator is IDisposable disposable)
                 {
-                    (enumerator as IDisposable).Dispose();
+                    disposable.Dispose();
                 }
             }
             int num = 1;
@@ -275,7 +275,7 @@ public partial class diagFind : Form
         {
             return;
         }
-        int[] array = new int[0];
+        int[] array = Array.Empty<int>();
         checked
         {
             IEnumerator enumerator = default(IEnumerator);
@@ -294,9 +294,9 @@ public partial class diagFind : Form
             }
             finally
             {
-                if (enumerator is IDisposable)
+                if (enumerator is IDisposable disposable)
                 {
-                    (enumerator as IDisposable).Dispose();
+                    disposable.Dispose();
                 }
             }
             int num = 1;
@@ -334,7 +334,7 @@ public partial class diagFind : Form
         {
             return;
         }
-        int[] array = new int[0];
+        int[] array = Array.Empty<int>();
         checked
         {
             IEnumerator enumerator = default(IEnumerator);
@@ -353,9 +353,9 @@ public partial class diagFind : Form
             }
             finally
             {
-                if (enumerator is IDisposable)
+                if (enumerator is IDisposable disposable)
                 {
-                    (enumerator as IDisposable).Dispose();
+                    disposable.Dispose();
                 }
             }
             int num = 1;
@@ -393,7 +393,7 @@ public partial class diagFind : Form
         {
             return;
         }
-        int[] array = new int[0];
+        int[] array = Array.Empty<int>();
         checked
         {
             IEnumerator enumerator = default(IEnumerator);
@@ -412,9 +412,9 @@ public partial class diagFind : Form
             }
             finally
             {
-                if (enumerator is IDisposable)
+                if (enumerator is IDisposable disposable)
                 {
-                    (enumerator as IDisposable).Dispose();
+                    disposable.Dispose();
                 }
             }
             int num = 1;
@@ -452,7 +452,7 @@ public partial class diagFind : Form
         {
             return;
         }
-        int[] array = new int[0];
+        int[] array = Array.Empty<int>();
         checked
         {
             IEnumerator enumerator = default(IEnumerator);
@@ -471,9 +471,9 @@ public partial class diagFind : Form
             }
             finally
             {
-                if (enumerator is IDisposable)
+                if (enumerator is IDisposable disposable)
                 {
-                    (enumerator as IDisposable).Dispose();
+                    disposable.Dispose();
                 }
             }
             int num = 1;

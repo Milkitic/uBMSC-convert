@@ -373,7 +373,7 @@ public class UndoRedo
         public ChangeMeasureLength(byte[] b)
         {
             Value = 192.0;
-            Indices = new int[0];
+            Indices = Array.Empty<int>();
             Value = BitConverter.ToDouble(b, 1);
             int num = BitConverter.ToInt32(b, 9);
             Indices = (int[])Utils.CopyArray(Indices, new int[checked(num + 1)]);
@@ -387,7 +387,7 @@ public class UndoRedo
         public ChangeMeasureLength(double xValue, int[] xIndices)
         {
             Value = 192.0;
-            Indices = new int[0];
+            Indices = Array.Empty<int>();
             Value = xValue;
             Indices = xIndices;
         }

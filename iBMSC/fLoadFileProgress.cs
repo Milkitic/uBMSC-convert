@@ -20,7 +20,7 @@ public partial class fLoadFileProgress : Form
     {
         base.Shown += fLoadFileProgress_Shown;
         base.Load += fLoadFileProgress_Load;
-        xPath = new string[0];
+        xPath = Array.Empty<string>();
         CancelPressed = false;
         IsSaved = false;
         InitializeComponent();

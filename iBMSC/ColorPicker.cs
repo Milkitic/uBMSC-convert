@@ -357,7 +357,7 @@ public partial class ColorPicker : Form
 
     private void rbH_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 0;
             SetCursor();
@@ -369,7 +369,7 @@ public partial class ColorPicker : Form
 
     private void rbS_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 1;
             SetCursor();
@@ -381,7 +381,7 @@ public partial class ColorPicker : Form
 
     private void rbL_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 2;
             SetCursor();
@@ -393,7 +393,7 @@ public partial class ColorPicker : Form
 
     private void rbR_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 3;
             SetCursor();
@@ -405,7 +405,7 @@ public partial class ColorPicker : Form
 
     private void rbG_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 4;
             SetCursor();
@@ -417,7 +417,7 @@ public partial class ColorPicker : Form
 
     private void rbB_CheckedChanged(object sender, EventArgs e)
     {
-        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", new object[0], null, null, null)))
+        if (Conversions.ToBoolean(NewLateBinding.LateGet(sender, null, "Checked", Array.Empty<object>(), null, null, null)))
         {
             DrawingIndex = 5;
             SetCursor();
@@ -797,10 +797,10 @@ public partial class ColorPicker : Form
             {
                 bufferedGraphics.Graphics.FillRectangle(new SolidBrush(OrigColor), 0, 0, 61, 28);
                 bufferedGraphics.Graphics.DrawLine(new Pen(Color.FromKnownColor(KnownColor.WindowFrame)), 61, 0, 61, 28);
-                bufferedGraphics.Graphics.DrawString("Orig", font, (Brush)Interaction.IIf(OrigColor.GetBrightness() + (255 - unchecked(OrigColor.A)) / 255.0 > 0.5, Brushes.Black, Brushes.White), 31f - bufferedGraphics.Graphics.MeasureString("Orig", font).Width / 2f, 14f - bufferedGraphics.Graphics.MeasureString("Orig", font).Height / 2f);
+                bufferedGraphics.Graphics.DrawString("Orig", font, (Brush)Interaction.IIf(OrigColor.GetBrightness() + (255 - OrigColor.A) / 255.0 > 0.5, Brushes.Black, Brushes.White), 31f - bufferedGraphics.Graphics.MeasureString("Orig", font).Width / 2f, 14f - bufferedGraphics.Graphics.MeasureString("Orig", font).Height / 2f);
             }
             bufferedGraphics.Graphics.FillRectangle(new SolidBrush(NewColor), 62, 0, 61, 28);
-            bufferedGraphics.Graphics.DrawString("New", font, (Brush)Interaction.IIf(NewColor.GetBrightness() + (255 - unchecked(NewColor.A)) / 255.0 > 0.5, Brushes.Black, Brushes.White), 93f - bufferedGraphics.Graphics.MeasureString("New", font).Width / 2f, 14f - bufferedGraphics.Graphics.MeasureString("New", font).Height / 2f);
+            bufferedGraphics.Graphics.DrawString("New", font, (Brush)Interaction.IIf(NewColor.GetBrightness() + (255 - NewColor.A) / 255.0 > 0.5, Brushes.Black, Brushes.White), 93f - bufferedGraphics.Graphics.MeasureString("New", font).Width / 2f, 14f - bufferedGraphics.Graphics.MeasureString("New", font).Height / 2f);
             bufferedGraphics.Render(pPrev.CreateGraphics());
             bufferedGraphics.Dispose();
         }
