@@ -38,7 +38,8 @@ namespace {context.Namespace}
         if (context.TargetClass == "MainWindow")
         {
         }
-        return null;
+
+        return str;
     }
 
     private static void WriteInitializeComponents(Context context, StringBuilder stringBuilder)
