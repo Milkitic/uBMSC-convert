@@ -14,15 +14,10 @@ namespace iBMSC;
 public partial class OpGeneral : Form
 {
     public int zWheel;
-
     public int zPgUpDn;
-
     public Encoding zEncoding;
-
     public int zMiddle;
-
     public int zAutoSave;
-
     public int zGridPartition;
 
     [DllImport("shell32.dll")]
@@ -63,7 +58,8 @@ public partial class OpGeneral : Form
             _ => zEncoding
         };
         zMiddle = Conversions.ToInteger(Interaction.IIf(rMiddleDrag.Checked, 1, 0));
-        zAutoSave = Conversions.ToInteger(Operators.MultiplyObject(Operators.MultiplyObject(Interaction.IIf(cAutoSave.Checked, 1, 0), NAutoSave.Value), 60000));
+        zAutoSave = Conversions.ToInteger(Operators.MultiplyObject(
+            Operators.MultiplyObject(Interaction.IIf(cAutoSave.Checked, 1, 0), NAutoSave.Value), 60000));
         zGridPartition = Convert.ToInt32(nGridPartition.Value);
         DialogResult = DialogResult.OK;
         Close();
@@ -75,7 +71,8 @@ public partial class OpGeneral : Form
         Close();
     }
 
-    public OpGeneral(int xMsWheel, int xPgUpDn, int xMiddleButton, int xTextEncoding, int xGridPartition, int xAutoSave, bool xBeep, bool xBPMx, bool xSTOPx, bool xMFEnter, bool xMFClick, bool xMStopPreview)
+    public OpGeneral(int xMsWheel, int xPgUpDn, int xMiddleButton, int xTextEncoding, int xGridPartition, int xAutoSave,
+        bool xBeep, bool xBPMx, bool xSTOPx, bool xMFEnter, bool xMFClick, bool xMStopPreview)
     {
         int try0006_dispatch = -1;
         int num2 = default(int);
@@ -99,74 +96,47 @@ public partial class OpGeneral : Form
                             num2 = num;
                             switch (num3)
                             {
-                                case 1:
-                                    break;
-                                default:
-                                    goto end_IL_0006;
+                                case 1: break;
+                                default: goto end_IL_0006;
                             }
+
                             int num4 = num2 + 1;
                             num2 = 0;
                             switch (num4)
                             {
-                                case 1:
-                                    break;
-                                case 2:
-                                    goto IL_0022;
-                                case 3:
-                                    goto IL_0029;
+                                case 1: break;
+                                case 2: goto IL_0022;
+                                case 3: goto IL_0029;
                                 case 5:
-                                case 6:
-                                    goto IL_002e;
-                                case 7:
-                                    goto IL_0039;
-                                case 9:
-                                    goto IL_004a;
-                                case 10:
-                                    goto IL_0053;
-                                case 12:
-                                    goto IL_0065;
-                                case 13:
-                                    goto IL_006e;
-                                case 15:
-                                    goto IL_0080;
-                                case 16:
-                                    goto IL_0089;
+                                case 6: goto IL_002e;
+                                case 7: goto IL_0039;
+                                case 9: goto IL_004a;
+                                case 10: goto IL_0053;
+                                case 12: goto IL_0065;
+                                case 13: goto IL_006e;
+                                case 15: goto IL_0080;
+                                case 16: goto IL_0089;
                                 case 4:
                                 case 8:
                                 case 11:
                                 case 14:
                                 case 17:
-                                case 18:
-                                    goto IL_0099;
+                                case 18: goto IL_0099;
                                 case 20:
-                                case 21:
-                                    goto IL_009f;
-                                case 22:
-                                    goto IL_00ab;
-                                case 24:
-                                    goto IL_00c0;
-                                case 25:
-                                    goto IL_00cc;
-                                case 27:
-                                    goto IL_00e1;
-                                case 28:
-                                    goto IL_00ed;
-                                case 30:
-                                    goto IL_00ff;
-                                case 31:
-                                    goto IL_010b;
-                                case 33:
-                                    goto IL_011d;
-                                case 34:
-                                    goto IL_0129;
-                                case 36:
-                                    goto IL_013b;
-                                case 37:
-                                    goto IL_0147;
-                                case 39:
-                                    goto IL_0159;
-                                case 40:
-                                    goto IL_0162;
+                                case 21: goto IL_009f;
+                                case 22: goto IL_00ab;
+                                case 24: goto IL_00c0;
+                                case 25: goto IL_00cc;
+                                case 27: goto IL_00e1;
+                                case 28: goto IL_00ed;
+                                case 30: goto IL_00ff;
+                                case 31: goto IL_010b;
+                                case 33: goto IL_011d;
+                                case 34: goto IL_0129;
+                                case 36: goto IL_013b;
+                                case 37: goto IL_0147;
+                                case 39: goto IL_0159;
+                                case 40: goto IL_0162;
                                 case 19:
                                 case 23:
                                 case 26:
@@ -175,47 +145,30 @@ public partial class OpGeneral : Form
                                 case 35:
                                 case 38:
                                 case 41:
-                                case 42:
-                                    goto IL_0172;
-                                case 43:
-                                    goto IL_0183;
-                                case 44:
-                                    goto IL_0199;
-                                case 45:
-                                    goto IL_01a1;
-                                case 47:
-                                    goto IL_01b3;
-                                case 48:
-                                    goto IL_01b7;
+                                case 42: goto IL_0172;
+                                case 43: goto IL_0183;
+                                case 44: goto IL_0199;
+                                case 45: goto IL_01a1;
+                                case 47: goto IL_01b3;
+                                case 48: goto IL_01b7;
                                 case 46:
                                 case 49:
-                                case 50:
-                                    goto IL_01c7;
-                                case 51:
-                                    goto IL_020c;
-                                case 53:
-                                    goto IL_021e;
-                                case 54:
-                                    goto IL_0222;
+                                case 50: goto IL_01c7;
+                                case 51: goto IL_020c;
+                                case 53: goto IL_021e;
+                                case 54: goto IL_0222;
                                 case 52:
                                 case 55:
-                                case 56:
-                                    goto IL_0243;
-                                case 57:
-                                    goto IL_0254;
-                                case 58:
-                                    goto IL_0265;
-                                case 59:
-                                    goto IL_0276;
-                                case 60:
-                                    goto IL_0287;
-                                case 61:
-                                    goto end_IL_0006_2;
-                                default:
-                                    goto end_IL_0006;
-                                case 62:
-                                    goto end_IL_0006_3;
+                                case 56: goto IL_0243;
+                                case 57: goto IL_0254;
+                                case 58: goto IL_0265;
+                                case 59: goto IL_0276;
+                                case 60: goto IL_0287;
+                                case 61: goto end_IL_0006_2;
+                                default: goto end_IL_0006;
+                                case 62: goto end_IL_0006_3;
                             }
+
                             goto IL_0019;
                         }
 IL_0287:
@@ -240,6 +193,7 @@ IL_002e:
                         {
                             goto IL_0039;
                         }
+
                         goto IL_004a;
 IL_0039:
                         num = 7;
@@ -251,6 +205,7 @@ IL_004a:
                         {
                             goto IL_0053;
                         }
+
                         goto IL_0065;
 IL_0053:
                         num = 10;
@@ -262,6 +217,7 @@ IL_0065:
                         {
                             goto IL_006e;
                         }
+
                         goto IL_0080;
 IL_006e:
                         num = 13;
@@ -273,6 +229,7 @@ IL_0080:
                         {
                             goto IL_0089;
                         }
+
                         goto IL_0099;
 IL_0089:
                         num = 16;
@@ -288,6 +245,7 @@ IL_009f:
                         {
                             goto IL_00ab;
                         }
+
                         goto IL_00c0;
 IL_00ab:
                         num = 22;
@@ -299,6 +257,7 @@ IL_00c0:
                         {
                             goto IL_00cc;
                         }
+
                         goto IL_00e1;
 IL_00cc:
                         num = 25;
@@ -310,6 +269,7 @@ IL_00e1:
                         {
                             goto IL_00ed;
                         }
+
                         goto IL_00ff;
 IL_00ed:
                         num = 28;
@@ -321,6 +281,7 @@ IL_00ff:
                         {
                             goto IL_010b;
                         }
+
                         goto IL_011d;
 IL_010b:
                         num = 31;
@@ -332,6 +293,7 @@ IL_011d:
                         {
                             goto IL_0129;
                         }
+
                         goto IL_013b;
 IL_0129:
                         num = 34;
@@ -343,6 +305,7 @@ IL_013b:
                         {
                             goto IL_0147;
                         }
+
                         goto IL_0159;
 IL_0147:
                         num = 37;
@@ -354,6 +317,7 @@ IL_0159:
                         {
                             goto IL_0162;
                         }
+
                         goto IL_0172;
 IL_0162:
                         num = 40;
@@ -373,6 +337,7 @@ IL_0199:
                         {
                             goto IL_01a1;
                         }
+
                         goto IL_01b3;
 IL_01a1:
                         num = 45;
@@ -387,10 +352,12 @@ IL_01b7:
                         goto IL_01c7;
 IL_01c7:
                         num = 50;
-                        if ((xAutoSave / 60000.0 > Convert.ToDouble(NAutoSave.Maximum)) | (xAutoSave / 60000.0 < Convert.ToDouble(NAutoSave.Minimum)))
+                        if ((xAutoSave / 60000.0 > Convert.ToDouble(NAutoSave.Maximum)) |
+                            (xAutoSave / 60000.0 < Convert.ToDouble(NAutoSave.Minimum)))
                         {
                             goto IL_020c;
                         }
+
                         goto IL_021e;
 IL_020c:
                         num = 51;
@@ -422,6 +389,7 @@ IL_0276:
 end_IL_0006_2:
                         break;
                 }
+
                 num = 61;
                 cMStopPreview.Checked = xMStopPreview;
                 break;
@@ -433,11 +401,13 @@ end_IL_0006:;
                 try0006_dispatch = 950;
                 continue;
             }
+
             throw ProjectData.CreateProjectError(-2146828237);
             continue;
 end_IL_0006_3:
             break;
         }
+
         if (num2 != 0)
         {
             ProjectData.ClearProjectError();
@@ -498,10 +468,13 @@ end_IL_0006_3:
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
     private void Associate(string xExt, string xClass, string xDescription, bool isIBMSC)
     {
-        if (Interaction.MsgBox(Microsoft.VisualBasic.Strings.Replace(Strings.Messages.FileAssociationPrompt, "{}", "*" + xExt), MsgBoxStyle.YesNo | MsgBoxStyle.Question) != MsgBoxResult.Yes)
+        if (Interaction.MsgBox(
+                Microsoft.VisualBasic.Strings.Replace(Strings.Messages.FileAssociationPrompt, "{}", "*" + xExt),
+                MsgBoxStyle.YesNo | MsgBoxStyle.Question) != MsgBoxResult.Yes)
         {
             return;
         }
+
         try
         {
             RegistryKey classesRoot = Registry.ClassesRoot;
@@ -509,6 +482,7 @@ end_IL_0006_3:
             {
                 classesRoot.DeleteSubKeyTree(xExt);
             }
+
             classesRoot.CreateSubKey(xExt);
             RegistryKey registryKey = classesRoot.OpenSubKey(xExt, writable: true);
             registryKey.SetValue("", xClass, RegistryValueKind.String);
@@ -516,12 +490,14 @@ end_IL_0006_3:
             {
                 classesRoot.DeleteSubKeyTree(xClass);
             }
+
             classesRoot.CreateSubKey(xClass);
             registryKey = classesRoot.OpenSubKey(xClass, writable: true);
             registryKey.SetValue("", xDescription, RegistryValueKind.String);
             registryKey.CreateSubKey("DefaultIcon");
             registryKey = classesRoot.OpenSubKey(xClass + "\\DefaultIcon", writable: true);
-            registryKey.SetValue("", MyProject.Application.Info.DirectoryPath + "\\TypeBMS.ico", RegistryValueKind.String);
+            registryKey.SetValue("", MyProject.Application.Info.DirectoryPath + "\\TypeBMS.ico",
+                RegistryValueKind.String);
             registryKey = classesRoot.OpenSubKey(xClass, writable: true);
             registryKey.CreateSubKey("shell");
             registryKey = classesRoot.OpenSubKey(xClass + "\\shell", writable: true);
@@ -547,12 +523,18 @@ end_IL_0006_3:
                 registryKey = classesRoot.OpenSubKey(xClass + "\\shell\\viewcode\\command", writable: true);
                 registryKey.SetValue("", Environment.SystemDirectory + "\\notepad.exe %1");
             }
+
             classesRoot = null;
             RegistryKey currentUser = Registry.CurrentUser;
             currentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + xExt);
-            registryKey = currentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + xExt, writable: true);
+            registryKey =
+                currentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + xExt,
+                    writable: true);
             registryKey.CreateSubKey("UserChoice");
-            registryKey = currentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + xExt + "\\UserChoice", writable: true);
+            registryKey =
+                currentUser.OpenSubKey(
+                    "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + xExt + "\\UserChoice",
+                    writable: true);
             registryKey.SetValue("Progid", xClass);
             currentUser = null;
         }
@@ -560,9 +542,11 @@ end_IL_0006_3:
         {
             ProjectData.SetProjectError(ex);
             Exception ex2 = ex;
-            Interaction.MsgBox(Strings.Messages.FileAssociationError + "\r\n\r\n" + ex2.Message, MsgBoxStyle.Exclamation, Strings.Messages.Err);
+            Interaction.MsgBox(Strings.Messages.FileAssociationError + "\r\n\r\n" + ex2.Message,
+                MsgBoxStyle.Exclamation, Strings.Messages.Err);
             ProjectData.ClearProjectError();
         }
+
         SHChangeNotify(134217728, 0, 0, 0);
         Interaction.Beep();
     }

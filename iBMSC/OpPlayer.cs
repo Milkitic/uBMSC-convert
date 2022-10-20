@@ -13,7 +13,6 @@ namespace iBMSC;
 public partial class OpPlayer : Form
 {
     private MainWindow.PlayerArguments[] pArg;
-
     private int CurrPlayer;
 
     private void OK_Button_Click(object sender, EventArgs e)
@@ -42,7 +41,9 @@ public partial class OpPlayer : Form
         Label4.Text = Strings.fopPlayer.StopPlaying;
         BAdd.Text = Strings.fopPlayer.Add;
         BRemove.Text = Strings.fopPlayer.Remove;
-        Label6.Text = Strings.fopPlayer.References + "\r\n<apppath> = " + Strings.fopPlayer.DirectoryOfApp + "\r\n<measure> = " + Strings.fopPlayer.CurrMeasure + "\r\n<filename> = " + Strings.fopPlayer.FileName;
+        Label6.Text = Strings.fopPlayer.References + "\r\n<apppath> = " + Strings.fopPlayer.DirectoryOfApp +
+                      "\r\n<measure> = " + Strings.fopPlayer.CurrMeasure + "\r\n<filename> = " +
+                      Strings.fopPlayer.FileName;
         OK_Button.Text = Strings.OK;
         Cancel_Button.Text = Strings.Cancel;
         BDefault.Text = Strings.fopPlayer.RestoreDefault;
@@ -66,7 +67,8 @@ public partial class OpPlayer : Form
     {
         checked
         {
-            pArg = (MainWindow.PlayerArguments[])Utils.CopyArray(pArg, new MainWindow.PlayerArguments[Information.UBound(pArg) + 1 + 1]);
+            pArg = (MainWindow.PlayerArguments[])Utils.CopyArray(pArg,
+                new MainWindow.PlayerArguments[Information.UBound(pArg) + 1 + 1]);
             CurrPlayer++;
             int num = Information.UBound(pArg);
             int currPlayer = CurrPlayer;
@@ -75,6 +77,7 @@ public partial class OpPlayer : Form
                 ref MainWindow.PlayerArguments reference = ref pArg[i];
                 reference = pArg[i - 1];
             }
+
             LPlayer.Items.Insert(CurrPlayer, GetFileName(pArg[CurrPlayer - 1].Path));
             LPlayer.SelectedIndex++;
         }
@@ -87,6 +90,7 @@ public partial class OpPlayer : Form
             Interaction.MsgBox(Strings.Messages.PreviewDelError, MsgBoxStyle.Exclamation);
             return;
         }
+
         int currPlayer = CurrPlayer;
         checked
         {
@@ -96,9 +100,13 @@ public partial class OpPlayer : Form
                 ref MainWindow.PlayerArguments reference = ref pArg[i];
                 reference = pArg[i + 1];
             }
-            pArg = (MainWindow.PlayerArguments[])Utils.CopyArray(pArg, new MainWindow.PlayerArguments[Information.UBound(pArg) - 1 + 1]);
+
+            pArg = (MainWindow.PlayerArguments[])Utils.CopyArray(pArg,
+                new MainWindow.PlayerArguments[Information.UBound(pArg) - 1 + 1]);
             LPlayer.Items.RemoveAt(CurrPlayer);
-            LPlayer.SelectedIndex = Conversions.ToInteger(Interaction.IIf(CurrPlayer > Information.UBound(pArg), CurrPlayer - 1, CurrPlayer));
+            LPlayer.SelectedIndex =
+                Conversions.ToInteger(
+                    Interaction.IIf(CurrPlayer > Information.UBound(pArg), CurrPlayer - 1, CurrPlayer));
             CurrPlayer = Math.Min(CurrPlayer, Information.UBound(pArg));
             ShowInTextbox();
         }
@@ -108,25 +116,35 @@ public partial class OpPlayer : Form
     private void BPrevBrowse_Click(object sender, EventArgs e)
     {
         OpenFileDialog openFileDialog = new OpenFileDialog();
-        openFileDialog.InitialDirectory = Conversions.ToString(Interaction.IIf(Operators.CompareString(Path.GetDirectoryName(Microsoft.VisualBasic.Strings.Replace(TPath.Text, "<apppath>", MyProject.Application.Info.DirectoryPath)), "", TextCompare: false) == 0, MyProject.Application.Info.DirectoryPath, Path.GetDirectoryName(Microsoft.VisualBasic.Strings.Replace(TPath.Text, "<apppath>", MyProject.Application.Info.DirectoryPath))));
+        openFileDialog.InitialDirectory = Conversions.ToString(Interaction.IIf(
+            Operators.CompareString(
+                Path.GetDirectoryName(Microsoft.VisualBasic.Strings.Replace(TPath.Text, "<apppath>",
+                    MyProject.Application.Info.DirectoryPath)), "", TextCompare: false) == 0,
+            MyProject.Application.Info.DirectoryPath,
+            Path.GetDirectoryName(Microsoft.VisualBasic.Strings.Replace(TPath.Text, "<apppath>",
+                MyProject.Application.Info.DirectoryPath))));
         openFileDialog.Filter = Strings.FileType.EXE + "|*.exe";
         openFileDialog.DefaultExt = "exe";
         if (openFileDialog.ShowDialog() != DialogResult.Cancel)
         {
-            TPath.Text = Microsoft.VisualBasic.Strings.Replace(openFileDialog.FileName, MyProject.Application.Info.DirectoryPath, "<apppath>");
+            TPath.Text = Microsoft.VisualBasic.Strings.Replace(openFileDialog.FileName,
+                MyProject.Application.Info.DirectoryPath, "<apppath>");
         }
     }
 
     private void BPrevDefault_Click(object sender, EventArgs e)
     {
-        if (Interaction.MsgBox(Strings.Messages.RestoreDefaultSettings, MsgBoxStyle.YesNo | MsgBoxStyle.Question) != MsgBoxResult.No)
+        if (Interaction.MsgBox(Strings.Messages.RestoreDefaultSettings, MsgBoxStyle.YesNo | MsgBoxStyle.Question) !=
+            MsgBoxResult.No)
         {
             MainWindow.PlayerArguments[] array = new MainWindow.PlayerArguments[2];
             ref MainWindow.PlayerArguments reference = ref array[0];
-            MainWindow.PlayerArguments playerArguments = new MainWindow.PlayerArguments("<apppath>\\uBMplay.exe", "-P -N0 \"<filename>\"", "-P -N<measure> \"<filename>\"", "-S");
+            MainWindow.PlayerArguments playerArguments = new MainWindow.PlayerArguments("<apppath>\\uBMplay.exe",
+                "-P -N0 \"<filename>\"", "-P -N<measure> \"<filename>\"", "-S");
             reference = playerArguments;
             ref MainWindow.PlayerArguments reference2 = ref array[1];
-            MainWindow.PlayerArguments playerArguments2 = new MainWindow.PlayerArguments("<apppath>\\o2play.exe", "-P -N0 \"<filename>\"", "-P -N<measure> \"<filename>\"", "-S");
+            MainWindow.PlayerArguments playerArguments2 = new MainWindow.PlayerArguments("<apppath>\\o2play.exe",
+                "-P -N0 \"<filename>\"", "-P -N<measure> \"<filename>\"", "-S");
             reference2 = playerArguments2;
             pArg = array;
             CurrPlayer = 0;
@@ -142,6 +160,7 @@ public partial class OpPlayer : Form
         {
             LPlayer.Items.Add(GetFileName(pArg[i].Path));
         }
+
         LPlayer.SelectedIndex = CurrPlayer;
         ShowInTextbox();
     }
@@ -186,6 +205,7 @@ public partial class OpPlayer : Form
                     break;
                 }
             }
+
             textBox.BackColor = flag ? Color.FromArgb(-16192) : backColor;
         }
     }
@@ -216,6 +236,7 @@ public partial class OpPlayer : Form
         {
             LPlayerChangeCurrIndex(pArg[CurrPlayer].Path);
         }
+
         ValidateTextBox();
     }
 
@@ -223,6 +244,7 @@ public partial class OpPlayer : Form
     {
         int num = Microsoft.VisualBasic.Strings.InStrRev(s, "/");
         int num2 = Microsoft.VisualBasic.Strings.InStrRev(s, "\\");
-        return Microsoft.VisualBasic.Strings.Mid(s, Conversions.ToInteger(Operators.AddObject(Interaction.IIf(num > num2, num, num2), 1)));
+        return Microsoft.VisualBasic.Strings.Mid(s,
+            Conversions.ToInteger(Operators.AddObject(Interaction.IIf(num > num2, num, num2), 1)));
     }
 }

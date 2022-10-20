@@ -52,11 +52,7 @@ public partial class dgStatistics : Form
                 int num2 = 0;
                 do
                 {
-                    Label label = new Label
-                    {
-                        Dock = DockStyle.Fill,
-                        TextAlign = ContentAlignment.MiddleCenter
-                    };
+                    Label label = new Label { Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
                     Padding margin = new Padding(0);
                     label.Margin = margin;
                     label.Font = new Font(Font, FontStyle.Bold);
@@ -64,17 +60,18 @@ public partial class dgStatistics : Form
                     {
                         label.Text = Conversions.ToString(data[num, num2]);
                     }
+
                     if (num % 2 == 0)
                     {
                         label.BackColor = Color.FromArgb(268435456);
                     }
+
                     TableLayoutPanel1.Controls.Add(label, num2 + 1, num + 1);
                     num2++;
-                }
-                while (num2 <= 5);
+                } while (num2 <= 5);
+
                 num++;
-            }
-            while (num <= 5);
+            } while (num <= 5);
         }
     }
 }

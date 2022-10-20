@@ -34,7 +34,7 @@ internal sealed class MySettings : ApplicationSettingsBase
                     Monitor.Enter(obj, ref lockTaken);
                     if (!addedHandler)
                     {
-                        MyProject.Application.Shutdown += [DebuggerNonUserCode][EditorBrowsable(EditorBrowsableState.Advanced)] (object sender, EventArgs e) =>
+                        MyProject.Application.Shutdown += [DebuggerNonUserCode][EditorBrowsable(EditorBrowsableState.Advanced)] (sender, e) =>
                         {
                             if (MyProject.Application.SaveMySettingsOnExit)
                             {

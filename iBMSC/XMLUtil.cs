@@ -14,13 +14,15 @@ internal static class XMLUtil
     private static NumberFormatInfo _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi;
 
     [SpecialName]
-    private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi_0024Init = new StaticLocalInitFlag();
+    private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi_0024Init =
+        new StaticLocalInitFlag();
 
     [SpecialName]
     private static NumberFormatInfo _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi;
 
     [SpecialName]
-    private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi_0024Init = new StaticLocalInitFlag();
+    private static StaticLocalInitFlag _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi_0024Init =
+        new StaticLocalInitFlag();
 
     public static void XMLWriteValue(XmlTextWriter w, string local, string val)
     {
@@ -59,6 +61,7 @@ internal static class XMLUtil
         {
             return;
         }
+
         bool lockTaken = false;
         try
         {
@@ -81,6 +84,7 @@ internal static class XMLUtil
                 Monitor.Exit(_0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi_0024Init);
             }
         }
+
         _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi.NumberDecimalSeparator = ".";
         v = (float)double.Parse(s, _0024STATIC_0024XMLLoadAttribute_0024021E10C_0024nfi);
     }
@@ -91,6 +95,7 @@ internal static class XMLUtil
         {
             return;
         }
+
         bool lockTaken = false;
         try
         {
@@ -113,6 +118,7 @@ internal static class XMLUtil
                 Monitor.Exit(_0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi_0024Init);
             }
         }
+
         _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi.NumberDecimalSeparator = ".";
         v = double.Parse(s, _0024STATIC_0024XMLLoadAttribute_0024021E10D_0024nfi);
     }

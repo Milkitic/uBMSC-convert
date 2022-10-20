@@ -11,9 +11,7 @@ namespace iBMSC;
 public partial class fLoadFileProgress : Form
 {
     private string[] xPath;
-
     private bool CancelPressed;
-
     private bool IsSaved;
 
     public fLoadFileProgress(string[] xxPath, bool xIsSaved, bool TopMost = true)
@@ -59,7 +57,8 @@ public partial class fLoadFileProgress : Form
                                 int num3 = Information.UBound(xPath);
                                 for (int i = 0; i <= num3; i++)
                                 {
-                                    Label1.Text = "Currently loading ( " + Conversions.ToString(i + 1) + " / " + Conversions.ToString(Information.UBound(xPath) + 1) + " ): " + xPath[i];
+                                    Label1.Text = "Currently loading ( " + Conversions.ToString(i + 1) + " / " +
+                                                  Conversions.ToString(Information.UBound(xPath) + 1) + " ): " + xPath[i];
                                     int maximum = prog.Maximum;
                                     int value = prog.Value;
                                     prog.Value = i;
@@ -68,6 +67,7 @@ public partial class fLoadFileProgress : Form
                                     {
                                         break;
                                     }
+
                                     if (i == 0 && IsSaved)
                                     {
                                         MyProject.Forms.MainWindow.ReadFile(xPath[i]);
@@ -77,6 +77,7 @@ public partial class fLoadFileProgress : Form
                                         Process.Start(Application.ExecutablePath, "\"" + xPath[i] + "\"");
                                     }
                                 }
+
                                 Close();
                                 goto end_IL_0000;
                             }
@@ -85,10 +86,13 @@ public partial class fLoadFileProgress : Form
                             switch (num2)
                             {
                             }
+
                             break;
                     }
+
                     goto IL_0143;
                 }
+
 end_IL_0000:;
             }
             catch (Exception obj) when (num2 != 0 && num == 0)
@@ -97,10 +101,12 @@ end_IL_0000:;
                 try0000_dispatch = 269;
                 continue;
             }
+
             break;
 IL_0143:
             throw ProjectData.CreateProjectError(-2146828237);
         }
+
         if (num != 0)
         {
             ProjectData.ClearProjectError();

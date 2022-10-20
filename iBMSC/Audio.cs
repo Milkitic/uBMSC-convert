@@ -11,13 +11,13 @@ namespace iBMSC;
 internal static class Audio
 {
     private static WasapiOut Output;
-
     private static IWaveSource Source;
 
     public static void Initialize()
     {
         Output = new WasapiOut();
-        CodecFactory.Instance.Register("ogg", new CodecFactoryEntry([SpecialName] (Stream s) => new NVorbisSource(s).ToWaveSource(), new string[1] { ".ogg" }));
+        CodecFactory.Instance.Register("ogg",
+            new CodecFactoryEntry([SpecialName] (s) => new NVorbisSource(s).ToWaveSource(), ".ogg"));
     }
 
     public static void Finalize()
@@ -33,17 +33,20 @@ internal static class Audio
         {
             return filename;
         }
+
         string extension = Path.GetExtension(filename);
         if (string.Compare(extension, ".ogg") == 0)
         {
             string text = Path.ChangeExtension(filename, ".wav");
             return Conversions.ToString(Interaction.IIf(File.Exists(text), text, filename));
         }
+
         if (string.Compare(extension, ".wav") == 0)
         {
             string text2 = Path.ChangeExtension(filename, ".ogg");
             return Conversions.ToString(Interaction.IIf(File.Exists(text2), text2, filename));
         }
+
         return filename;
     }
 
@@ -55,6 +58,7 @@ internal static class Audio
             Source.Dispose();
             Source = null;
         }
+
         if ((object)filename != "")
         {
             string text = CheckFilename(filename);

@@ -18,7 +18,6 @@ public class UndoRedo
         }
 
         public abstract byte ofType();
-
         public abstract byte[] toBytes();
     }
 
@@ -92,8 +91,7 @@ public class UndoRedo
             note = _note;
         }
 
-        public AddNote(byte[] b)
-            : base(b)
+        public AddNote(byte[] b) : base(b)
         {
         }
 
@@ -110,8 +108,7 @@ public class UndoRedo
             note = _note;
         }
 
-        public RemoveNote(byte[] b)
-            : base(b)
+        public RemoveNote(byte[] b) : base(b)
         {
         }
 
@@ -156,7 +153,6 @@ public class UndoRedo
     public class MoveNote : LinkedURNoteCmd
     {
         public int NColumnIndex;
-
         public double NVPosition;
 
         public override byte[] toBytes()
@@ -197,7 +193,6 @@ public class UndoRedo
     public class LongNoteModify : LinkedURNoteCmd
     {
         public double NVPosition;
-
         public double NLongNote;
 
         public override byte[] toBytes()
@@ -327,7 +322,6 @@ public class UndoRedo
     public class ChangeMeasureLength : LinkedURCmd
     {
         public double Value;
-
         public int[] Indices;
 
         public override byte[] toBytes()
@@ -336,19 +330,8 @@ public class UndoRedo
             byte[] bytes2 = BitConverter.GetBytes(Information.UBound(Indices));
             byte[] array = new byte[13]
             {
-                16,
-                bytes[0],
-                bytes[1],
-                bytes[2],
-                bytes[3],
-                bytes[4],
-                bytes[5],
-                bytes[6],
-                bytes[7],
-                bytes2[0],
-                bytes2[1],
-                bytes2[2],
-                bytes2[3]
+                16, bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5], bytes[6], bytes[7], bytes2[0],
+                bytes2[1], bytes2[2], bytes2[3]
             };
             checked
             {
@@ -361,11 +344,13 @@ public class UndoRedo
                     {
                         bytes3 = BitConverter.GetBytes(Indices[checked(i - 13) / 4]);
                     }
+
                     array[i + 0] = bytes3[0];
                     array[i + 1] = bytes3[1];
                     array[i + 2] = bytes3[2];
                     array[i + 3] = bytes3[3];
                 }
+
                 return array;
             }
         }
@@ -401,11 +386,8 @@ public class UndoRedo
     public class ChangeTimeSelection : LinkedURCmd
     {
         public double SelStart;
-
         public double SelLength;
-
         public double SelHalf;
-
         public bool Selected;
 
         public override byte[] toBytes()
@@ -415,31 +397,9 @@ public class UndoRedo
             byte[] bytes3 = BitConverter.GetBytes(SelLength);
             return new byte[]
             {
-                17,
-                bytes[0],
-                bytes[1],
-                bytes[2],
-                bytes[3],
-                bytes[4],
-                bytes[5],
-                bytes[6],
-                bytes[7],
-                bytes2[0],
-                bytes2[1],
-                bytes2[2],
-                bytes2[3],
-                bytes2[4],
-                bytes2[5],
-                bytes2[6],
-                bytes2[7],
-                bytes3[0],
-                bytes3[1],
-                bytes3[2],
-                bytes3[3],
-                bytes3[4],
-                bytes3[5],
-                bytes3[6],
-                bytes3[7],
+                17, bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5], bytes[6], bytes[7], bytes2[0],
+                bytes2[1], bytes2[2], bytes2[3], bytes2[4], bytes2[5], bytes2[6], bytes2[7], bytes3[0], bytes3[1],
+                bytes3[2], bytes3[3], bytes3[4], bytes3[5], bytes3[6], bytes3[7],
                 Conversions.ToByte(Interaction.IIf(Selected, (byte)1, (byte)0))
             };
         }
@@ -477,15 +437,13 @@ public class UndoRedo
     public class NT : LinkedURCmd
     {
         public bool BecomeNT;
-
         public bool AutoConvert;
 
         public override byte[] toBytes()
         {
             return new byte[]
             {
-                18,
-                Conversions.ToByte(Interaction.IIf(BecomeNT, (byte)1, (byte)0)),
+                18, Conversions.ToByte(Interaction.IIf(BecomeNT, (byte)1, (byte)0)),
                 Conversions.ToByte(Interaction.IIf(AutoConvert, (byte)1, (byte)0))
             };
         }
@@ -524,11 +482,7 @@ public class UndoRedo
 
         public override byte[] toBytes()
         {
-            return new byte[]
-            {
-                20,
-                Conversions.ToByte(Interaction.IIf(Checked, (byte)1, (byte)0))
-            };
+            return new byte[] { 20, Conversions.ToByte(Interaction.IIf(Checked, (byte)1, (byte)0)) };
         }
 
         public WavAutoincFlag(byte[] b)
@@ -565,35 +519,20 @@ public class UndoRedo
     }
 
     public const byte opVoid = 0;
-
     public const byte opAddNote = 1;
-
     public const byte opRemoveNote = 2;
-
     public const byte opChangeNote = 3;
-
     public const byte opMoveNote = 4;
-
     public const byte opLongNoteModify = 5;
-
     public const byte opHiddenNoteModify = 6;
-
     public const byte opRelabelNote = 7;
-
     public const byte opRemoveAllNotes = 15;
-
     public const byte opChangeMeasureLength = 16;
-
     public const byte opChangeTimeSelection = 17;
-
     public const byte opNT = 18;
-
     public const byte opWavAutoincFlag = 20;
-
     public const byte opNoOperation = byte.MaxValue;
-
     private const byte trueByte = 1;
-
     private const byte falseByte = 0;
 
     public static LinkedURCmd fromBytes(byte[] b)
@@ -602,10 +541,12 @@ public class UndoRedo
         {
             return null;
         }
+
         if (b.Length == 0)
         {
             return null;
         }
+
         return b[0] switch
         {
             0 => new Void(b),

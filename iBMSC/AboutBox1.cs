@@ -12,13 +12,9 @@ namespace iBMSC;
 public sealed partial class AboutBox1 : Form
 {
     private const int WM_SYSCOMMAND = 274;
-
     private const int SC_MOVE = 61456;
-
     private const int WM_NCLBUTTONDOWN = 161;
-
     private const int HTCAPTION = 2;
-
     public Bitmap bBitmap;
 
     protected override CreateParams CreateParams
@@ -31,7 +27,8 @@ public sealed partial class AboutBox1 : Form
         }
     }
 
-    [DllImport("user32.dll", CharSet = CharSet.Ansi, EntryPoint = "SendMessageA", ExactSpelling = true, SetLastError = true)]
+    [DllImport("user32.dll", CharSet = CharSet.Ansi, EntryPoint = "SendMessageA", ExactSpelling = true,
+        SetLastError = true)]
     public static extern int SendMessage(int hwnd, int wMsg, int wParam, int lParam);
 
     [DllImport("user32.dll", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
@@ -62,6 +59,7 @@ public sealed partial class AboutBox1 : Form
         {
             throw new ApplicationException("The bitmap must be 32bpp with alpha-channel.");
         }
+
         IntPtr dC = APIHelp.GetDC(IntPtr.Zero);
         IntPtr intPtr = APIHelp.CreateCompatibleDC(dC);
         IntPtr intPtr2 = IntPtr.Zero;
@@ -88,6 +86,7 @@ public sealed partial class AboutBox1 : Form
                 APIHelp.SelectObject(intPtr, hObject);
                 APIHelp.DeleteObject(intPtr2);
             }
+
             APIHelp.DeleteDC(intPtr);
         }
     }

@@ -13,9 +13,7 @@ namespace iBMSC;
 public partial class diagFind : Form
 {
     private int bCol;
-
     private string msg1;
-
     private string msg2;
 
     public diagFind(int xbCol, string xmsg1, string xmsg2)
@@ -153,6 +151,7 @@ public partial class diagFind : Form
                 checkBox2 = null;
                 Panel1.Controls.Add(checkBox);
             }
+
             lr1.KeyDown += lblKeyDown;
             lr2.KeyDown += lblKeyDown;
             Ttl.KeyDown += lblKeyDown;
@@ -166,19 +165,24 @@ public partial class diagFind : Form
         {
             return false;
         }
-        if ((Operators.CompareString(xStr, "00", TextCompare: false) == 0) | (Operators.CompareString(xStr, "0", TextCompare: false) == 0))
+
+        if ((Operators.CompareString(xStr, "00", TextCompare: false) == 0) |
+            (Operators.CompareString(xStr, "0", TextCompare: false) == 0))
         {
             return false;
         }
+
         if ((Microsoft.VisualBasic.Strings.Len(xStr) != 1) & (Microsoft.VisualBasic.Strings.Len(xStr) != 2))
         {
             return false;
         }
+
         int num = Microsoft.VisualBasic.Strings.Asc(Microsoft.VisualBasic.Strings.Mid(xStr, 1, 1));
         if (num is not (>= 48 and <= 57 or >= 65 and <= 90))
         {
             return false;
         }
+
         if (Microsoft.VisualBasic.Strings.Len(xStr) == 2)
         {
             int num2 = Microsoft.VisualBasic.Strings.Asc(Microsoft.VisualBasic.Strings.Mid(xStr, 2, 1));
@@ -187,6 +191,7 @@ public partial class diagFind : Form
                 return false;
             }
         }
+
         return true;
     }
 
@@ -200,13 +205,16 @@ public partial class diagFind : Form
 
     private bool ValidateLabel(object sender)
     {
-        bool flag = ValidLabel(Conversions.ToString(NewLateBinding.LateGet(sender, null, "Text", Array.Empty<object>(), null, null, null)));
+        bool flag = ValidLabel(Conversions.ToString(NewLateBinding.LateGet(sender, null, "Text", Array.Empty<object>(),
+            null, null, null)));
         if (!flag)
         {
             Interaction.MsgBox(msg2, MsgBoxStyle.Critical, msg1);
             NewLateBinding.LateCall(sender, null, "Focus", Array.Empty<object>(), null, null, null, IgnoreReturn: true);
-            NewLateBinding.LateCall(sender, null, "SelectAll", Array.Empty<object>(), null, null, null, IgnoreReturn: true);
+            NewLateBinding.LateCall(sender, null, "SelectAll", Array.Empty<object>(), null, null, null,
+                IgnoreReturn: true);
         }
+
         return flag;
     }
 
@@ -216,6 +224,7 @@ public partial class diagFind : Form
         {
             return;
         }
+
         int[] array = Array.Empty<int>();
         checked
         {
@@ -240,32 +249,41 @@ public partial class diagFind : Form
                     disposable.Dispose();
                 }
             }
+
             int num = 1;
             if (cbx1.Checked)
             {
                 num *= 2;
             }
+
             if (cbx2.Checked)
             {
                 num *= 3;
             }
+
             if (cbx3.Checked)
             {
                 num *= 5;
             }
+
             if (cbx4.Checked)
             {
                 num *= 7;
             }
+
             if (cbx5.Checked)
             {
                 num *= 11;
             }
+
             if (cbx6.Checked)
             {
                 num *= 13;
             }
-            MyProject.Forms.MainWindow.fdrSelect(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))), Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
+
+            MyProject.Forms.MainWindow.fdrSelect(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text,
+                lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))),
+                Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
         }
     }
 
@@ -275,6 +293,7 @@ public partial class diagFind : Form
         {
             return;
         }
+
         int[] array = Array.Empty<int>();
         checked
         {
@@ -299,32 +318,41 @@ public partial class diagFind : Form
                     disposable.Dispose();
                 }
             }
+
             int num = 1;
             if (cbx1.Checked)
             {
                 num *= 2;
             }
+
             if (cbx2.Checked)
             {
                 num *= 3;
             }
+
             if (cbx3.Checked)
             {
                 num *= 5;
             }
+
             if (cbx4.Checked)
             {
                 num *= 7;
             }
+
             if (cbx5.Checked)
             {
                 num *= 11;
             }
+
             if (cbx6.Checked)
             {
                 num *= 13;
             }
-            MyProject.Forms.MainWindow.fdrUnselect(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))), Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
+
+            MyProject.Forms.MainWindow.fdrUnselect(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value),
+                lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))),
+                Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
         }
     }
 
@@ -334,6 +362,7 @@ public partial class diagFind : Form
         {
             return;
         }
+
         int[] array = Array.Empty<int>();
         checked
         {
@@ -358,32 +387,41 @@ public partial class diagFind : Form
                     disposable.Dispose();
                 }
             }
+
             int num = 1;
             if (cbx1.Checked)
             {
                 num *= 2;
             }
+
             if (cbx2.Checked)
             {
                 num *= 3;
             }
+
             if (cbx3.Checked)
             {
                 num *= 5;
             }
+
             if (cbx4.Checked)
             {
                 num *= 7;
             }
+
             if (cbx5.Checked)
             {
                 num *= 11;
             }
+
             if (cbx6.Checked)
             {
                 num *= 13;
             }
-            MyProject.Forms.MainWindow.fdrDelete(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))), Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
+
+            MyProject.Forms.MainWindow.fdrDelete(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text,
+                lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))),
+                Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array);
         }
     }
 
@@ -393,6 +431,7 @@ public partial class diagFind : Form
         {
             return;
         }
+
         int[] array = Array.Empty<int>();
         checked
         {
@@ -417,32 +456,41 @@ public partial class diagFind : Form
                     disposable.Dispose();
                 }
             }
+
             int num = 1;
             if (cbx1.Checked)
             {
                 num *= 2;
             }
+
             if (cbx2.Checked)
             {
                 num *= 3;
             }
+
             if (cbx3.Checked)
             {
                 num *= 5;
             }
+
             if (cbx4.Checked)
             {
                 num *= 7;
             }
+
             if (cbx5.Checked)
             {
                 num *= 11;
             }
+
             if (cbx6.Checked)
             {
                 num *= 13;
             }
-            MyProject.Forms.MainWindow.fdrReplaceL(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))), Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array, Ttl.Text);
+
+            MyProject.Forms.MainWindow.fdrReplaceL(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value),
+                lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))),
+                Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array, Ttl.Text);
         }
     }
 
@@ -452,6 +500,7 @@ public partial class diagFind : Form
         {
             return;
         }
+
         int[] array = Array.Empty<int>();
         checked
         {
@@ -476,32 +525,42 @@ public partial class diagFind : Form
                     disposable.Dispose();
                 }
             }
+
             int num = 1;
             if (cbx1.Checked)
             {
                 num *= 2;
             }
+
             if (cbx2.Checked)
             {
                 num *= 3;
             }
+
             if (cbx3.Checked)
             {
                 num *= 5;
             }
+
             if (cbx4.Checked)
             {
                 num *= 7;
             }
+
             if (cbx5.Checked)
             {
                 num *= 11;
             }
+
             if (cbx6.Checked)
             {
                 num *= 13;
             }
-            MyProject.Forms.MainWindow.fdrReplaceV(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value), lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))), Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array, Convert.ToInt32(decimal.Multiply(Ttv.Value, new decimal(10000L))));
+
+            MyProject.Forms.MainWindow.fdrReplaceV(num, Convert.ToInt32(mr1.Value), Convert.ToInt32(mr2.Value),
+                lr1.Text, lr2.Text, Convert.ToInt32(decimal.Multiply(vr1.Value, new decimal(10000L))),
+                Convert.ToInt32(decimal.Multiply(vr2.Value, new decimal(10000L))), array,
+                Convert.ToInt32(decimal.Multiply(Ttv.Value, new decimal(10000L))));
         }
     }
 }

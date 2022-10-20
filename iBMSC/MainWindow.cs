@@ -515,7 +515,7 @@ public partial class MainWindow : Form
                 }
 
                 goto IL_0952;
-                IL_0952:
+IL_0952:
                 text = text + text2 + "\r\n";
             }
 
@@ -1488,172 +1488,172 @@ public partial class MainWindow : Form
                     switch (br.ReadInt32())
                     {
                         case 1717924432:
-                        {
-                            int num17 = br.ReadInt32();
-                            NTInput = (num17 & 1) != 0;
-                            TBNTInput.Checked = NTInput;
-                            mnNTInput.Checked = NTInput;
-                            POBLong.Enabled = !NTInput;
-                            POBLongShort.Enabled = !NTInput;
-                            ErrorCheck = (num17 & 2) != 0;
-                            TBErrorCheck.Checked = ErrorCheck;
-                            TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
-                            PreviewOnClick = (num17 & 4) != 0;
-                            TBPreviewOnClick.Checked = PreviewOnClick;
-                            TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
-                            ShowFileName = (num17 & 8) != 0;
-                            TBShowFileName.Checked = ShowFileName;
-                            TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
-                            mnSMenu.Checked = (num17 & 0x100) != 0;
-                            mnSTB.Checked = (num17 & 0x200) != 0;
-                            mnSOP.Checked = (num17 & 0x400) != 0;
-                            mnSStatus.Checked = (num17 & 0x800) != 0;
-                            mnSLSplitter.Checked = (num17 & 0x1000) != 0;
-                            mnSRSplitter.Checked = (num17 & 0x2000) != 0;
-                            CGShow.Checked = (num17 & 0x4000) != 0;
-                            CGShowS.Checked = (num17 & 0x8000) != 0;
-                            CGShowBG.Checked = (num17 & 0x10000) != 0;
-                            CGShowM.Checked = (num17 & 0x20000) != 0;
-                            CGShowMB.Checked = (num17 & 0x40000) != 0;
-                            CGShowV.Checked = (num17 & 0x80000) != 0;
-                            CGShowC.Checked = (num17 & 0x100000) != 0;
-                            CGBLP.Checked = (num17 & 0x200000) != 0;
-                            CGSTOP.Checked = (num17 & 0x400000) != 0;
-                            CGSCROLL.Checked = (num17 & 0x20000000) != 0;
-                            CGBPM.Checked = (num17 & 0x800000) != 0;
-                            CGSnap.Checked = (num17 & 0x1000000) != 0;
-                            CGDisableVertical.Checked = (num17 & 0x2000000) != 0;
-                            cVSLockL.Checked = (num17 & 0x4000000) != 0;
-                            cVSLock.Checked = (num17 & 0x8000000) != 0;
-                            cVSLockR.Checked = (num17 & 0x10000000) != 0;
-                            CGDivide.Value = new decimal(br.ReadInt32());
-                            CGSub.Value = new decimal(br.ReadInt32());
-                            gSlash = br.ReadInt32();
-                            CGHeight.Value = new decimal(br.ReadSingle());
-                            CGWidth.Value = new decimal(br.ReadSingle());
-                            CGB.Value = new decimal(br.ReadInt32());
-                            break;
-                        }
+                            {
+                                int num17 = br.ReadInt32();
+                                NTInput = (num17 & 1) != 0;
+                                TBNTInput.Checked = NTInput;
+                                mnNTInput.Checked = NTInput;
+                                POBLong.Enabled = !NTInput;
+                                POBLongShort.Enabled = !NTInput;
+                                ErrorCheck = (num17 & 2) != 0;
+                                TBErrorCheck.Checked = ErrorCheck;
+                                TBErrorCheck_Click(TBErrorCheck, EventArgs.Empty);
+                                PreviewOnClick = (num17 & 4) != 0;
+                                TBPreviewOnClick.Checked = PreviewOnClick;
+                                TBPreviewOnClick_Click(TBPreviewOnClick, EventArgs.Empty);
+                                ShowFileName = (num17 & 8) != 0;
+                                TBShowFileName.Checked = ShowFileName;
+                                TBShowFileName_Click(TBShowFileName, EventArgs.Empty);
+                                mnSMenu.Checked = (num17 & 0x100) != 0;
+                                mnSTB.Checked = (num17 & 0x200) != 0;
+                                mnSOP.Checked = (num17 & 0x400) != 0;
+                                mnSStatus.Checked = (num17 & 0x800) != 0;
+                                mnSLSplitter.Checked = (num17 & 0x1000) != 0;
+                                mnSRSplitter.Checked = (num17 & 0x2000) != 0;
+                                CGShow.Checked = (num17 & 0x4000) != 0;
+                                CGShowS.Checked = (num17 & 0x8000) != 0;
+                                CGShowBG.Checked = (num17 & 0x10000) != 0;
+                                CGShowM.Checked = (num17 & 0x20000) != 0;
+                                CGShowMB.Checked = (num17 & 0x40000) != 0;
+                                CGShowV.Checked = (num17 & 0x80000) != 0;
+                                CGShowC.Checked = (num17 & 0x100000) != 0;
+                                CGBLP.Checked = (num17 & 0x200000) != 0;
+                                CGSTOP.Checked = (num17 & 0x400000) != 0;
+                                CGSCROLL.Checked = (num17 & 0x20000000) != 0;
+                                CGBPM.Checked = (num17 & 0x800000) != 0;
+                                CGSnap.Checked = (num17 & 0x1000000) != 0;
+                                CGDisableVertical.Checked = (num17 & 0x2000000) != 0;
+                                cVSLockL.Checked = (num17 & 0x4000000) != 0;
+                                cVSLock.Checked = (num17 & 0x8000000) != 0;
+                                cVSLockR.Checked = (num17 & 0x10000000) != 0;
+                                CGDivide.Value = new decimal(br.ReadInt32());
+                                CGSub.Value = new decimal(br.ReadInt32());
+                                gSlash = br.ReadInt32();
+                                CGHeight.Value = new decimal(br.ReadSingle());
+                                CGWidth.Value = new decimal(br.ReadSingle());
+                                CGB.Value = new decimal(br.ReadInt32());
+                                break;
+                            }
                         case 1684104520:
-                        {
-                            THTitle.Text = br.ReadString();
-                            THArtist.Text = br.ReadString();
-                            THGenre.Text = br.ReadString();
-                            Notes[0].Value = br.ReadInt64();
-                            int num23 = br.ReadByte();
-                            THPlayLevel.Text = br.ReadString();
-                            CHPlayer.SelectedIndex = num23 & 0xF;
-                            CHRank.SelectedIndex = num23 >> 4;
-                            THSubTitle.Text = br.ReadString();
-                            THSubArtist.Text = br.ReadString();
-                            THStageFile.Text = br.ReadString();
-                            THBanner.Text = br.ReadString();
-                            THBackBMP.Text = br.ReadString();
-                            CHDifficulty.SelectedIndex = br.ReadByte();
-                            THExRank.Text = br.ReadString();
-                            THTotal.Text = br.ReadString();
-                            THComment.Text = br.ReadString();
-                            CHLnObj.SelectedIndex = br.ReadInt16();
-                            break;
-                        }
+                            {
+                                THTitle.Text = br.ReadString();
+                                THArtist.Text = br.ReadString();
+                                THGenre.Text = br.ReadString();
+                                Notes[0].Value = br.ReadInt64();
+                                int num23 = br.ReadByte();
+                                THPlayLevel.Text = br.ReadString();
+                                CHPlayer.SelectedIndex = num23 & 0xF;
+                                CHRank.SelectedIndex = num23 >> 4;
+                                THSubTitle.Text = br.ReadString();
+                                THSubArtist.Text = br.ReadString();
+                                THStageFile.Text = br.ReadString();
+                                THBanner.Text = br.ReadString();
+                                THBackBMP.Text = br.ReadString();
+                                CHDifficulty.SelectedIndex = br.ReadByte();
+                                THExRank.Text = br.ReadString();
+                                THTotal.Text = br.ReadString();
+                                THComment.Text = br.ReadString();
+                                CHLnObj.SelectedIndex = br.ReadInt16();
+                                break;
+                            }
                         case 5652823:
-                        {
-                            int num11 = br.ReadByte();
-                            WAVMultiSelect = (num11 & 1) != 0;
-                            CWAVMultiSelect.Checked = WAVMultiSelect;
-                            CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
-                            WAVChangeLabel = (num11 & 2) != 0;
-                            CWAVChangeLabel.Checked = WAVChangeLabel;
-                            CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
-                            int num12 = br.ReadInt32();
-                            int num13 = num12;
-                            for (int k = 1; k <= num13; k++)
                             {
-                                int num14 = br.ReadInt16();
-                                hWAV[num14] = br.ReadString();
-                            }
+                                int num11 = br.ReadByte();
+                                WAVMultiSelect = (num11 & 1) != 0;
+                                CWAVMultiSelect.Checked = WAVMultiSelect;
+                                CWAVMultiSelect_CheckedChanged(CWAVMultiSelect, EventArgs.Empty);
+                                WAVChangeLabel = (num11 & 2) != 0;
+                                CWAVChangeLabel.Checked = WAVChangeLabel;
+                                CWAVChangeLabel_CheckedChanged(CWAVChangeLabel, EventArgs.Empty);
+                                int num12 = br.ReadInt32();
+                                int num13 = num12;
+                                for (int k = 1; k <= num13; k++)
+                                {
+                                    int num14 = br.ReadInt16();
+                                    hWAV[num14] = br.ReadString();
+                                }
 
-                            break;
-                        }
+                                break;
+                            }
                         case 1952539970:
-                        {
-                            nBeatN.Value = new decimal(br.ReadInt16());
-                            nBeatD.Value = new decimal(br.ReadInt16());
-                            int num18 = br.ReadByte();
-                            RadioButton[] array =
-                                new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
-                            array[num18].Checked = true;
-                            CBeatPreserve_Click(array[num18], EventArgs.Empty);
-                            int num19 = br.ReadInt32();
-                            int num20 = num19;
-                            for (int m = 1; m <= num20; m++)
                             {
-                                int num21 = br.ReadInt16();
-                                MeasureLength[num21] = br.ReadDouble();
-                                double num22 = MeasureLength[num21] / 192.0;
-                                long denominator = Functions.GetDenominator(num22, 2147483647L);
-                                LBeat.Items[num21] = Operators.ConcatenateObject(
-                                    string.Concat(Functions.Add3Zeros(num21) + ": ", Conversions.ToString(num22)),
-                                    Interaction.IIf(denominator > 10000, "",
-                                        " ( " + Conversions.ToString((long)Math.Round(num22 * denominator)) + " / " +
-                                        Conversions.ToString(denominator) + " ) "));
-                            }
+                                nBeatN.Value = new decimal(br.ReadInt16());
+                                nBeatD.Value = new decimal(br.ReadInt16());
+                                int num18 = br.ReadByte();
+                                RadioButton[] array =
+                                    new RadioButton[4] { CBeatPreserve, CBeatMeasure, CBeatCut, CBeatScale };
+                                array[num18].Checked = true;
+                                CBeatPreserve_Click(array[num18], EventArgs.Empty);
+                                int num19 = br.ReadInt32();
+                                int num20 = num19;
+                                for (int m = 1; m <= num20; m++)
+                                {
+                                    int num21 = br.ReadInt16();
+                                    MeasureLength[num21] = br.ReadDouble();
+                                    double num22 = MeasureLength[num21] / 192.0;
+                                    long denominator = Functions.GetDenominator(num22, 2147483647L);
+                                    LBeat.Items[num21] = Operators.ConcatenateObject(
+                                        string.Concat(Functions.Add3Zeros(num21) + ": ", Conversions.ToString(num22)),
+                                        Interaction.IIf(denominator > 10000, "",
+                                            " ( " + Conversions.ToString((long)Math.Round(num22 * denominator)) + " / " +
+                                            Conversions.ToString(denominator) + " ) "));
+                                }
 
-                            break;
-                        }
+                                break;
+                            }
                         case 1852864581:
                             TExpansion.Text = br.ReadString();
                             break;
                         case 1702129486:
-                        {
-                            int num15 = br.ReadInt32();
-                            Notes = (Note[])Utils.CopyArray(Notes, new Note[num15 + 1]);
-                            int num16 = Information.UBound(Notes);
-                            for (int l = 1; l <= num16; l++)
                             {
-                                Notes[l].FromBinReader(ref br);
+                                int num15 = br.ReadInt32();
+                                Notes = (Note[])Utils.CopyArray(Notes, new Note[num15 + 1]);
+                                int num16 = Information.UBound(Notes);
+                                for (int l = 1; l <= num16; l++)
+                                {
+                                    Notes[l].FromBinReader(ref br);
+                                }
+
+                                break;
                             }
-
-                            break;
-                        }
                         case 1868852821:
-                        {
-                            int num5 = br.ReadInt32();
-                            sI = br.ReadInt32();
-                            int num6 = 0;
-                            do
                             {
-                                int num7 = br.ReadInt32();
-                                UndoRedo.Void @void = new UndoRedo.Void();
-                                UndoRedo.LinkedURCmd linkedURCmd = @void;
-                                int num8 = num7;
-                                for (int i = 1; i <= num8; i++)
+                                int num5 = br.ReadInt32();
+                                sI = br.ReadInt32();
+                                int num6 = 0;
+                                do
                                 {
-                                    int count = br.ReadInt32();
-                                    byte[] b = br.ReadBytes(count);
-                                    linkedURCmd.Next = UndoRedo.fromBytes(b);
-                                    linkedURCmd = linkedURCmd.Next;
-                                }
+                                    int num7 = br.ReadInt32();
+                                    UndoRedo.Void @void = new UndoRedo.Void();
+                                    UndoRedo.LinkedURCmd linkedURCmd = @void;
+                                    int num8 = num7;
+                                    for (int i = 1; i <= num8; i++)
+                                    {
+                                        int count = br.ReadInt32();
+                                        byte[] b = br.ReadBytes(count);
+                                        linkedURCmd.Next = UndoRedo.fromBytes(b);
+                                        linkedURCmd = linkedURCmd.Next;
+                                    }
 
-                                sUndo[num6] = @void.Next;
-                                int num9 = br.ReadInt32();
-                                UndoRedo.Void void2 = new UndoRedo.Void();
-                                UndoRedo.LinkedURCmd linkedURCmd2 = void2;
-                                int num10 = num9;
-                                for (int j = 1; j <= num10; j++)
-                                {
-                                    int count2 = br.ReadInt32();
-                                    byte[] b2 = br.ReadBytes(count2);
-                                    linkedURCmd2.Next = UndoRedo.fromBytes(b2);
-                                    linkedURCmd2 = linkedURCmd2.Next;
-                                }
+                                    sUndo[num6] = @void.Next;
+                                    int num9 = br.ReadInt32();
+                                    UndoRedo.Void void2 = new UndoRedo.Void();
+                                    UndoRedo.LinkedURCmd linkedURCmd2 = void2;
+                                    int num10 = num9;
+                                    for (int j = 1; j <= num10; j++)
+                                    {
+                                        int count2 = br.ReadInt32();
+                                        byte[] b2 = br.ReadBytes(count2);
+                                        linkedURCmd2.Next = UndoRedo.fromBytes(b2);
+                                        linkedURCmd2 = linkedURCmd2.Next;
+                                    }
 
-                                sRedo[num6] = void2.Next;
-                                num6++;
-                            } while (num6 <= 99);
+                                    sRedo[num6] = void2.Next;
+                                    num6++;
+                                } while (num6 <= 99);
 
-                            break;
-                        }
+                                break;
+                            }
                     }
                 }
             }
@@ -4505,89 +4505,89 @@ public partial class MainWindow : Form
                             vo.kSelected.Color = Color.FromArgb((int)Math.Round(Conversion.Val(text2)));
                             break;
                         case "KLENGTH":
-                        {
-                            string[] array9 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num7 = 0;
-                            do
                             {
-                                column[num7].Width = (int)Math.Round(Conversion.Val(array9[num7]));
-                                num7++;
-                            } while (num7 <= 26);
+                                string[] array9 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num7 = 0;
+                                do
+                                {
+                                    column[num7].Width = (int)Math.Round(Conversion.Val(array9[num7]));
+                                    num7++;
+                                } while (num7 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KTITLE":
-                        {
-                            string[] array8 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num6 = 0;
-                            do
                             {
-                                column[num6].Title = array8[num6];
-                                num6++;
-                            } while (num6 <= 26);
+                                string[] array8 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num6 = 0;
+                                do
+                                {
+                                    column[num6].Title = array8[num6];
+                                    num6++;
+                                } while (num6 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KCOLOR":
-                        {
-                            string[] array7 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num5 = 0;
-                            do
                             {
-                                column[num5].setNoteColor((int)Math.Round(Conversion.Val(array7[num5])));
-                                num5++;
-                            } while (num5 <= 26);
+                                string[] array7 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num5 = 0;
+                                do
+                                {
+                                    column[num5].setNoteColor((int)Math.Round(Conversion.Val(array7[num5])));
+                                    num5++;
+                                } while (num5 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KCOLORL":
-                        {
-                            string[] array6 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num4 = 0;
-                            do
                             {
-                                column[num4].setLNoteColor((int)Math.Round(Conversion.Val(array6[num4])));
-                                num4++;
-                            } while (num4 <= 26);
+                                string[] array6 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num4 = 0;
+                                do
+                                {
+                                    column[num4].setLNoteColor((int)Math.Round(Conversion.Val(array6[num4])));
+                                    num4++;
+                                } while (num4 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KFORECOLOR":
-                        {
-                            string[] array5 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num3 = 0;
-                            do
                             {
-                                column[num3].cText = Color.FromArgb((int)Math.Round(Conversion.Val(array5[num3])));
-                                num3++;
-                            } while (num3 <= 26);
+                                string[] array5 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num3 = 0;
+                                do
+                                {
+                                    column[num3].cText = Color.FromArgb((int)Math.Round(Conversion.Val(array5[num3])));
+                                    num3++;
+                                } while (num3 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KFORECOLORL":
-                        {
-                            string[] array4 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num2 = 0;
-                            do
                             {
-                                column[num2].cLText = Color.FromArgb((int)Math.Round(Conversion.Val(array4[num2])));
-                                num2++;
-                            } while (num2 <= 26);
+                                string[] array4 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num2 = 0;
+                                do
+                                {
+                                    column[num2].cLText = Color.FromArgb((int)Math.Round(Conversion.Val(array4[num2])));
+                                    num2++;
+                                } while (num2 <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                         case "KBGCOLOR":
-                        {
-                            string[] array3 = LoadThemeComptability_SplitStringInto26Parts(text2);
-                            int num = 0;
-                            do
                             {
-                                column[num].cBG = Color.FromArgb((int)Math.Round(Conversion.Val(array3[num])));
-                                num++;
-                            } while (num <= 26);
+                                string[] array3 = LoadThemeComptability_SplitStringInto26Parts(text2);
+                                int num = 0;
+                                do
+                                {
+                                    column[num].cBG = Color.FromArgb((int)Math.Round(Conversion.Val(array3[num])));
+                                    num++;
+                                } while (num <= 26);
 
-                            break;
-                        }
+                                break;
+                            }
                     }
                 }
             }
@@ -4814,195 +4814,195 @@ public partial class MainWindow : Form
                 switch (sCmd.ofType())
                 {
                     case 1:
-                    {
-                        UndoRedo.AddNote addNote = (UndoRedo.AddNote)sCmd;
-                        Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
-                        ref Note reference = ref Notes[Information.UBound(Notes)];
-                        reference = addNote.note;
-                        if (TBWavIncrease.Checked)
                         {
-                            IncreaseCurrentWav();
-                        }
+                            UndoRedo.AddNote addNote = (UndoRedo.AddNote)sCmd;
+                            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) + 1 + 1]);
+                            ref Note reference = ref Notes[Information.UBound(Notes)];
+                            reference = addNote.note;
+                            if (TBWavIncrease.Checked)
+                            {
+                                IncreaseCurrentWav();
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 2:
-                    {
-                        UndoRedo.RemoveNote removeNote = (UndoRedo.RemoveNote)sCmd;
-                        int num7 = FindNoteIndex(removeNote.note);
-                        if (num7 < Notes.Length)
                         {
-                            int num8 = num7 + 1;
-                            int num9 = Information.UBound(Notes);
-                            for (int k = num8; k <= num9; k++)
+                            UndoRedo.RemoveNote removeNote = (UndoRedo.RemoveNote)sCmd;
+                            int num7 = FindNoteIndex(removeNote.note);
+                            if (num7 < Notes.Length)
                             {
-                                ref Note reference2 = ref Notes[k - 1];
-                                reference2 = Notes[k];
+                                int num8 = num7 + 1;
+                                int num9 = Information.UBound(Notes);
+                                for (int k = num8; k <= num9; k++)
+                                {
+                                    ref Note reference2 = ref Notes[k - 1];
+                                    reference2 = Notes[k];
+                                }
+
+                                Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
                             }
 
-                            Notes = (Note[])Utils.CopyArray(Notes, new Note[Information.UBound(Notes) - 1 + 1]);
-                        }
+                            if (TBWavIncrease.Checked)
+                            {
+                                DecreaseCurrentWav();
+                            }
 
-                        if (TBWavIncrease.Checked)
-                        {
-                            DecreaseCurrentWav();
+                            break;
                         }
-
-                        break;
-                    }
                     case 3:
-                    {
-                        UndoRedo.ChangeNote changeNote = (UndoRedo.ChangeNote)sCmd;
-                        int num15 = FindNoteIndex(changeNote.note);
-                        if (num15 < Notes.Length)
                         {
-                            ref Note reference3 = ref Notes[num15];
-                            reference3 = changeNote.note;
-                        }
+                            UndoRedo.ChangeNote changeNote = (UndoRedo.ChangeNote)sCmd;
+                            int num15 = FindNoteIndex(changeNote.note);
+                            if (num15 < Notes.Length)
+                            {
+                                ref Note reference3 = ref Notes[num15];
+                                reference3 = changeNote.note;
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 4:
-                    {
-                        UndoRedo.MoveNote moveNote = (UndoRedo.MoveNote)sCmd;
-                        int num13 = FindNoteIndex(moveNote.note);
-                        if (num13 < Notes.Length)
                         {
-                            Note[] notes2 = Notes;
-                            int num14 = num13;
-                            notes2[num14].ColumnIndex = moveNote.NColumnIndex;
-                            notes2[num14].VPosition = moveNote.NVPosition;
-                            notes2[num14].Selected = moveNote.note.Selected & nEnabled(notes2[num14].ColumnIndex);
-                        }
+                            UndoRedo.MoveNote moveNote = (UndoRedo.MoveNote)sCmd;
+                            int num13 = FindNoteIndex(moveNote.note);
+                            if (num13 < Notes.Length)
+                            {
+                                Note[] notes2 = Notes;
+                                int num14 = num13;
+                                notes2[num14].ColumnIndex = moveNote.NColumnIndex;
+                                notes2[num14].VPosition = moveNote.NVPosition;
+                                notes2[num14].Selected = moveNote.note.Selected & nEnabled(notes2[num14].ColumnIndex);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 5:
-                    {
-                        UndoRedo.LongNoteModify longNoteModify = (UndoRedo.LongNoteModify)sCmd;
-                        int num10 = FindNoteIndex(longNoteModify.note);
-                        if (num10 < Notes.Length)
                         {
-                            Note[] notes = Notes;
-                            int num11 = num10;
-                            if (NTInput)
+                            UndoRedo.LongNoteModify longNoteModify = (UndoRedo.LongNoteModify)sCmd;
+                            int num10 = FindNoteIndex(longNoteModify.note);
+                            if (num10 < Notes.Length)
                             {
-                                notes[num11].VPosition = longNoteModify.NVPosition;
-                                notes[num11].Length = longNoteModify.NLongNote;
-                            }
-                            else
-                            {
-                                notes[num11].LongNote = longNoteModify.NLongNote != 0.0;
+                                Note[] notes = Notes;
+                                int num11 = num10;
+                                if (NTInput)
+                                {
+                                    notes[num11].VPosition = longNoteModify.NVPosition;
+                                    notes[num11].Length = longNoteModify.NLongNote;
+                                }
+                                else
+                                {
+                                    notes[num11].LongNote = longNoteModify.NLongNote != 0.0;
+                                }
+
+                                notes[num11].Selected = longNoteModify.note.Selected & nEnabled(notes[num11].ColumnIndex);
                             }
 
-                            notes[num11].Selected = longNoteModify.note.Selected & nEnabled(notes[num11].ColumnIndex);
+                            break;
                         }
-
-                        break;
-                    }
                     case 6:
-                    {
-                        UndoRedo.HiddenNoteModify hiddenNoteModify = (UndoRedo.HiddenNoteModify)sCmd;
-                        int num3 = FindNoteIndex(hiddenNoteModify.note);
-                        if (num3 < Notes.Length)
                         {
-                            Notes[num3].Hidden = hiddenNoteModify.NHidden;
-                            Notes[num3].Selected = hiddenNoteModify.note.Selected & nEnabled(Notes[num3].ColumnIndex);
-                        }
+                            UndoRedo.HiddenNoteModify hiddenNoteModify = (UndoRedo.HiddenNoteModify)sCmd;
+                            int num3 = FindNoteIndex(hiddenNoteModify.note);
+                            if (num3 < Notes.Length)
+                            {
+                                Notes[num3].Hidden = hiddenNoteModify.NHidden;
+                                Notes[num3].Selected = hiddenNoteModify.note.Selected & nEnabled(Notes[num3].ColumnIndex);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 7:
-                    {
-                        UndoRedo.RelabelNote relabelNote = (UndoRedo.RelabelNote)sCmd;
-                        int num2 = FindNoteIndex(relabelNote.note);
-                        if (num2 < Notes.Length)
                         {
-                            Notes[num2].Value = relabelNote.NValue;
-                            Notes[num2].Selected = relabelNote.note.Selected & nEnabled(Notes[num2].ColumnIndex);
-                        }
+                            UndoRedo.RelabelNote relabelNote = (UndoRedo.RelabelNote)sCmd;
+                            int num2 = FindNoteIndex(relabelNote.note);
+                            if (num2 < Notes.Length)
+                            {
+                                Notes[num2].Value = relabelNote.NValue;
+                                Notes[num2].Selected = relabelNote.note.Selected & nEnabled(Notes[num2].ColumnIndex);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 15:
                         Notes = (Note[])Utils.CopyArray(Notes, new Note[1]);
                         break;
                     case 16:
-                    {
-                        UndoRedo.ChangeMeasureLength changeMeasureLength = (UndoRedo.ChangeMeasureLength)sCmd;
-                        long denominator = Functions.GetDenominator(changeMeasureLength.Value / 192.0, 2147483647L);
-                        int[] indices = changeMeasureLength.Indices;
-                        foreach (int num12 in indices)
                         {
-                            MeasureLength[num12] = changeMeasureLength.Value;
-                            LBeat.Items[num12] = Operators.ConcatenateObject(
-                                string.Concat(Functions.Add3Zeros(num12) + ": ",
-                                    Conversions.ToString(changeMeasureLength.Value / 192.0)),
-                                Interaction.IIf(denominator > 10000, "",
-                                    " ( " + Conversions.ToString(
-                                        (long)Math.Round(changeMeasureLength.Value / 192.0 * denominator)) + " / " +
-                                    Conversions.ToString(denominator) + " ) "));
-                            LBeat.SelectedIndices.Add(num12);
-                        }
+                            UndoRedo.ChangeMeasureLength changeMeasureLength = (UndoRedo.ChangeMeasureLength)sCmd;
+                            long denominator = Functions.GetDenominator(changeMeasureLength.Value / 192.0, 2147483647L);
+                            int[] indices = changeMeasureLength.Indices;
+                            foreach (int num12 in indices)
+                            {
+                                MeasureLength[num12] = changeMeasureLength.Value;
+                                LBeat.Items[num12] = Operators.ConcatenateObject(
+                                    string.Concat(Functions.Add3Zeros(num12) + ": ",
+                                        Conversions.ToString(changeMeasureLength.Value / 192.0)),
+                                    Interaction.IIf(denominator > 10000, "",
+                                        " ( " + Conversions.ToString(
+                                            (long)Math.Round(changeMeasureLength.Value / 192.0 * denominator)) + " / " +
+                                        Conversions.ToString(denominator) + " ) "));
+                                LBeat.SelectedIndices.Add(num12);
+                            }
 
-                        UpdateMeasureBottom();
-                        break;
-                    }
+                            UpdateMeasureBottom();
+                            break;
+                        }
                     case 17:
-                    {
-                        UndoRedo.ChangeTimeSelection changeTimeSelection = (UndoRedo.ChangeTimeSelection)sCmd;
-                        vSelStart = changeTimeSelection.SelStart;
-                        vSelLength = changeTimeSelection.SelLength;
-                        vSelHalf = changeTimeSelection.SelHalf;
-                        if (changeTimeSelection.Selected)
                         {
-                            double num4 = Conversions.ToDouble(Operators.AddObject(vSelStart,
-                                Interaction.IIf(vSelLength < 0.0, vSelLength, 0)));
-                            double num5 = Conversions.ToDouble(Operators.AddObject(vSelStart,
-                                Interaction.IIf(vSelLength > 0.0, vSelLength, 0)));
-                            int num6 = Information.UBound(Notes);
-                            for (int j = 1; j <= num6; j++)
+                            UndoRedo.ChangeTimeSelection changeTimeSelection = (UndoRedo.ChangeTimeSelection)sCmd;
+                            vSelStart = changeTimeSelection.SelStart;
+                            vSelLength = changeTimeSelection.SelLength;
+                            vSelHalf = changeTimeSelection.SelHalf;
+                            if (changeTimeSelection.Selected)
                             {
-                                Notes[j].Selected =
-                                    ((Notes[j].VPosition >= num4 && Notes[j].VPosition < num5 &&
-                                      nEnabled(Notes[j].ColumnIndex))
-                                        ? true
-                                        : false);
+                                double num4 = Conversions.ToDouble(Operators.AddObject(vSelStart,
+                                    Interaction.IIf(vSelLength < 0.0, vSelLength, 0)));
+                                double num5 = Conversions.ToDouble(Operators.AddObject(vSelStart,
+                                    Interaction.IIf(vSelLength > 0.0, vSelLength, 0)));
+                                int num6 = Information.UBound(Notes);
+                                for (int j = 1; j <= num6; j++)
+                                {
+                                    Notes[j].Selected =
+                                        ((Notes[j].VPosition >= num4 && Notes[j].VPosition < num5 &&
+                                          nEnabled(Notes[j].ColumnIndex))
+                                            ? true
+                                            : false);
+                                }
                             }
-                        }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 18:
-                    {
-                        UndoRedo.NT nT = (UndoRedo.NT)sCmd;
-                        NTInput = nT.BecomeNT;
-                        TBNTInput.Checked = NTInput;
-                        mnNTInput.Checked = NTInput;
-                        POBLong.Enabled = !NTInput;
-                        POBLongShort.Enabled = !NTInput;
-                        bAdjustLength = false;
-                        bAdjustUpper = false;
-                        if (nT.AutoConvert)
                         {
-                            if (NTInput)
+                            UndoRedo.NT nT = (UndoRedo.NT)sCmd;
+                            NTInput = nT.BecomeNT;
+                            TBNTInput.Checked = NTInput;
+                            mnNTInput.Checked = NTInput;
+                            POBLong.Enabled = !NTInput;
+                            POBLongShort.Enabled = !NTInput;
+                            bAdjustLength = false;
+                            bAdjustUpper = false;
+                            if (nT.AutoConvert)
                             {
-                                ConvertBMSE2NT();
+                                if (NTInput)
+                                {
+                                    ConvertBMSE2NT();
+                                }
+                                else
+                                {
+                                    ConvertNT2BMSE();
+                                }
                             }
-                            else
-                            {
-                                ConvertNT2BMSE();
-                            }
-                        }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 20:
-                    {
-                        UndoRedo.WavAutoincFlag wavAutoincFlag = (UndoRedo.WavAutoincFlag)sCmd;
-                        TBWavIncrease.Checked = wavAutoincFlag.Checked;
-                        break;
-                    }
+                        {
+                            UndoRedo.WavAutoincFlag wavAutoincFlag = (UndoRedo.WavAutoincFlag)sCmd;
+                            TBWavIncrease.Checked = wavAutoincFlag.Checked;
+                            break;
+                        }
                 }
 
                 sCmd = sCmd.Next;
@@ -5422,7 +5422,7 @@ public partial class MainWindow : Form
         base.DragDrop += Form1_DragDrop;
         base.KeyDown += Form1_KeyDown;
         base.KeyUp += Form1_KeyUp;
-        base.Disposed += [SpecialName] [DebuggerStepThrough](object a0, EventArgs a1) => { Unload(); };
+        base.Disposed += [SpecialName][DebuggerStepThrough] (a0, a1) => { Unload(); };
         base.Load += Form1_Load;
         BMSChannelList = new string[72]
         {
@@ -6788,7 +6788,7 @@ public partial class MainWindow : Form
             goto IL_03ba;
         }
 
-        IL_03ba:
+IL_03ba:
         lErl = 1000;
         IsInitializing = false;
         POStatusRefresh();
@@ -7583,101 +7583,101 @@ public partial class MainWindow : Form
             switch (PanelFocus)
             {
                 case 0:
-                {
-                    VScrollBar leftPanelScroll = LeftPanelScroll;
-                    int num = (int)Math.Round(leftPanelScroll.Value + tempY / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar leftPanelScroll = LeftPanelScroll;
+                        int num = (int)Math.Round(leftPanelScroll.Value + tempY / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < leftPanelScroll.Minimum)
-                    {
-                        num = leftPanelScroll.Minimum;
-                    }
+                        if (num < leftPanelScroll.Minimum)
+                        {
+                            num = leftPanelScroll.Minimum;
+                        }
 
-                    leftPanelScroll.Value = num;
-                    leftPanelScroll = null;
-                    HScrollBar hSL = HSL;
-                    num = (int)Math.Round(hSL.Value + tempX / 10.0 / gxWidth);
-                    if (num > hSL.Maximum - hSL.LargeChange + 1)
-                    {
-                        num = hSL.Maximum - hSL.LargeChange + 1;
-                    }
+                        leftPanelScroll.Value = num;
+                        leftPanelScroll = null;
+                        HScrollBar hSL = HSL;
+                        num = (int)Math.Round(hSL.Value + tempX / 10.0 / gxWidth);
+                        if (num > hSL.Maximum - hSL.LargeChange + 1)
+                        {
+                            num = hSL.Maximum - hSL.LargeChange + 1;
+                        }
 
-                    if (num < hSL.Minimum)
-                    {
-                        num = hSL.Minimum;
-                    }
+                        if (num < hSL.Minimum)
+                        {
+                            num = hSL.Minimum;
+                        }
 
-                    hSL.Value = num;
-                    hSL = null;
-                    break;
-                }
+                        hSL.Value = num;
+                        hSL = null;
+                        break;
+                    }
                 case 1:
-                {
-                    VScrollBar mainPanelScroll = MainPanelScroll;
-                    int num = (int)Math.Round(mainPanelScroll.Value + tempY / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar mainPanelScroll = MainPanelScroll;
+                        int num = (int)Math.Round(mainPanelScroll.Value + tempY / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < mainPanelScroll.Minimum)
-                    {
-                        num = mainPanelScroll.Minimum;
-                    }
+                        if (num < mainPanelScroll.Minimum)
+                        {
+                            num = mainPanelScroll.Minimum;
+                        }
 
-                    mainPanelScroll.Value = num;
-                    mainPanelScroll = null;
-                    HScrollBar hS = HS;
-                    num = (int)Math.Round(hS.Value + tempX / 10.0 / gxWidth);
-                    if (num > hS.Maximum - hS.LargeChange + 1)
-                    {
-                        num = hS.Maximum - hS.LargeChange + 1;
-                    }
+                        mainPanelScroll.Value = num;
+                        mainPanelScroll = null;
+                        HScrollBar hS = HS;
+                        num = (int)Math.Round(hS.Value + tempX / 10.0 / gxWidth);
+                        if (num > hS.Maximum - hS.LargeChange + 1)
+                        {
+                            num = hS.Maximum - hS.LargeChange + 1;
+                        }
 
-                    if (num < hS.Minimum)
-                    {
-                        num = hS.Minimum;
-                    }
+                        if (num < hS.Minimum)
+                        {
+                            num = hS.Minimum;
+                        }
 
-                    hS.Value = num;
-                    hS = null;
-                    break;
-                }
+                        hS.Value = num;
+                        hS = null;
+                        break;
+                    }
                 case 2:
-                {
-                    VScrollBar rightPanelScroll = RightPanelScroll;
-                    int num = (int)Math.Round(rightPanelScroll.Value + tempY / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar rightPanelScroll = RightPanelScroll;
+                        int num = (int)Math.Round(rightPanelScroll.Value + tempY / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < rightPanelScroll.Minimum)
-                    {
-                        num = rightPanelScroll.Minimum;
-                    }
+                        if (num < rightPanelScroll.Minimum)
+                        {
+                            num = rightPanelScroll.Minimum;
+                        }
 
-                    rightPanelScroll.Value = num;
-                    rightPanelScroll = null;
-                    HScrollBar hSR = HSR;
-                    num = (int)Math.Round(hSR.Value + tempX / 10.0 / gxWidth);
-                    if (num > hSR.Maximum - hSR.LargeChange + 1)
-                    {
-                        num = hSR.Maximum - hSR.LargeChange + 1;
-                    }
+                        rightPanelScroll.Value = num;
+                        rightPanelScroll = null;
+                        HScrollBar hSR = HSR;
+                        num = (int)Math.Round(hSR.Value + tempX / 10.0 / gxWidth);
+                        if (num > hSR.Maximum - hSR.LargeChange + 1)
+                        {
+                            num = hSR.Maximum - hSR.LargeChange + 1;
+                        }
 
-                    if (num < hSR.Minimum)
-                    {
-                        num = hSR.Minimum;
-                    }
+                        if (num < hSR.Minimum)
+                        {
+                            num = hSR.Minimum;
+                        }
 
-                    hSR.Value = num;
-                    hSR = null;
-                    break;
-                }
+                        hSR.Value = num;
+                        hSR = null;
+                        break;
+                    }
             }
 
             MouseEventArgs e2 = new MouseEventArgs(MouseButtons.Left, 0, MouseMoveStatus.X, MouseMoveStatus.Y, 0);
@@ -7698,104 +7698,104 @@ public partial class MainWindow : Form
             switch (PanelFocus)
             {
                 case 0:
-                {
-                    VScrollBar leftPanelScroll = LeftPanelScroll;
-                    int num = (int)Math.Round(leftPanelScroll.Value +
-                                              (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar leftPanelScroll = LeftPanelScroll;
+                        int num = (int)Math.Round(leftPanelScroll.Value +
+                                                  (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < leftPanelScroll.Minimum)
-                    {
-                        num = leftPanelScroll.Minimum;
-                    }
+                        if (num < leftPanelScroll.Minimum)
+                        {
+                            num = leftPanelScroll.Minimum;
+                        }
 
-                    leftPanelScroll.Value = num;
-                    leftPanelScroll = null;
-                    HScrollBar hSL = HSL;
-                    num = (int)Math.Round(hSL.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
-                    if (num > hSL.Maximum - hSL.LargeChange + 1)
-                    {
-                        num = hSL.Maximum - hSL.LargeChange + 1;
-                    }
+                        leftPanelScroll.Value = num;
+                        leftPanelScroll = null;
+                        HScrollBar hSL = HSL;
+                        num = (int)Math.Round(hSL.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
+                        if (num > hSL.Maximum - hSL.LargeChange + 1)
+                        {
+                            num = hSL.Maximum - hSL.LargeChange + 1;
+                        }
 
-                    if (num < hSL.Minimum)
-                    {
-                        num = hSL.Minimum;
-                    }
+                        if (num < hSL.Minimum)
+                        {
+                            num = hSL.Minimum;
+                        }
 
-                    hSL.Value = num;
-                    hSL = null;
-                    break;
-                }
+                        hSL.Value = num;
+                        hSL = null;
+                        break;
+                    }
                 case 1:
-                {
-                    VScrollBar mainPanelScroll = MainPanelScroll;
-                    int num = (int)Math.Round(mainPanelScroll.Value +
-                                              (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar mainPanelScroll = MainPanelScroll;
+                        int num = (int)Math.Round(mainPanelScroll.Value +
+                                                  (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < mainPanelScroll.Minimum)
-                    {
-                        num = mainPanelScroll.Minimum;
-                    }
+                        if (num < mainPanelScroll.Minimum)
+                        {
+                            num = mainPanelScroll.Minimum;
+                        }
 
-                    mainPanelScroll.Value = num;
-                    mainPanelScroll = null;
-                    HScrollBar hS = HS;
-                    num = (int)Math.Round(hS.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
-                    if (num > hS.Maximum - hS.LargeChange + 1)
-                    {
-                        num = hS.Maximum - hS.LargeChange + 1;
-                    }
+                        mainPanelScroll.Value = num;
+                        mainPanelScroll = null;
+                        HScrollBar hS = HS;
+                        num = (int)Math.Round(hS.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
+                        if (num > hS.Maximum - hS.LargeChange + 1)
+                        {
+                            num = hS.Maximum - hS.LargeChange + 1;
+                        }
 
-                    if (num < hS.Minimum)
-                    {
-                        num = hS.Minimum;
-                    }
+                        if (num < hS.Minimum)
+                        {
+                            num = hS.Minimum;
+                        }
 
-                    hS.Value = num;
-                    hS = null;
-                    break;
-                }
+                        hS.Value = num;
+                        hS = null;
+                        break;
+                    }
                 case 2:
-                {
-                    VScrollBar rightPanelScroll = RightPanelScroll;
-                    int num = (int)Math.Round(rightPanelScroll.Value +
-                                              (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        VScrollBar rightPanelScroll = RightPanelScroll;
+                        int num = (int)Math.Round(rightPanelScroll.Value +
+                                                  (Cursor.Position.Y - MiddleButtonLocation.Y) / 5.0 / gxHeight);
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < rightPanelScroll.Minimum)
-                    {
-                        num = rightPanelScroll.Minimum;
-                    }
+                        if (num < rightPanelScroll.Minimum)
+                        {
+                            num = rightPanelScroll.Minimum;
+                        }
 
-                    rightPanelScroll.Value = num;
-                    rightPanelScroll = null;
-                    HScrollBar hSR = HSR;
-                    num = (int)Math.Round(hSR.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
-                    if (num > hSR.Maximum - hSR.LargeChange + 1)
-                    {
-                        num = hSR.Maximum - hSR.LargeChange + 1;
-                    }
+                        rightPanelScroll.Value = num;
+                        rightPanelScroll = null;
+                        HScrollBar hSR = HSR;
+                        num = (int)Math.Round(hSR.Value + (Cursor.Position.X - MiddleButtonLocation.X) / 5.0 / gxWidth);
+                        if (num > hSR.Maximum - hSR.LargeChange + 1)
+                        {
+                            num = hSR.Maximum - hSR.LargeChange + 1;
+                        }
 
-                    if (num < hSR.Minimum)
-                    {
-                        num = hSR.Minimum;
-                    }
+                        if (num < hSR.Minimum)
+                        {
+                            num = hSR.Minimum;
+                        }
 
-                    hSR.Value = num;
-                    hSR = null;
-                    break;
-                }
+                        hSR.Value = num;
+                        hSR = null;
+                        break;
+                    }
             }
 
             MouseEventArgs e2 = new MouseEventArgs(MouseButtons.Left, 0, MouseMoveStatus.X, MouseMoveStatus.Y, 0);
@@ -8456,10 +8456,10 @@ public partial class MainWindow : Form
                 if (stop_notes != null)
                 {
                     var stops = from stp in stop_notes
-                        where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
-                        select stp;
+                                where stp.VPosition >= notevpos & stp.VPosition < notevpos + duration
+                                select stp;
                     //IEnumerable<Note> stops = enumerable.Where(closure_0024__._Lambda_0024__8);
-                    double stop_beats = stops.Sum([SpecialName](Note x) => x.Value / 10000.0) / 48.0;
+                    double stop_beats = stops.Sum([SpecialName] (x) => x.Value / 10000.0) / 48.0;
                     stop_contrib += current_bps * stop_beats;
                 }
             }
@@ -9557,10 +9557,10 @@ public partial class MainWindow : Form
         }
 
         goto IL_0359;
-        IL_0359:
+IL_0359:
         RefreshPanelAll();
         return;
-        IL_0347:
+IL_0347:
         Interaction.MsgBox(Strings.Messages.InvalidLabel, MsgBoxStyle.Critical, Strings.Messages.Err);
         goto IL_0359;
     }
@@ -10253,43 +10253,43 @@ public partial class MainWindow : Form
                         now = DateAndTime.Now;
                         goto IL_0009;
                     case 367:
-                    {
-                        num2 = num;
-                        switch (num3)
                         {
-                            case 1: break;
-                            default: goto end_IL_0000;
-                        }
+                            num2 = num;
+                            switch (num3)
+                            {
+                                case 1: break;
+                                default: goto end_IL_0000;
+                            }
 
-                        int num4 = num2 + 1;
-                        num2 = 0;
-                        switch (num4)
-                        {
-                            case 1: break;
-                            case 2: goto IL_0009;
-                            case 3: goto IL_000c;
-                            case 4:
-                            case 5: goto IL_00e0;
-                            case 6: goto IL_00ea;
-                            case 7: goto IL_00f1;
-                            case 8: goto IL_0108;
-                            case 9:
-                            case 10: goto IL_0116;
-                            case 11: goto end_IL_0000_2;
-                            default: goto end_IL_0000;
-                            case 12: goto end_IL_0000_3;
-                        }
+                            int num4 = num2 + 1;
+                            num2 = 0;
+                            switch (num4)
+                            {
+                                case 1: break;
+                                case 2: goto IL_0009;
+                                case 3: goto IL_000c;
+                                case 4:
+                                case 5: goto IL_00e0;
+                                case 6: goto IL_00ea;
+                                case 7: goto IL_00f1;
+                                case 8: goto IL_0108;
+                                case 9:
+                                case 10: goto IL_0116;
+                                case 11: goto end_IL_0000_2;
+                                default: goto end_IL_0000;
+                                case 12: goto end_IL_0000_3;
+                            }
 
-                        goto default;
-                    }
-                        IL_0116:
+                            goto default;
+                        }
+IL_0116:
                         ProjectData.ClearProjectError();
                         num3 = 0;
                         break;
-                        IL_0009:
+IL_0009:
                         num = 2;
                         goto IL_000c;
-                        IL_000c:
+IL_000c:
                         num = 3;
                         text = MyProject.Application.Info.DirectoryPath + "\\AutoSave_" +
                                Conversions.ToString(now.Year) + "_" + Conversions.ToString(now.Month) + "_" +
@@ -10297,15 +10297,15 @@ public partial class MainWindow : Form
                                Conversions.ToString(now.Minute) + "_" + Conversions.ToString(now.Second) + "_" +
                                Conversions.ToString(now.Millisecond) + ".IBMSC";
                         goto IL_00e0;
-                        IL_00e0:
+IL_00e0:
                         num = 5;
                         SaveiBMSC(text);
                         goto IL_00ea;
-                        IL_00ea:
+IL_00ea:
                         ProjectData.ClearProjectError();
                         num3 = 1;
                         goto IL_00f1;
-                        IL_00f1:
+IL_00f1:
                         num = 7;
                         if (Operators.CompareString(PreviousAutoSavedFileName, "", TextCompare: false) != 0)
                         {
@@ -10313,18 +10313,18 @@ public partial class MainWindow : Form
                         }
 
                         goto IL_0116;
-                        IL_0108:
+IL_0108:
                         num = 8;
                         File.Delete(PreviousAutoSavedFileName);
                         goto IL_0116;
-                        end_IL_0000_2:
+end_IL_0000_2:
                         break;
                 }
 
                 num = 11;
                 PreviousAutoSavedFileName = text;
                 break;
-                end_IL_0000: ;
+end_IL_0000:;
             }
             catch (Exception obj) when (num3 != 0 && num2 == 0)
             {
@@ -10335,7 +10335,7 @@ public partial class MainWindow : Form
 
             throw ProjectData.CreateProjectError(-2146828237);
             continue;
-            end_IL_0000_3:
+end_IL_0000_3:
             break;
         }
 
@@ -10912,46 +10912,46 @@ public partial class MainWindow : Form
                 switch (BeatChangeMode)
                 {
                     case 1:
-                    {
-                        int num25;
-                        if (NTInput)
                         {
-                            int num24 = Information.UBound(Notes);
-                            for (num25 = 1; num25 <= num24 && !(Notes[num25].VPosition >= num6); num25++)
+                            int num25;
+                            if (NTInput)
                             {
-                                if (Notes[num25].VPosition + Notes[num25].Length >= num6)
+                                int num24 = Information.UBound(Notes);
+                                for (num25 = 1; num25 <= num24 && !(Notes[num25].VPosition >= num6); num25++)
                                 {
-                                    RedoLongNoteModify(Notes[num25], Notes[num25].VPosition, Notes[num25].Length + num2,
-                                        ref BaseUndo, ref BaseRedo);
-                                    Note[] notes = Notes;
-                                    Note[] array6 = notes;
-                                    int num9 = num25;
-                                    array6[num9].Length = notes[num9].Length + num2;
+                                    if (Notes[num25].VPosition + Notes[num25].Length >= num6)
+                                    {
+                                        RedoLongNoteModify(Notes[num25], Notes[num25].VPosition, Notes[num25].Length + num2,
+                                            ref BaseUndo, ref BaseRedo);
+                                        Note[] notes = Notes;
+                                        Note[] array6 = notes;
+                                        int num9 = num25;
+                                        array6[num9].Length = notes[num9].Length + num2;
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            int num26 = Information.UBound(Notes);
-                            for (num25 = 1; num25 <= num26 && !(Notes[num25].VPosition >= num6); num25++)
+                            else
                             {
+                                int num26 = Information.UBound(Notes);
+                                for (num25 = 1; num25 <= num26 && !(Notes[num25].VPosition >= num6); num25++)
+                                {
+                                }
                             }
-                        }
 
-                        int num27 = num25;
-                        int num28 = Information.UBound(Notes);
-                        for (int num29 = num27; num29 <= num28; num29++)
-                        {
-                            RedoLongNoteModify(Notes[num29], Notes[num29].VPosition + num2, Notes[num29].Length,
-                                ref BaseUndo, ref BaseRedo);
-                            Note[] notes = Notes;
-                            Note[] array7 = notes;
-                            int num9 = num29;
-                            array7[num9].VPosition = notes[num9].VPosition + num2;
-                        }
+                            int num27 = num25;
+                            int num28 = Information.UBound(Notes);
+                            for (int num29 = num27; num29 <= num28; num29++)
+                            {
+                                RedoLongNoteModify(Notes[num29], Notes[num29].VPosition + num2, Notes[num29].Length,
+                                    ref BaseUndo, ref BaseRedo);
+                                Note[] notes = Notes;
+                                Note[] array7 = notes;
+                                int num9 = num29;
+                                array7[num9].VPosition = notes[num9].VPosition + num2;
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case 2:
                         if (num2 < 0.0)
                         {
@@ -11980,7 +11980,7 @@ public partial class MainWindow : Form
 
     public object GetColumnHighlightColor(Color col, double factor = 2.0)
     {
-        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = [SpecialName](object x) =>
+        VB_0024AnonymousDelegate_1<object, object> vB_0024AnonymousDelegate_ = [SpecialName] (x) =>
             Interaction.IIf(Operators.ConditionalCompareObjectGreater(x, 255, TextCompare: false), 255,
                 RuntimeHelpers.GetObjectValue(x));
         return Color.FromArgb(Conversions.ToInteger(vB_0024AnonymousDelegate_(col.A * factor)),
@@ -12731,153 +12731,153 @@ public partial class MainWindow : Form
                 switch (e.KeyCode)
                 {
                     case Keys.Up:
-                    {
-                        double num3 = 192.0 / gDivide;
-                        if (MyProject.Computer.Keyboard.CtrlKeyDown)
                         {
-                            num3 = 1.0;
-                        }
-
-                        double num4 = GetMaxVPosition() - 1.0;
-                        int num5 = Information.UBound(Notes);
-                        for (int i = 1; i <= num5; i++)
-                        {
-                            if (Notes[i].Selected)
+                            double num3 = 192.0 / gDivide;
+                            if (MyProject.Computer.Keyboard.CtrlKeyDown)
                             {
-                                num4 = Conversions.ToDouble(Interaction.IIf(
-                                    Operators.ConditionalCompareObjectGreater(
+                                num3 = 1.0;
+                            }
+
+                            double num4 = GetMaxVPosition() - 1.0;
+                            int num5 = Information.UBound(Notes);
+                            for (int i = 1; i <= num5; i++)
+                            {
+                                if (Notes[i].Selected)
+                                {
+                                    num4 = Conversions.ToDouble(Interaction.IIf(
+                                        Operators.ConditionalCompareObjectGreater(
+                                            Operators.AddObject(
+                                                Operators.AddObject(Notes[i].VPosition,
+                                                    Interaction.IIf(NTInput, Notes[i].Length, 0)), num3), num4,
+                                            TextCompare: false),
                                         Operators.AddObject(
                                             Operators.AddObject(Notes[i].VPosition,
-                                                Interaction.IIf(NTInput, Notes[i].Length, 0)), num3), num4,
-                                        TextCompare: false),
-                                    Operators.AddObject(
-                                        Operators.AddObject(Notes[i].VPosition,
-                                            Interaction.IIf(NTInput, Notes[i].Length, 0)), num3), num4));
+                                                Interaction.IIf(NTInput, Notes[i].Length, 0)), num3), num4));
+                                }
                             }
-                        }
 
-                        num4 -= 191999.0;
-                        int num6 = Information.UBound(Notes);
-                        for (int i = 1; i <= num6; i++)
-                        {
-                            if (Notes[i].Selected)
+                            num4 -= 191999.0;
+                            int num6 = Information.UBound(Notes);
+                            for (int i = 1; i <= num6; i++)
                             {
-                                double num7 = Notes[i].VPosition + num3 - num4;
-                                RedoMoveNote(Notes[i], Notes[i].ColumnIndex, num7, ref BaseUndo, ref BaseRedo);
-                                Notes[i].VPosition = num7;
+                                if (Notes[i].Selected)
+                                {
+                                    double num7 = Notes[i].VPosition + num3 - num4;
+                                    RedoMoveNote(Notes[i], Notes[i].ColumnIndex, num7, ref BaseUndo, ref BaseRedo);
+                                    Notes[i].VPosition = num7;
+                                }
                             }
-                        }
 
-                        if (num3 - num4 != 0.0)
-                        {
-                            AddUndo(BaseUndo, linkedURCmd.Next);
-                        }
+                            if (num3 - num4 != 0.0)
+                            {
+                                AddUndo(BaseUndo, linkedURCmd.Next);
+                            }
 
-                        SortByVPositionInsertion();
-                        UpdatePairing();
-                        CalculateTotalPlayableNotes();
-                        CalculateGreatestVPosition();
-                        RefreshPanelAll();
-                        break;
-                    }
+                            SortByVPositionInsertion();
+                            UpdatePairing();
+                            CalculateTotalPlayableNotes();
+                            CalculateGreatestVPosition();
+                            RefreshPanelAll();
+                            break;
+                        }
                     case Keys.Down:
-                    {
-                        double num10 = -192.0 / gDivide;
-                        if (MyProject.Computer.Keyboard.CtrlKeyDown)
                         {
-                            num10 = -1.0;
-                        }
-
-                        double num11 = 0.0;
-                        int num12 = Information.UBound(Notes);
-                        for (int i = 1; i <= num12; i++)
-                        {
-                            if (Notes[i].Selected)
+                            double num10 = -192.0 / gDivide;
+                            if (MyProject.Computer.Keyboard.CtrlKeyDown)
                             {
-                                num11 = Conversions.ToDouble(Interaction.IIf(Notes[i].VPosition + num10 < num11,
-                                    Notes[i].VPosition + num10, num11));
+                                num10 = -1.0;
                             }
-                        }
 
-                        int num13 = Information.UBound(Notes);
-                        for (int i = 1; i <= num13; i++)
-                        {
-                            if (Notes[i].Selected)
+                            double num11 = 0.0;
+                            int num12 = Information.UBound(Notes);
+                            for (int i = 1; i <= num12; i++)
                             {
-                                double num14 = Notes[i].VPosition + num10 - num11;
-                                RedoMoveNote(Notes[i], Notes[i].ColumnIndex, num14, ref BaseUndo, ref BaseRedo);
-                                Notes[i].VPosition = num14;
+                                if (Notes[i].Selected)
+                                {
+                                    num11 = Conversions.ToDouble(Interaction.IIf(Notes[i].VPosition + num10 < num11,
+                                        Notes[i].VPosition + num10, num11));
+                                }
                             }
-                        }
 
-                        if (num10 - num11 != 0.0)
-                        {
-                            AddUndo(BaseUndo, linkedURCmd.Next);
-                        }
+                            int num13 = Information.UBound(Notes);
+                            for (int i = 1; i <= num13; i++)
+                            {
+                                if (Notes[i].Selected)
+                                {
+                                    double num14 = Notes[i].VPosition + num10 - num11;
+                                    RedoMoveNote(Notes[i], Notes[i].ColumnIndex, num14, ref BaseUndo, ref BaseRedo);
+                                    Notes[i].VPosition = num14;
+                                }
+                            }
 
-                        SortByVPositionInsertion();
-                        UpdatePairing();
-                        CalculateTotalPlayableNotes();
-                        CalculateGreatestVPosition();
-                        RefreshPanelAll();
-                        break;
-                    }
+                            if (num10 - num11 != 0.0)
+                            {
+                                AddUndo(BaseUndo, linkedURCmd.Next);
+                            }
+
+                            SortByVPositionInsertion();
+                            UpdatePairing();
+                            CalculateTotalPlayableNotes();
+                            CalculateGreatestVPosition();
+                            RefreshPanelAll();
+                            break;
+                        }
                     case Keys.Left:
-                    {
-                        int num15 = 0;
-                        int num16 = Information.UBound(Notes);
-                        for (int i = 1; i <= num16; i++)
                         {
-                            if (Notes[i].Selected)
+                            int num15 = 0;
+                            int num16 = Information.UBound(Notes);
+                            for (int i = 1; i <= num16; i++)
                             {
-                                num15 = Conversions.ToInteger(Interaction.IIf(
-                                    ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1 < num15,
-                                    ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1, num15));
+                                if (Notes[i].Selected)
+                                {
+                                    num15 = Conversions.ToInteger(Interaction.IIf(
+                                        ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1 < num15,
+                                        ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1, num15));
+                                }
                             }
-                        }
 
-                        int num17 = Information.UBound(Notes);
-                        for (int i = 1; i <= num17; i++)
-                        {
-                            if (Notes[i].Selected)
+                            int num17 = Information.UBound(Notes);
+                            for (int i = 1; i <= num17; i++)
                             {
-                                int num18 = EnabledColumnIndexToColumnArrayIndex(
-                                    ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1 - num15);
-                                RedoMoveNote(Notes[i], num18, Notes[i].VPosition, ref BaseUndo, ref BaseRedo);
-                                Notes[i].ColumnIndex = num18;
+                                if (Notes[i].Selected)
+                                {
+                                    int num18 = EnabledColumnIndexToColumnArrayIndex(
+                                        ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) - 1 - num15);
+                                    RedoMoveNote(Notes[i], num18, Notes[i].VPosition, ref BaseUndo, ref BaseRedo);
+                                    Notes[i].ColumnIndex = num18;
+                                }
                             }
-                        }
 
-                        if (-1 - num15 != 0)
-                        {
-                            AddUndo(BaseUndo, linkedURCmd.Next);
-                        }
+                            if (-1 - num15 != 0)
+                            {
+                                AddUndo(BaseUndo, linkedURCmd.Next);
+                            }
 
-                        UpdatePairing();
-                        CalculateTotalPlayableNotes();
-                        RefreshPanelAll();
-                        break;
-                    }
+                            UpdatePairing();
+                            CalculateTotalPlayableNotes();
+                            RefreshPanelAll();
+                            break;
+                        }
                     case Keys.Right:
-                    {
-                        int num8 = Information.UBound(Notes);
-                        for (int i = 1; i <= num8; i++)
                         {
-                            if (Notes[i].Selected)
+                            int num8 = Information.UBound(Notes);
+                            for (int i = 1; i <= num8; i++)
                             {
-                                int num9 = EnabledColumnIndexToColumnArrayIndex(
-                                    ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) + 1);
-                                RedoMoveNote(Notes[i], num9, Notes[i].VPosition, ref BaseUndo, ref BaseRedo);
-                                Notes[i].ColumnIndex = num9;
+                                if (Notes[i].Selected)
+                                {
+                                    int num9 = EnabledColumnIndexToColumnArrayIndex(
+                                        ColumnArrayIndexToEnabledColumnIndex(Notes[i].ColumnIndex) + 1);
+                                    RedoMoveNote(Notes[i], num9, Notes[i].VPosition, ref BaseUndo, ref BaseRedo);
+                                    Notes[i].ColumnIndex = num9;
+                                }
                             }
-                        }
 
-                        AddUndo(BaseUndo, linkedURCmd.Next);
-                        UpdatePairing();
-                        CalculateTotalPlayableNotes();
-                        RefreshPanelAll();
-                        break;
-                    }
+                            AddUndo(BaseUndo, linkedURCmd.Next);
+                            UpdatePairing();
+                            CalculateTotalPlayableNotes();
+                            RefreshPanelAll();
+                            break;
+                        }
                     case Keys.Delete:
                         mnDelete_Click(mnDelete, EventArgs.Empty);
                         break;
@@ -12982,28 +12982,28 @@ public partial class MainWindow : Form
                         CGDivide.Value = new decimal(gSlash);
                         break;
                     case Keys.Oemplus:
-                    {
-                        NumericUpDown cGHeight2 = CGHeight;
-                        NumericUpDown numericUpDown = cGHeight2;
-                        numericUpDown.Value = Conversions.ToDecimal(Operators.AddObject(numericUpDown.Value,
-                            Interaction.IIf(
-                                decimal.Compare(cGHeight2.Value,
-                                    decimal.Subtract(cGHeight2.Maximum, cGHeight2.Increment)) > 0,
-                                decimal.Subtract(cGHeight2.Maximum, cGHeight2.Value), cGHeight2.Increment)));
-                        cGHeight2 = null;
-                        break;
-                    }
+                        {
+                            NumericUpDown cGHeight2 = CGHeight;
+                            NumericUpDown numericUpDown = cGHeight2;
+                            numericUpDown.Value = Conversions.ToDecimal(Operators.AddObject(numericUpDown.Value,
+                                Interaction.IIf(
+                                    decimal.Compare(cGHeight2.Value,
+                                        decimal.Subtract(cGHeight2.Maximum, cGHeight2.Increment)) > 0,
+                                    decimal.Subtract(cGHeight2.Maximum, cGHeight2.Value), cGHeight2.Increment)));
+                            cGHeight2 = null;
+                            break;
+                        }
                     case Keys.OemMinus:
-                    {
-                        NumericUpDown cGHeight = CGHeight;
-                        NumericUpDown numericUpDown = cGHeight;
-                        numericUpDown.Value = Conversions.ToDecimal(Operators.SubtractObject(numericUpDown.Value,
-                            Interaction.IIf(
-                                decimal.Compare(cGHeight.Value, decimal.Add(cGHeight.Minimum, cGHeight.Increment)) < 0,
-                                decimal.Subtract(cGHeight.Value, cGHeight.Minimum), cGHeight.Increment)));
-                        cGHeight = null;
-                        break;
-                    }
+                        {
+                            NumericUpDown cGHeight = CGHeight;
+                            NumericUpDown numericUpDown = cGHeight;
+                            numericUpDown.Value = Conversions.ToDecimal(Operators.SubtractObject(numericUpDown.Value,
+                                Interaction.IIf(
+                                    decimal.Compare(cGHeight.Value, decimal.Add(cGHeight.Minimum, cGHeight.Increment)) < 0,
+                                    decimal.Subtract(cGHeight.Value, cGHeight.Minimum), cGHeight.Increment)));
+                            cGHeight = null;
+                            break;
+                        }
                     case Keys.Add:
                         IncreaseCurrentWav();
                         break;
@@ -13398,27 +13398,27 @@ public partial class MainWindow : Form
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                {
-                    if (tempFirstMouseDown & !TBTimeSelect.Checked)
                     {
+                        if (tempFirstMouseDown & !TBTimeSelect.Checked)
+                        {
+                            RefreshPanelAll();
+                            break;
+                        }
+
+                        KMouseOver = -1;
+                        int NoteIndex = GetClickedNote(e, num, num2, xHeight);
+                        PanelPreviewNoteIndex(NoteIndex);
+                        int num3 = Information.UBound(Notes);
+                        for (int i = 0; i <= num3; i++)
+                        {
+                            Notes[i].TempMouseDown = false;
+                        }
+
+                        HandleCurrentModeOnClick(e, num, num2, xHeight, ref NoteIndex);
                         RefreshPanelAll();
+                        POStatusRefresh();
                         break;
                     }
-
-                    KMouseOver = -1;
-                    int NoteIndex = GetClickedNote(e, num, num2, xHeight);
-                    PanelPreviewNoteIndex(NoteIndex);
-                    int num3 = Information.UBound(Notes);
-                    for (int i = 0; i <= num3; i++)
-                    {
-                        Notes[i].TempMouseDown = false;
-                    }
-
-                    HandleCurrentModeOnClick(e, num, num2, xHeight, ref NoteIndex);
-                    RefreshPanelAll();
-                    POStatusRefresh();
-                    break;
-                }
                 case MouseButtons.Middle:
                     if (MiddleButtonMoveMethod == 1)
                     {
@@ -14085,110 +14085,110 @@ public partial class MainWindow : Form
             switch (e.Button)
             {
                 case MouseButtons.None:
-                {
-                    if (MiddleButtonClicked)
                     {
-                        break;
-                    }
-
-                    if (isFullScreen)
-                    {
-                        if (e.Y < 5)
-                        {
-                            ToolStripContainer1.TopToolStripPanelVisible = true;
-                        }
-                        else
-                        {
-                            ToolStripContainer1.TopToolStripPanelVisible = false;
-                        }
-                    }
-
-                    bool flag = false;
-                    int num6 = -1;
-                    for (int i = Information.UBound(Notes); i >= 0; i += -1)
-                    {
-                        unchecked
-                        {
-                            if (MouseInNote(e, num2, num3, num4, Notes[i]))
-                            {
-                                num6 = i;
-                                flag = num6 == KMouseOver;
-                                if (NTInput)
-                                {
-                                    int num7 = NoteRowToPanelHeight(Notes[i].VPosition + Notes[i].Length, num3, num4);
-                                    bool flag2 = (e.Y <= num7) & PanelKeyStates.ModifierLongNoteActive();
-                                    bool flag3 = (e.Y >= checked(num7 - vo.kHeight) || flag2) &
-                                                 PanelKeyStates.ModifierLongNoteActive();
-                                    flag = flag & (flag2 == bAdjustUpper) & (flag3 == bAdjustLength);
-                                    bAdjustUpper = flag2;
-                                    bAdjustLength = flag3;
-                                }
-
-                                break;
-                            }
-                        }
-                    }
-
-                    bool @checked = TBTimeSelect.Checked;
-                    if (TBSelect.Checked || @checked)
-                    {
-                        if (flag)
+                        if (MiddleButtonClicked)
                         {
                             break;
                         }
 
-                        if (KMouseOver >= 0)
+                        if (isFullScreen)
                         {
-                            KMouseOver = -1;
-                        }
-
-                        if (@checked)
-                        {
-                            int num8 = vSelMouseOverLine;
-                            vSelMouseOverLine = 0;
-                            if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart + vSelLength, num3, num4)) <=
-                                vo.PEDeltaMouseOver)
+                            if (e.Y < 5)
                             {
-                                vSelMouseOverLine = 3;
+                                ToolStripContainer1.TopToolStripPanelVisible = true;
                             }
-                            else if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart + vSelHalf, num3, num4)) <=
-                                     vo.PEDeltaMouseOver)
+                            else
                             {
-                                vSelMouseOverLine = 2;
-                            }
-                            else if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart, num3, num4)) <= vo.PEDeltaMouseOver)
-                            {
-                                vSelMouseOverLine = 1;
+                                ToolStripContainer1.TopToolStripPanelVisible = false;
                             }
                         }
 
-                        if (num6 > -1)
+                        bool flag = false;
+                        int num6 = -1;
+                        for (int i = Information.UBound(Notes); i >= 0; i += -1)
                         {
-                            DrawNoteHoverHighlight(num, num2, num3, num4, num6);
+                            unchecked
+                            {
+                                if (MouseInNote(e, num2, num3, num4, Notes[i]))
+                                {
+                                    num6 = i;
+                                    flag = num6 == KMouseOver;
+                                    if (NTInput)
+                                    {
+                                        int num7 = NoteRowToPanelHeight(Notes[i].VPosition + Notes[i].Length, num3, num4);
+                                        bool flag2 = (e.Y <= num7) & PanelKeyStates.ModifierLongNoteActive();
+                                        bool flag3 = (e.Y >= checked(num7 - vo.kHeight) || flag2) &
+                                                     PanelKeyStates.ModifierLongNoteActive();
+                                        flag = flag & (flag2 == bAdjustUpper) & (flag3 == bAdjustLength);
+                                        bAdjustUpper = flag2;
+                                        bAdjustLength = flag3;
+                                    }
+
+                                    break;
+                                }
+                            }
                         }
 
-                        KMouseOver = num6;
+                        bool @checked = TBTimeSelect.Checked;
+                        if (TBSelect.Checked || @checked)
+                        {
+                            if (flag)
+                            {
+                                break;
+                            }
+
+                            if (KMouseOver >= 0)
+                            {
+                                KMouseOver = -1;
+                            }
+
+                            if (@checked)
+                            {
+                                int num8 = vSelMouseOverLine;
+                                vSelMouseOverLine = 0;
+                                if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart + vSelLength, num3, num4)) <=
+                                    vo.PEDeltaMouseOver)
+                                {
+                                    vSelMouseOverLine = 3;
+                                }
+                                else if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart + vSelHalf, num3, num4)) <=
+                                         vo.PEDeltaMouseOver)
+                                {
+                                    vSelMouseOverLine = 2;
+                                }
+                                else if (Math.Abs(e.Y - NoteRowToPanelHeight(vSelStart, num3, num4)) <= vo.PEDeltaMouseOver)
+                                {
+                                    vSelMouseOverLine = 1;
+                                }
+                            }
+
+                            if (num6 > -1)
+                            {
+                                DrawNoteHoverHighlight(num, num2, num3, num4, num6);
+                            }
+
+                            KMouseOver = num6;
+                        }
+                        else if (TBWrite.Checked)
+                        {
+                            TempVPosition = (num4 - num3 * gxHeight - e.Y - 1f) / gxHeight;
+                            if (gSnap)
+                            {
+                                TempVPosition = SnapToGrid(TempVPosition);
+                            }
+
+                            SelectedColumn = Conversions.ToInteger(GetColumnAtEvent(e, (int)num2));
+                            TempLength = 0.0;
+                            if (num6 > -1)
+                            {
+                                TempLength = Notes[num6].Length;
+                            }
+
+                            RefreshPanelAll();
+                        }
+
+                        break;
                     }
-                    else if (TBWrite.Checked)
-                    {
-                        TempVPosition = (num4 - num3 * gxHeight - e.Y - 1f) / gxHeight;
-                        if (gSnap)
-                        {
-                            TempVPosition = SnapToGrid(TempVPosition);
-                        }
-
-                        SelectedColumn = Conversions.ToInteger(GetColumnAtEvent(e, (int)num2));
-                        TempLength = 0.0;
-                        if (num6 > -1)
-                        {
-                            TempLength = Notes[num6].Length;
-                        }
-
-                        RefreshPanelAll();
-                    }
-
-                    break;
-                }
                 case MouseButtons.Left:
                     if (tempFirstMouseDown & !TBTimeSelect.Checked)
                     {
@@ -15290,53 +15290,53 @@ public partial class MainWindow : Form
             switch (spMouseOver)
             {
                 case 0:
-                {
-                    int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < LeftPanelScroll.Minimum)
-                    {
-                        num = LeftPanelScroll.Minimum;
-                    }
+                        if (num < LeftPanelScroll.Minimum)
+                        {
+                            num = LeftPanelScroll.Minimum;
+                        }
 
-                    LeftPanelScroll.Value = num;
-                    break;
-                }
+                        LeftPanelScroll.Value = num;
+                        break;
+                    }
                 case 1:
-                {
-                    int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < MainPanelScroll.Minimum)
-                    {
-                        num = MainPanelScroll.Minimum;
-                    }
+                        if (num < MainPanelScroll.Minimum)
+                        {
+                            num = MainPanelScroll.Minimum;
+                        }
 
-                    MainPanelScroll.Value = num;
-                    break;
-                }
+                        MainPanelScroll.Value = num;
+                        break;
+                    }
                 case 2:
-                {
-                    int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
-                    if (num > 0)
                     {
-                        num = 0;
-                    }
+                        int num = PanelVScroll[spMouseOver] - Math.Sign(e.Delta) * gWheel;
+                        if (num > 0)
+                        {
+                            num = 0;
+                        }
 
-                    if (num < RightPanelScroll.Minimum)
-                    {
-                        num = RightPanelScroll.Minimum;
-                    }
+                        if (num < RightPanelScroll.Minimum)
+                        {
+                            num = RightPanelScroll.Minimum;
+                        }
 
-                    RightPanelScroll.Value = num;
-                    break;
-                }
+                        RightPanelScroll.Value = num;
+                        break;
+                    }
             }
         }
     }
@@ -16117,8 +16117,8 @@ public partial class MainWindow : Form
         double num = Conversions.ToDouble(Interaction.IIf(vSelLength > 0.0, vSelStart, vSelStart + vSelLength));
         double num2 = Conversions.ToDouble(Interaction.IIf(vSelLength < 0.0, vSelStart, vSelStart + vSelLength));
         IEnumerable<Note> source = from note in Notes
-            where (note.VPosition > num) & (note.VPosition <= num2)
-            select (note);
+                                   where (note.VPosition > num) & (note.VPosition <= num2)
+                                   select (note);
         if (source.Count() > 0)
         {
             MessageBox.Show("The selected area can't have notes anywhere but at the start.");

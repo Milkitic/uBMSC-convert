@@ -13,21 +13,13 @@ public partial class dgMyO2 : Form
     public struct Adj
     {
         public int Measure;
-
         public int ColumnIndex;
-
         public string ColumnName;
-
         public string Grid;
-
         public bool LongNote;
-
         public bool Hidden;
-
         public bool AdjTo64;
-
         public int D64;
-
         public int D48;
     }
 
@@ -102,7 +94,8 @@ public partial class dgMyO2 : Form
     {
         if (e.ColumnIndex == 6 && e.RowIndex >= 0)
         {
-            Aj[checked((int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(lResult[0, e.RowIndex].Value))))].AdjTo64 = Conversions.ToBoolean(lResult[6, e.RowIndex].Value);
+            Aj[checked((int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(lResult[0, e.RowIndex].Value))))]
+                .AdjTo64 = Conversions.ToBoolean(lResult[6, e.RowIndex].Value);
         }
     }
 }

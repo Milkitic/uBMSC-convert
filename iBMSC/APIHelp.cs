@@ -14,7 +14,6 @@ internal class APIHelp
     public struct Point
     {
         public int x;
-
         public int y;
 
         public Point(int x, int y)
@@ -28,7 +27,6 @@ internal class APIHelp
     public struct Size
     {
         public int cx;
-
         public int cy;
 
         public Size(int cx, int cy)
@@ -43,11 +41,8 @@ internal class APIHelp
     private struct ARGB
     {
         public byte Blue;
-
         public byte Green;
-
         public byte Red;
-
         public byte Alpha;
     }
 
@@ -55,28 +50,21 @@ internal class APIHelp
     public struct BLENDFUNCTION
     {
         public byte BlendOp;
-
         public byte BlendFlags;
-
         public byte SourceConstantAlpha;
-
         public byte AlphaFormat;
     }
 
     public const int WS_EX_LAYERED = 524288;
-
     public const int HTCAPTION = 2;
-
     public const int WM_NCHITTEST = 132;
-
     public const int ULW_ALPHA = 2;
-
     public const byte AC_SRC_OVER = 0;
-
     public const byte AC_SRC_ALPHA = 1;
 
     [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-    public static extern Bool UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point pprSrc, int crKey, ref BLENDFUNCTION pblend, int dwFlags);
+    public static extern Bool UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref Point pptDst, ref Size psize,
+        IntPtr hdcSrc, ref Point pprSrc, int crKey, ref BLENDFUNCTION pblend, int dwFlags);
 
     [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true)]
     public static extern IntPtr CreateCompatibleDC(IntPtr hDC);

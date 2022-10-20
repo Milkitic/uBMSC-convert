@@ -14,28 +14,18 @@ public partial class OpVisual : Form
     public struct ColumnOptionSet
     {
         public NumericUpDown Width;
-
         public TextBox Title;
-
         public Button SNote;
-
         public Button SText;
-
         public Button LNote;
-
         public Button LText;
-
         public Button BG;
     }
 
     private int niB;
-
     private int[] lLeft;
-
     private visualSettings vo;
-
     private Column[] col;
-
     private ColumnOptionSet[] co;
 
     public OpVisual(visualSettings xvo, Column[] xcol, Font monoFont)
@@ -44,9 +34,8 @@ public partial class OpVisual : Form
         niB = 27;
         lLeft = new int[28]
         {
-            78, 110, 142, 174, 208, 240, 272, 304, 336, 368,
-            400, 432, 464, 498, 530, 562, 594, 626, 658, 690,
-            722, 754, 788, 820, 852, 884, 918, 950
+            78, 110, 142, 174, 208, 240, 272, 304, 336, 368, 400, 432, 464, 498, 530, 562, 594, 626, 658, 690, 722,
+            754, 788, 820, 852, 884, 918, 950
         };
         InitializeComponent();
         vo = xvo;
@@ -198,7 +187,9 @@ public partial class OpVisual : Form
                 button20.Size = size;
                 button18.BackColor = col[i].cBG;
                 Button button21 = button18;
-                object obj = Interaction.IIf((int)Math.Round(col[i].cBG.GetBrightness() * 255f) + 255 - col[i].cBG.A >= 128, Color.Black, Color.White);
+                object obj =
+                    Interaction.IIf((int)Math.Round(col[i].cBG.GetBrightness() * 255f) + 255 - col[i].cBG.A >= 128,
+                        Color.Black, Color.White);
                 button21.ForeColor = ((obj != null) ? ((Color)obj) : color);
                 button18.Text = To4Hex(col[i].cBG.ToArgb());
                 button18.Name = "cBG";
@@ -233,7 +224,8 @@ public partial class OpVisual : Form
         xbutton.BackColor = c;
         checked
         {
-            object obj = Interaction.IIf((int)Math.Round(c.GetBrightness() * 255f) + 255 - c.A >= 128, Color.Black, Color.White);
+            object obj = Interaction.IIf((int)Math.Round(c.GetBrightness() * 255f) + 255 - c.A >= 128, Color.Black,
+                Color.White);
             Color color = default(Color);
             xbutton.ForeColor = ((obj != null) ? ((Color)obj) : color);
         }
@@ -286,6 +278,7 @@ public partial class OpVisual : Form
             col[i].cLText = co[i].LText.ForeColor;
             col[i].cBG = co[i].BG.BackColor;
         }
+
         MyProject.Forms.MainWindow.column = col;
         DialogResult = DialogResult.OK;
         Close();
@@ -371,6 +364,7 @@ public partial class OpVisual : Form
         {
             colorPicker.SetOrigColor(button.BackColor);
         }
+
         checked
         {
             if (colorPicker.ShowDialog(this) != DialogResult.Cancel)
@@ -389,7 +383,10 @@ public partial class OpVisual : Form
                     case "cBG":
                         {
                             button.BackColor = colorPicker.NewColor;
-                            object obj = Interaction.IIf((int)Math.Round(colorPicker.NewColor.GetBrightness() * 255f) + 255 - colorPicker.NewColor.A >= 128, Color.Black, Color.White);
+                            object obj =
+                                Interaction.IIf(
+                                    (int)Math.Round(colorPicker.NewColor.GetBrightness() * 255f) + 255 -
+                                    colorPicker.NewColor.A >= 128, Color.Black, Color.White);
                             Color color = default(Color);
                             button.ForeColor = ((obj != null) ? ((Color)obj) : color);
                             break;
@@ -409,6 +406,7 @@ public partial class OpVisual : Form
             {
                 array[i] = xC[i].ToArgb();
             }
+
             return array;
         }
     }
@@ -416,6 +414,7 @@ public partial class OpVisual : Form
     private string To4Hex(int xInt)
     {
         Color color = Color.FromArgb(xInt);
-        return Conversion.Hex(color.A) + "\r\n" + Conversion.Hex(color.R) + "\r\n" + Conversion.Hex(color.G) + "\r\n" + Conversion.Hex(color.B);
+        return Conversion.Hex(color.A) + "\r\n" + Conversion.Hex(color.R) + "\r\n" + Conversion.Hex(color.G) + "\r\n" +
+               Conversion.Hex(color.B);
     }
 }
